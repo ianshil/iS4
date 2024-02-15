@@ -1,0 +1,12 @@
+DIGEST 0184b96fba9a9f832f556ff84c82abd8
+FGeneral.existsT
+R36:38 Coq.Init.Specif <> sig ind
+binder 45:45 <> x:1
+R54:56 Coq.Init.Specif <> sig ind
+binder 63:63 <> y:2
+not 9:9 <> ::type_scope:'existsT'_x_'..'_x_','_x
+R238:241 Coq.Init.Specif <> sigT ind
+binder 248:248 <> x:3
+R257:260 Coq.Init.Specif <> sigT ind
+binder 267:267 <> y:4
+not 210:210 <> ::type_scope:'existsT2'_x_'..'_x_','_x

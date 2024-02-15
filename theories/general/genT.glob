@@ -1,0 +1,2132 @@
+DIGEST 6735fa86afb005407cfe275d87e1cddb
+FGeneral.genT
+R102:105 Coq.Lists.List <> <> lib
+R116:128 Coq.Lists.List ListNotations <> mod
+R147:153 General.existsT <> <> lib
+R174:201 Coq.Classes.CRelationClasses <> <> lib
+R222:224 General.gen <> <> lib
+def 253:256 <> rlsT
+binder 258:258 <> W:1
+R269:272 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R263:266 Coq.Init.Datatypes <> list ind
+R268:268 General.genT <> W:1 var
+R274:277 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R273:273 General.genT <> W:1 var
+ind 333:338 <> emptyT
+binder 341:341 <> X:2
+R354:357 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+scheme 333:338 <> emptyT_rect
+scheme 333:338 <> emptyT_ind
+scheme 333:338 <> emptyT_rec
+scheme 333:338 <> emptyT_sind
+prf 377:387 <> emptyT_any'
+binder 398:400 <> sty:5
+binder 410:410 <> Q:6
+R420:422 General.genT <> sty:5 var
+binder 413:416 <> prem:7
+R437:440 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R426:431 General.genT <> emptyT ind
+R433:436 General.genT <> prem:7 var
+R441:441 General.genT <> Q:6 var
+R443:446 General.genT <> prem:7 var
+prf 492:501 <> emptyT_any
+binder 512:514 <> sty:8
+binder 524:524 <> Q:9
+R534:536 General.genT <> sty:8 var
+binder 527:530 <> prem:10
+R551:554 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R540:545 General.genT <> emptyT ind
+R547:550 General.genT <> prem:10 var
+R555:555 General.genT <> Q:9 var
+def 705:713 <> relationT
+binder 716:716 <> A:11
+R730:733 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R729:729 General.genT <> A:11 var
+R735:738 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R734:734 General.genT <> A:11 var
+ind 756:765 <> empty_relT
+binder 768:768 <> A:12
+binder 770:770 <> B:13
+R783:786 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R788:791 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+scheme 756:765 <> empty_relT_rect
+scheme 756:765 <> empty_relT_ind
+scheme 756:765 <> empty_relT_rec
+scheme 756:765 <> empty_relT_sind
+prf 811:821 <> rsub_emptyT
+binder 824:824 <> A:16
+binder 826:826 <> B:17
+binder 829:829 <> r:18
+R834:837 General.gen <> rsub def
+R839:839 General.genT <> A:16 var
+R841:841 General.genT <> B:17 var
+R843:852 General.genT <> empty_relT ind
+R854:854 General.genT <> r:18 var
+def 910:920 <> transitiveT
+binder 922:922 <> W:19
+R929:937 General.genT <> relationT def
+R939:939 General.genT <> W:19 var
+binder 925:925 <> R:20
+R964:964 General.genT <> W:19 var
+binder 956:956 <> x:21
+binder 958:958 <> y:22
+binder 960:960 <> z:23
+R973:976 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R968:968 General.genT <> R:20 var
+R970:970 General.genT <> x:21 var
+R972:972 General.genT <> y:22 var
+R982:985 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R977:977 General.genT <> R:20 var
+R979:979 General.genT <> y:22 var
+R981:981 General.genT <> z:23 var
+R986:986 General.genT <> R:20 var
+R988:988 General.genT <> x:21 var
+R990:990 General.genT <> z:23 var
+prf 1062:1071 <> iffT_trans
+binder 1081:1081 <> A:24
+binder 1083:1083 <> B:25
+binder 1085:1085 <> C:26
+R1096:1099 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1088:1091 Coq.Classes.CRelationClasses <> iffT def
+R1093:1093 General.genT <> A:24 var
+R1095:1095 General.genT <> B:25 var
+R1108:1111 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1100:1103 Coq.Classes.CRelationClasses <> iffT def
+R1105:1105 General.genT <> B:25 var
+R1107:1107 General.genT <> C:26 var
+R1112:1115 Coq.Classes.CRelationClasses <> iffT def
+R1117:1117 General.genT <> A:24 var
+R1119:1119 General.genT <> C:26 var
+R1138:1141 Coq.Classes.CRelationClasses <> iffT def
+prf 1199:1207 <> iffT_sym'
+binder 1217:1217 <> A:27
+binder 1219:1219 <> B:28
+R1230:1233 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1222:1225 Coq.Classes.CRelationClasses <> iffT def
+R1227:1227 General.genT <> A:27 var
+R1229:1229 General.genT <> B:28 var
+R1234:1237 Coq.Classes.CRelationClasses <> iffT def
+R1239:1239 General.genT <> B:28 var
+R1241:1241 General.genT <> A:27 var
+R1260:1263 Coq.Classes.CRelationClasses <> iffT def
+prf 1307:1315 <> iffT_refl
+binder 1325:1325 <> A:29
+R1328:1331 Coq.Classes.CRelationClasses <> iffT def
+R1333:1333 General.genT <> A:29 var
+R1335:1335 General.genT <> A:29 var
+R1354:1357 Coq.Classes.CRelationClasses <> iffT def
+prf 1389:1396 <> iffT_D1'
+binder 1406:1406 <> A:30
+binder 1408:1408 <> B:31
+R1419:1422 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1411:1414 Coq.Classes.CRelationClasses <> iffT def
+R1416:1416 General.genT <> A:30 var
+R1418:1418 General.genT <> B:31 var
+R1424:1427 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1423:1423 General.genT <> A:30 var
+R1428:1428 General.genT <> B:31 var
+R1447:1450 Coq.Classes.CRelationClasses <> iffT def
+prf 1482:1489 <> iffT_D2'
+binder 1499:1499 <> A:32
+binder 1501:1501 <> B:33
+R1512:1515 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1504:1507 Coq.Classes.CRelationClasses <> iffT def
+R1509:1509 General.genT <> B:33 var
+R1511:1511 General.genT <> A:32 var
+R1517:1520 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1516:1516 General.genT <> A:32 var
+R1521:1521 General.genT <> B:33 var
+R1540:1543 Coq.Classes.CRelationClasses <> iffT def
+def 1609:1616 <> iffT_sym
+binder 1619:1619 <> A:34
+binder 1621:1621 <> B:35
+R1636:1639 Coq.Classes.CRelationClasses <> iffT def
+R1641:1641 General.genT <> A:34 var
+R1643:1643 General.genT <> B:35 var
+binder 1632:1632 <> X:36
+R1663:1663 General.genT <> X:36 var
+binder 1654:1654 <> f:37
+binder 1657:1657 <> g:38
+R1668:1668 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1670:1671 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1673:1673 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1669:1669 General.genT <> g:38 var
+R1672:1672 General.genT <> f:37 var
+def 1688:1694 <> iffT_D1
+binder 1697:1697 <> A:39
+binder 1699:1699 <> B:40
+R1714:1717 Coq.Classes.CRelationClasses <> iffT def
+R1719:1719 General.genT <> A:39 var
+R1721:1721 General.genT <> B:40 var
+binder 1710:1710 <> X:41
+binder 1724:1724 <> a:42
+R1743:1743 General.genT <> X:41 var
+binder 1734:1734 <> f:43
+R1748:1748 General.genT <> f:43 var
+R1750:1750 General.genT <> a:42 var
+def 1765:1771 <> iffT_D2
+binder 1774:1774 <> A:44
+binder 1776:1776 <> B:45
+R1791:1794 Coq.Classes.CRelationClasses <> iffT def
+R1796:1796 General.genT <> A:44 var
+R1798:1798 General.genT <> B:45 var
+binder 1787:1787 <> X:46
+binder 1801:1801 <> b:47
+R1820:1820 General.genT <> X:46 var
+binder 1814:1814 <> g:48
+R1825:1825 General.genT <> g:48 var
+R1827:1827 General.genT <> b:47 var
+prf 1839:1847 <> prod_mono
+binder 1849:1849 <> A:49
+binder 1851:1852 <> A':50
+binder 1854:1854 <> B:51
+binder 1856:1857 <> B':52
+R1861:1861 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1869:1873 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1863:1866 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1862:1862 General.genT <> A:49 var
+R1867:1868 General.genT <> A':50 var
+R1874:1874 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1882:1887 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1904:1904 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1876:1879 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1875:1875 General.genT <> B:51 var
+R1880:1881 General.genT <> B':52 var
+R1893:1896 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1889:1891 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1888:1888 General.genT <> A:49 var
+R1892:1892 General.genT <> B:51 var
+R1899:1901 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1897:1898 General.genT <> A':50 var
+R1902:1903 General.genT <> B':52 var
+prf 1958:1966 <> iffT_prod
+binder 1968:1968 <> A:53
+binder 1970:1971 <> A':54
+binder 1973:1973 <> B:55
+binder 1975:1976 <> B':56
+R1989:1992 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1980:1983 Coq.Classes.CRelationClasses <> iffT def
+R1985:1985 General.genT <> A:53 var
+R1987:1988 General.genT <> A':54 var
+R2002:2005 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1993:1996 Coq.Classes.CRelationClasses <> iffT def
+R1998:1998 General.genT <> B:55 var
+R2000:2001 General.genT <> B':56 var
+R2006:2009 Coq.Classes.CRelationClasses <> iffT def
+R2013:2015 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2012:2012 General.genT <> A:53 var
+R2016:2016 General.genT <> B:55 var
+R2023:2025 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2021:2022 General.genT <> A':54 var
+R2026:2027 General.genT <> B':56 var
+R2046:2049 Coq.Classes.CRelationClasses <> iffT def
+R2101:2109 General.genT <> prod_mono thm
+R2101:2109 General.genT <> prod_mono thm
+R2101:2109 General.genT <> prod_mono thm
+ind 2451:2454 <> AccT
+constr 2511:2520 <> AccT_intro
+binder 2457:2457 <> A:57
+R2473:2476 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2472:2472 General.genT <> A:57 var
+R2478:2481 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2477:2477 General.genT <> A:57 var
+binder 2468:2468 <> R:58
+R2493:2493 General.genT <> A:57 var
+binder 2489:2489 <> x:59
+R2524:2524 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2556:2560 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2536:2536 General.genT <> A:57 var
+binder 2532:2532 <> y:62
+R2544:2547 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2539:2539 General.genT <> R:58 var
+R2543:2543 General.genT <> x:59 var
+R2541:2541 General.genT <> y:62 var
+R2548:2551 General.genT <> AccT:60 ind
+R2555:2555 General.genT <> y:62 var
+R2553:2553 General.genT <> R:58 var
+R2561:2564 General.genT <> AccT:60 ind
+R2568:2568 General.genT <> x:59 var
+R2566:2566 General.genT <> R:58 var
+scheme 2451:2454 <> AccT_rect
+scheme 2451:2454 <> AccT_ind
+scheme 2451:2454 <> AccT_rec
+scheme 2451:2454 <> AccT_sind
+def 2585:2597 <> well_foundedT
+binder 2600:2600 <> A:63
+R2616:2619 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2615:2615 General.genT <> A:63 var
+R2621:2624 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2620:2620 General.genT <> A:63 var
+binder 2611:2611 <> R:64
+R2648:2648 General.genT <> A:63 var
+binder 2644:2644 <> a:65
+R2651:2654 General.genT <> AccT ind
+R2658:2658 General.genT <> a:65 var
+R2656:2656 General.genT <> R:64 var
+ind 2674:2680 <> ForallT
+constr 2734:2744 <> ForallT_nil
+constr 2766:2777 <> ForallT_cons
+binder 2683:2683 <> A:66
+R2699:2702 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2698:2698 General.genT <> A:66 var
+binder 2694:2694 <> P:67
+R2717:2720 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2711:2714 Coq.Init.Datatypes <> list ind
+R2748:2754 General.genT <> ForallT:68 ind
+R2758:2759 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R2756:2756 General.genT <> P:67 var
+R2793:2793 General.genT <> A:66 var
+binder 2789:2789 <> x:70
+R2801:2804 Coq.Init.Datatypes <> list ind
+R2806:2806 General.genT <> A:66 var
+binder 2797:2797 <> l:71
+R2832:2835 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2829:2829 General.genT <> P:67 var
+R2831:2831 General.genT <> x:70 var
+R2847:2850 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2836:2842 General.genT <> ForallT:68 ind
+R2846:2846 General.genT <> l:71 var
+R2844:2844 General.genT <> P:67 var
+R2851:2857 General.genT <> ForallT:68 ind
+R2863:2866 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2862:2862 General.genT <> x:70 var
+R2867:2867 General.genT <> l:71 var
+R2859:2859 General.genT <> P:67 var
+scheme 2674:2680 <> ForallT_rect
+scheme 2674:2680 <> ForallT_ind
+scheme 2674:2680 <> ForallT_rec
+scheme 2674:2680 <> ForallT_sind
+prf 2880:2890 <> ForallT_inv
+binder 2904:2904 <> A:72
+R2920:2923 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2919:2919 General.genT <> A:72 var
+binder 2915:2915 <> P:73
+R2935:2935 General.genT <> A:72 var
+binder 2931:2931 <> a:74
+R2943:2946 Coq.Init.Datatypes <> list ind
+R2948:2948 General.genT <> A:72 var
+binder 2939:2939 <> l:75
+R2973:2976 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2955:2961 General.genT <> ForallT ind
+R2967:2970 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2966:2966 General.genT <> a:74 var
+R2971:2971 General.genT <> l:75 var
+R2963:2963 General.genT <> P:73 var
+R2977:2977 General.genT <> P:73 var
+R2979:2979 General.genT <> a:74 var
+prf 3043:3058 <> ForallT_cons_inv
+binder 3072:3072 <> A:76
+R3088:3091 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3087:3087 General.genT <> A:76 var
+binder 3083:3083 <> P:77
+R3103:3103 General.genT <> A:76 var
+binder 3099:3099 <> x:78
+R3111:3114 Coq.Init.Datatypes <> list ind
+R3116:3116 General.genT <> A:76 var
+binder 3107:3107 <> l:79
+R3141:3144 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3123:3129 General.genT <> ForallT ind
+R3135:3138 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R3134:3134 General.genT <> x:78 var
+R3139:3139 General.genT <> l:79 var
+R3131:3131 General.genT <> P:77 var
+R3148:3150 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R3145:3145 General.genT <> P:77 var
+R3147:3147 General.genT <> x:78 var
+R3151:3157 General.genT <> ForallT ind
+R3161:3161 General.genT <> l:79 var
+R3159:3159 General.genT <> P:77 var
+prf 3242:3255 <> ForallT_single
+binder 3269:3269 <> A:80
+R3285:3288 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3284:3284 General.genT <> A:80 var
+binder 3280:3280 <> P:81
+R3300:3300 General.genT <> A:80 var
+binder 3296:3296 <> x:82
+R3304:3307 Coq.Classes.CRelationClasses <> iffT def
+R3310:3316 General.genT <> ForallT ind
+R3320:3320 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3322:3322 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3321:3321 General.genT <> x:82 var
+R3318:3318 General.genT <> P:81 var
+R3326:3326 General.genT <> P:81 var
+R3328:3328 General.genT <> x:82 var
+R3357:3360 Coq.Classes.CRelationClasses <> iffT def
+R3424:3435 General.genT <> ForallT_cons constr
+R3424:3435 General.genT <> ForallT_cons constr
+R3454:3464 General.genT <> ForallT_nil constr
+R3454:3464 General.genT <> ForallT_nil constr
+def 3487:3501 <> ForallT_singleD
+binder 3503:3503 <> A:83
+binder 3505:3505 <> P:84
+binder 3507:3507 <> x:85
+R3512:3518 General.genT <> iffT_D1 def
+R3522:3535 General.genT <> ForallT_single thm
+R3537:3537 General.genT <> A:83 var
+R3539:3539 General.genT <> P:84 var
+R3541:3541 General.genT <> x:85 var
+def 3557:3571 <> ForallT_singleI
+binder 3573:3573 <> A:86
+binder 3575:3575 <> P:87
+binder 3577:3577 <> x:88
+R3582:3588 General.genT <> iffT_D2 def
+R3592:3605 General.genT <> ForallT_single thm
+R3607:3607 General.genT <> A:86 var
+R3609:3609 General.genT <> P:87 var
+R3611:3611 General.genT <> x:88 var
+prf 3624:3639 <> ForallT_cons_iff
+binder 3653:3653 <> A:89
+R3669:3672 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3668:3668 General.genT <> A:89 var
+binder 3664:3664 <> P:90
+R3684:3684 General.genT <> A:89 var
+binder 3680:3680 <> x:91
+R3692:3695 Coq.Init.Datatypes <> list ind
+R3697:3697 General.genT <> A:89 var
+binder 3688:3688 <> l:92
+R3706:3709 Coq.Classes.CRelationClasses <> iffT def
+R3712:3718 General.genT <> ForallT ind
+R3724:3727 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R3723:3723 General.genT <> x:91 var
+R3728:3728 General.genT <> l:92 var
+R3720:3720 General.genT <> P:90 var
+R3736:3738 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R3733:3733 General.genT <> P:90 var
+R3735:3735 General.genT <> x:91 var
+R3739:3745 General.genT <> ForallT ind
+R3749:3749 General.genT <> l:92 var
+R3747:3747 General.genT <> P:90 var
+R3778:3781 Coq.Classes.CRelationClasses <> iffT def
+R3811:3826 General.genT <> ForallT_cons_inv thm
+R3811:3826 General.genT <> ForallT_cons_inv thm
+R3860:3871 General.genT <> ForallT_cons constr
+R3860:3871 General.genT <> ForallT_cons constr
+prf 3906:3919 <> ForallT_append
+binder 3933:3933 <> X:93
+R3949:3952 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3948:3948 General.genT <> X:93 var
+binder 3944:3944 <> P:94
+R3968:3971 Coq.Init.Datatypes <> list ind
+R3973:3973 General.genT <> X:93 var
+binder 3960:3961 <> xs:95
+binder 3963:3964 <> ys:96
+R3980:3983 Coq.Classes.CRelationClasses <> iffT def
+R3986:3992 General.genT <> ForallT ind
+R3999:4002 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R3997:3998 General.genT <> xs:95 var
+R4003:4004 General.genT <> ys:96 var
+R3994:3994 General.genT <> P:94 var
+R4021:4023 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R4009:4015 General.genT <> ForallT ind
+R4019:4020 General.genT <> xs:95 var
+R4017:4017 General.genT <> P:94 var
+R4024:4030 General.genT <> ForallT ind
+R4034:4035 General.genT <> ys:96 var
+R4032:4032 General.genT <> P:94 var
+R4064:4067 Coq.Classes.CRelationClasses <> iffT def
+R4127:4137 General.genT <> ForallT_nil constr
+R4127:4137 General.genT <> ForallT_nil constr
+R4288:4299 General.genT <> ForallT_cons constr
+R4288:4299 General.genT <> ForallT_cons constr
+R4382:4393 General.genT <> ForallT_cons constr
+R4382:4393 General.genT <> ForallT_cons constr
+def 4454:4468 <> ForallT_appendD
+binder 4470:4470 <> A:97
+binder 4472:4472 <> P:98
+binder 4474:4475 <> xs:99
+binder 4477:4478 <> ys:100
+R4483:4489 General.genT <> iffT_D1 def
+R4493:4506 General.genT <> ForallT_append thm
+R4508:4508 General.genT <> A:97 var
+R4510:4510 General.genT <> P:98 var
+R4512:4513 General.genT <> xs:99 var
+R4515:4516 General.genT <> ys:100 var
+def 4532:4547 <> ForallT_appendD1
+binder 4549:4549 <> A:101
+binder 4551:4551 <> P:102
+binder 4553:4554 <> xs:103
+binder 4556:4557 <> ys:104
+binder 4559:4560 <> aa:105
+R4565:4567 Coq.Init.Datatypes <> fst def
+R4571:4585 General.genT <> ForallT_appendD def
+R4587:4587 General.genT <> A:101 var
+R4589:4589 General.genT <> P:102 var
+R4591:4592 General.genT <> xs:103 var
+R4594:4595 General.genT <> ys:104 var
+R4597:4598 General.genT <> aa:105 var
+def 4614:4629 <> ForallT_appendD2
+binder 4631:4631 <> A:106
+binder 4633:4633 <> P:107
+binder 4635:4636 <> xs:108
+binder 4638:4639 <> ys:109
+binder 4641:4642 <> aa:110
+R4647:4649 Coq.Init.Datatypes <> snd def
+R4653:4667 General.genT <> ForallT_appendD def
+R4669:4669 General.genT <> A:106 var
+R4671:4671 General.genT <> P:107 var
+R4673:4674 General.genT <> xs:108 var
+R4676:4677 General.genT <> ys:109 var
+R4679:4680 General.genT <> aa:110 var
+def 4696:4711 <> ForallT_appendI'
+binder 4713:4713 <> A:111
+binder 4715:4715 <> P:112
+binder 4717:4718 <> xs:113
+binder 4720:4721 <> ys:114
+R4726:4732 General.genT <> iffT_D2 def
+R4736:4749 General.genT <> ForallT_append thm
+R4751:4751 General.genT <> A:111 var
+R4753:4753 General.genT <> P:112 var
+R4755:4756 General.genT <> xs:113 var
+R4758:4759 General.genT <> ys:114 var
+def 4775:4789 <> ForallT_appendI
+binder 4791:4791 <> A:115
+binder 4793:4793 <> P:116
+binder 4795:4796 <> xs:117
+binder 4798:4799 <> ys:118
+binder 4801:4802 <> ax:119
+binder 4804:4805 <> ay:120
+R4815:4830 General.genT <> ForallT_appendI' def
+R4832:4832 General.genT <> A:115 var
+R4834:4834 General.genT <> P:116 var
+R4836:4837 General.genT <> xs:117 var
+R4839:4840 General.genT <> ys:118 var
+R4843:4846 Coq.Init.Datatypes <> pair constr
+R4851:4852 General.genT <> ay:120 var
+R4848:4849 General.genT <> ax:119 var
+prf 4865:4873 <> ForallT_2
+binder 4884:4884 <> A:121
+R4900:4903 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4899:4899 General.genT <> A:121 var
+binder 4895:4895 <> P:122
+R4917:4917 General.genT <> A:121 var
+binder 4911:4911 <> x:123
+binder 4913:4913 <> y:124
+R4928:4931 Coq.Classes.CRelationClasses <> iffT def
+R4934:4940 General.genT <> ForallT ind
+R4944:4944 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R4946:4947 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R4949:4949 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R4945:4945 General.genT <> x:123 var
+R4948:4948 General.genT <> y:124 var
+R4942:4942 General.genT <> P:122 var
+R4956:4958 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R4953:4953 General.genT <> P:122 var
+R4955:4955 General.genT <> x:123 var
+R4959:4959 General.genT <> P:122 var
+R4961:4961 General.genT <> y:124 var
+R4990:4993 Coq.Classes.CRelationClasses <> iffT def
+R5082:5093 General.genT <> ForallT_cons constr
+R5082:5093 General.genT <> ForallT_cons constr
+R5113:5124 General.genT <> ForallT_cons constr
+R5113:5124 General.genT <> ForallT_cons constr
+R5144:5154 General.genT <> ForallT_nil constr
+R5144:5154 General.genT <> ForallT_nil constr
+prf 5171:5183 <> ForallT_map_2
+binder 5194:5194 <> A:125
+binder 5196:5196 <> B:126
+R5212:5215 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5211:5211 General.genT <> B:126 var
+binder 5207:5207 <> P:127
+R5228:5231 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5227:5227 General.genT <> A:125 var
+R5232:5232 General.genT <> B:126 var
+binder 5223:5223 <> f:128
+R5242:5242 General.genT <> A:125 var
+binder 5236:5236 <> x:129
+binder 5238:5238 <> y:130
+R5253:5256 Coq.Classes.CRelationClasses <> iffT def
+R5259:5265 General.genT <> ForallT ind
+R5270:5272 Coq.Lists.List <> map def
+R5276:5276 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5278:5279 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5281:5281 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5277:5277 General.genT <> x:129 var
+R5280:5280 General.genT <> y:130 var
+R5274:5274 General.genT <> f:128 var
+R5267:5267 General.genT <> P:127 var
+R5293:5295 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R5286:5286 General.genT <> P:127 var
+R5289:5289 General.genT <> f:128 var
+R5291:5291 General.genT <> x:129 var
+R5296:5296 General.genT <> P:127 var
+R5299:5299 General.genT <> f:128 var
+R5301:5301 General.genT <> y:130 var
+R5338:5346 General.genT <> ForallT_2 thm
+R5338:5346 General.genT <> ForallT_2 thm
+prf 5364:5374 <> ForallT_map
+binder 5385:5385 <> A:131
+binder 5387:5387 <> B:132
+R5403:5406 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5402:5402 General.genT <> B:132 var
+binder 5398:5398 <> P:133
+R5419:5422 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5418:5418 General.genT <> A:131 var
+R5423:5423 General.genT <> B:132 var
+binder 5414:5414 <> f:134
+R5431:5431 General.genT <> A:131 var
+binder 5427:5427 <> x:135
+R5442:5445 Coq.Classes.CRelationClasses <> iffT def
+R5448:5454 General.genT <> ForallT ind
+R5459:5461 Coq.Lists.List <> map def
+R5465:5465 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R5467:5467 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R5466:5466 General.genT <> x:135 var
+R5463:5463 General.genT <> f:134 var
+R5456:5456 General.genT <> P:133 var
+R5472:5472 General.genT <> P:133 var
+R5475:5475 General.genT <> f:134 var
+R5477:5477 General.genT <> x:135 var
+R5514:5527 General.genT <> ForallT_single thm
+R5514:5527 General.genT <> ForallT_single thm
+prf 5545:5559 <> ForallT_map_rev
+binder 5570:5570 <> A:136
+binder 5572:5572 <> B:137
+R5588:5591 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5587:5587 General.genT <> B:137 var
+binder 5583:5583 <> P:138
+R5604:5607 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5603:5603 General.genT <> A:136 var
+R5608:5608 General.genT <> B:137 var
+binder 5599:5599 <> f:139
+R5616:5616 General.genT <> A:136 var
+binder 5612:5612 <> x:140
+R5627:5630 Coq.Classes.CRelationClasses <> iffT def
+R5633:5633 General.genT <> P:138 var
+R5636:5636 General.genT <> f:139 var
+R5638:5638 General.genT <> x:140 var
+R5643:5649 General.genT <> ForallT ind
+R5654:5656 Coq.Lists.List <> map def
+R5660:5660 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R5662:5662 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R5661:5661 General.genT <> x:140 var
+R5658:5658 General.genT <> f:139 var
+R5651:5651 General.genT <> P:138 var
+R5714:5727 General.genT <> ForallT_single thm
+R5714:5727 General.genT <> ForallT_single thm
+R5714:5727 General.genT <> ForallT_single thm
+def 5757:5766 <> ForallT_2D
+binder 5768:5768 <> A:141
+binder 5770:5770 <> P:142
+binder 5772:5772 <> x:143
+binder 5774:5774 <> y:144
+R5779:5785 General.genT <> iffT_D1 def
+R5789:5797 General.genT <> ForallT_2 thm
+R5799:5799 General.genT <> A:141 var
+R5801:5801 General.genT <> P:142 var
+R5803:5803 General.genT <> x:143 var
+R5805:5805 General.genT <> y:144 var
+def 5821:5830 <> ForallT_D1
+binder 5832:5832 <> A:145
+binder 5834:5834 <> P:146
+binder 5836:5836 <> x:147
+binder 5838:5838 <> y:148
+binder 5840:5841 <> aa:149
+R5846:5848 Coq.Init.Datatypes <> fst def
+R5852:5861 General.genT <> ForallT_2D def
+R5863:5863 General.genT <> A:145 var
+R5865:5865 General.genT <> P:146 var
+R5867:5867 General.genT <> x:147 var
+R5869:5869 General.genT <> y:148 var
+R5871:5872 General.genT <> aa:149 var
+def 5888:5897 <> ForallT_D2
+binder 5899:5899 <> A:150
+binder 5901:5901 <> P:151
+binder 5903:5903 <> x:152
+binder 5905:5905 <> y:153
+binder 5907:5908 <> aa:154
+R5913:5915 Coq.Init.Datatypes <> snd def
+R5919:5928 General.genT <> ForallT_2D def
+R5930:5930 General.genT <> A:150 var
+R5932:5932 General.genT <> P:151 var
+R5934:5934 General.genT <> x:152 var
+R5936:5936 General.genT <> y:153 var
+R5938:5939 General.genT <> aa:154 var
+def 5955:5965 <> ForallT_2I'
+binder 5967:5967 <> A:155
+binder 5969:5969 <> P:156
+binder 5971:5971 <> x:157
+binder 5973:5973 <> y:158
+R5978:5984 General.genT <> iffT_D2 def
+R5988:5996 General.genT <> ForallT_2 thm
+R5998:5998 General.genT <> A:155 var
+R6000:6000 General.genT <> P:156 var
+R6002:6002 General.genT <> x:157 var
+R6004:6004 General.genT <> y:158 var
+def 6020:6029 <> ForallT_2I
+binder 6031:6031 <> A:159
+binder 6033:6033 <> P:160
+binder 6035:6035 <> x:161
+binder 6037:6037 <> y:162
+binder 6039:6040 <> ax:163
+binder 6042:6043 <> ay:164
+R6049:6059 General.genT <> ForallT_2I' def
+R6061:6061 General.genT <> A:159 var
+R6063:6063 General.genT <> P:160 var
+R6065:6065 General.genT <> x:161 var
+R6067:6067 General.genT <> y:162 var
+R6070:6073 Coq.Init.Datatypes <> pair constr
+R6078:6079 General.genT <> ay:164 var
+R6075:6076 General.genT <> ax:163 var
+prf 6092:6103 <> ForallT_impl
+binder 6117:6117 <> A:165
+R6135:6138 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6134:6134 General.genT <> A:165 var
+binder 6128:6128 <> P:166
+binder 6130:6130 <> Q:167
+R6149:6149 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6174:6178 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6161:6161 General.genT <> A:165 var
+binder 6157:6157 <> a:168
+R6167:6170 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6164:6164 General.genT <> P:166 var
+R6166:6166 General.genT <> a:168 var
+R6171:6171 General.genT <> Q:167 var
+R6173:6173 General.genT <> a:168 var
+R6190:6193 Coq.Init.Datatypes <> list ind
+R6195:6195 General.genT <> A:165 var
+binder 6186:6186 <> l:169
+R6209:6212 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6198:6204 General.genT <> ForallT ind
+R6208:6208 General.genT <> l:169 var
+R6206:6206 General.genT <> P:166 var
+R6213:6219 General.genT <> ForallT ind
+R6223:6223 General.genT <> l:169 var
+R6221:6221 General.genT <> Q:167 var
+R6264:6274 General.genT <> ForallT_nil constr
+R6264:6274 General.genT <> ForallT_nil constr
+R6286:6297 General.genT <> ForallT_cons constr
+R6286:6297 General.genT <> ForallT_cons constr
+ind 6746:6753 <> Forall2T
+constr 6805:6816 <> Forall2T_nil
+constr 6842:6854 <> Forall2T_cons
+binder 6756:6756 <> A:170
+binder 6758:6758 <> B:171
+binder 6768:6768 <> R:172
+R6778:6781 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6772:6775 Coq.Init.Datatypes <> list ind
+R6788:6791 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6782:6785 Coq.Init.Datatypes <> list ind
+R6820:6827 General.genT <> Forall2T:173 ind
+R6834:6835 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R6831:6832 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R6829:6829 General.genT <> R:172 var
+R6870:6870 General.genT <> A:170 var
+binder 6866:6866 <> x:175
+R6878:6878 General.genT <> B:171 var
+binder 6874:6874 <> y:176
+R6886:6889 Coq.Init.Datatypes <> list ind
+R6891:6891 General.genT <> A:170 var
+binder 6882:6882 <> l:177
+R6900:6903 Coq.Init.Datatypes <> list ind
+R6905:6905 General.genT <> B:171 var
+binder 6895:6896 <> l':178
+R6934:6937 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6929:6929 General.genT <> R:172 var
+R6931:6931 General.genT <> x:175 var
+R6933:6933 General.genT <> y:176 var
+R6953:6956 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6938:6945 General.genT <> Forall2T:173 ind
+R6951:6952 General.genT <> l':178 var
+R6949:6949 General.genT <> l:177 var
+R6947:6947 General.genT <> R:172 var
+R6957:6964 General.genT <> Forall2T:173 ind
+R6979:6982 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6978:6978 General.genT <> y:176 var
+R6983:6984 General.genT <> l':178 var
+R6970:6973 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6969:6969 General.genT <> x:175 var
+R6974:6974 General.genT <> l:177 var
+R6966:6966 General.genT <> R:172 var
+scheme 6746:6753 <> Forall2T_rect
+scheme 6746:6753 <> Forall2T_ind
+scheme 6746:6753 <> Forall2T_rec
+scheme 6746:6753 <> Forall2T_sind
+prf 7003:7020 <> Forall2T_app_inv_l
+binder 7031:7031 <> A:179
+binder 7033:7033 <> B:180
+R7041:7044 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7040:7040 General.genT <> A:179 var
+R7046:7049 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7045:7045 General.genT <> B:180 var
+binder 7036:7036 <> R:181
+binder 7056:7057 <> l1:182
+binder 7059:7060 <> l2:183
+binder 7062:7063 <> l':184
+R7093:7100 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7069:7076 General.genT <> Forall2T ind
+R7091:7092 General.genT <> l':184 var
+R7083:7086 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R7081:7082 General.genT <> l1:182 var
+R7087:7088 General.genT <> l2:183 var
+R7078:7078 General.genT <> R:181 var
+R7101:7105 Coq.Init.Specif <> sigT2 ind
+binder 7143:7145 <> l1':185
+R7150:7154 Coq.Init.Specif <> sigT2 ind
+binder 7197:7199 <> l2':186
+R7206:7208 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7204:7205 General.genT <> l':184 var
+R7212:7215 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R7209:7211 General.genT <> l1':185 var
+R7216:7218 General.genT <> l2':186 var
+binder 7161:7163 <> l2':187
+R7173:7180 General.genT <> Forall2T ind
+R7187:7189 General.genT <> l2':187 var
+R7184:7185 General.genT <> l2:183 var
+R7182:7182 General.genT <> R:181 var
+binder 7112:7114 <> l1':188
+R7119:7126 General.genT <> Forall2T ind
+R7133:7135 General.genT <> l1':188 var
+R7130:7131 General.genT <> l1:182 var
+R7128:7128 General.genT <> R:181 var
+R7285:7286 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R7285:7286 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R7295:7306 General.genT <> Forall2T_nil constr
+R7295:7306 General.genT <> Forall2T_nil constr
+R7430:7433 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7430:7433 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7444:7456 General.genT <> Forall2T_cons constr
+R7444:7456 General.genT <> Forall2T_cons constr
+prf 7550:7567 <> Forall2T_app_inv_r
+binder 7578:7578 <> A:189
+binder 7580:7580 <> B:190
+R7588:7591 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7587:7587 General.genT <> A:189 var
+R7593:7596 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7592:7592 General.genT <> B:190 var
+binder 7583:7583 <> R:191
+binder 7603:7605 <> l1':192
+binder 7607:7609 <> l2':193
+binder 7611:7611 <> l:194
+R7643:7649 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7618:7625 General.genT <> Forall2T ind
+R7635:7638 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R7632:7634 General.genT <> l1':192 var
+R7639:7641 General.genT <> l2':193 var
+R7629:7629 General.genT <> l:194 var
+R7627:7627 General.genT <> R:191 var
+R7650:7654 Coq.Init.Specif <> sigT2 ind
+binder 7691:7692 <> l1:195
+R7697:7701 Coq.Init.Specif <> sigT2 ind
+binder 7744:7745 <> l2:196
+R7751:7753 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7750:7750 General.genT <> l:194 var
+R7756:7759 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R7754:7755 General.genT <> l1:195 var
+R7760:7761 General.genT <> l2:196 var
+binder 7708:7709 <> l2:197
+R7720:7727 General.genT <> Forall2T ind
+R7734:7736 General.genT <> l2':193 var
+R7731:7732 General.genT <> l2:197 var
+R7729:7729 General.genT <> R:191 var
+binder 7661:7662 <> l1:198
+R7667:7674 General.genT <> Forall2T ind
+R7681:7683 General.genT <> l1':192 var
+R7678:7679 General.genT <> l1:198 var
+R7676:7676 General.genT <> R:191 var
+R7830:7831 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R7830:7831 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R7840:7851 General.genT <> Forall2T_nil constr
+R7840:7851 General.genT <> Forall2T_nil constr
+R7976:7979 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7976:7979 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7991:8003 General.genT <> Forall2T_cons constr
+R7991:8003 General.genT <> Forall2T_cons constr
+prf 8097:8108 <> Forall2T_app
+binder 8119:8119 <> A:199
+binder 8121:8121 <> B:200
+R8129:8132 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8128:8128 General.genT <> A:199 var
+R8134:8137 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8133:8133 General.genT <> B:200 var
+binder 8124:8124 <> R:201
+binder 8144:8145 <> l1:202
+binder 8147:8148 <> l2:203
+binder 8150:8152 <> l1':204
+binder 8154:8156 <> l2':205
+R8179:8182 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8162:8169 General.genT <> Forall2T ind
+R8176:8178 General.genT <> l1':204 var
+R8173:8174 General.genT <> l1:202 var
+R8171:8171 General.genT <> R:201 var
+R8200:8203 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8183:8190 General.genT <> Forall2T ind
+R8197:8199 General.genT <> l2':205 var
+R8194:8195 General.genT <> l2:203 var
+R8192:8192 General.genT <> R:201 var
+R8204:8211 General.genT <> Forall2T ind
+R8230:8233 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R8227:8229 General.genT <> l1':204 var
+R8234:8236 General.genT <> l2':205 var
+R8218:8221 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R8216:8217 General.genT <> l1:202 var
+R8222:8223 General.genT <> l2:203 var
+R8213:8213 General.genT <> R:201 var
+R8374:8386 General.genT <> Forall2T_cons constr
+R8374:8386 General.genT <> Forall2T_cons constr
+R8713:8716 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8713:8716 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8760:8761 Coq.Init.Logic <> ex ind
+R8760:8761 Coq.Init.Logic <> ex ind
+R8806:8810 Coq.Init.Logic <> False ind
+R8806:8810 Coq.Init.Logic <> False ind
+R8851:8853 Coq.Init.Specif <> sig ind
+R8851:8853 Coq.Init.Specif <> sig ind
+R8898:8901 Coq.Init.Specif <> sigT ind
+R8898:8901 Coq.Init.Specif <> sigT ind
+R8946:8950 Coq.Init.Logic <> False ind
+R8946:8950 Coq.Init.Logic <> False ind
+R8992:8994 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R8992:8994 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R9093:9096 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9093:9096 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9140:9141 Coq.Init.Logic <> ex ind
+R9140:9141 Coq.Init.Logic <> ex ind
+R9186:9190 Coq.Init.Logic <> False ind
+R9186:9190 Coq.Init.Logic <> False ind
+R9231:9233 Coq.Init.Specif <> sig ind
+R9231:9233 Coq.Init.Specif <> sig ind
+R9278:9281 Coq.Init.Specif <> sigT ind
+R9278:9281 Coq.Init.Specif <> sigT ind
+R9326:9330 Coq.Init.Logic <> False ind
+R9326:9330 Coq.Init.Logic <> False ind
+R9372:9374 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R9372:9374 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+ind 9428:9430 <> InT
+constr 9467:9473 <> InT_eq'
+constr 9521:9528 <> InT_cons
+binder 9432:9432 <> A:206
+R9439:9439 General.genT <> A:206 var
+binder 9435:9435 <> a:207
+R9450:9453 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9444:9447 Coq.Init.Datatypes <> list ind
+binder 9484:9484 <> b:210
+binder 9486:9486 <> l:211
+R9494:9497 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9490:9492 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9489:9489 General.genT <> b:210 var
+R9493:9493 General.genT <> a:207 var
+R9499:9501 General.genT <> InT:208 ind
+R9503:9503 General.genT <> A:206 var
+R9505:9505 General.genT <> a:207 var
+R9509:9512 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R9508:9508 General.genT <> b:210 var
+R9513:9513 General.genT <> l:211 var
+binder 9539:9539 <> b:212
+binder 9541:9541 <> l:213
+R9554:9557 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9545:9547 General.genT <> InT:208 ind
+R9549:9549 General.genT <> A:206 var
+R9551:9551 General.genT <> a:207 var
+R9553:9553 General.genT <> l:213 var
+R9559:9561 General.genT <> InT:208 ind
+R9563:9563 General.genT <> A:206 var
+R9565:9565 General.genT <> a:207 var
+R9569:9572 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R9568:9568 General.genT <> b:212 var
+R9573:9573 General.genT <> l:213 var
+scheme 9428:9430 <> InT_rect
+scheme 9428:9430 <> InT_ind
+scheme 9428:9430 <> InT_rec
+scheme 9428:9430 <> InT_sind
+prf 9586:9591 <> InT_eq
+binder 9601:9601 <> A:214
+binder 9603:9603 <> a:215
+binder 9605:9605 <> l:216
+R9609:9611 General.genT <> InT ind
+R9613:9613 General.genT <> A:214 var
+R9615:9615 General.genT <> a:215 var
+R9619:9622 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R9618:9618 General.genT <> a:215 var
+R9623:9623 General.genT <> l:216 var
+R9650:9656 General.genT <> InT_eq' constr
+R9650:9656 General.genT <> InT_eq' constr
+def 9691:9697 <> InT_2nd
+binder 9699:9699 <> A:217
+R9708:9708 General.genT <> A:217 var
+binder 9702:9702 <> a:218
+binder 9704:9704 <> b:219
+binder 9711:9711 <> l:220
+R9716:9723 General.genT <> InT_cons constr
+R9728:9733 General.genT <> InT_eq thm
+R9737:9737 General.genT <> l:220 var
+R9735:9735 General.genT <> b:219 var
+R9725:9725 General.genT <> a:218 var
+prf 9750:9757 <> InT_appL
+binder 9767:9767 <> A:221
+binder 9769:9769 <> a:222
+binder 9771:9771 <> X:223
+binder 9773:9773 <> Y:224
+R9789:9792 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9776:9778 General.genT <> InT ind
+R9788:9788 General.genT <> X:223 var
+R9785:9785 General.genT <> A:221 var
+R9781:9781 General.genT <> a:222 var
+R9793:9795 General.genT <> InT ind
+R9801:9804 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R9800:9800 General.genT <> X:223 var
+R9805:9805 General.genT <> Y:224 var
+R9797:9797 General.genT <> a:222 var
+R9864:9869 General.genT <> InT_eq thm
+R9864:9869 General.genT <> InT_eq thm
+R9879:9886 General.genT <> InT_cons constr
+R9879:9886 General.genT <> InT_cons constr
+prf 9915:9922 <> InT_appR
+binder 9932:9932 <> A:225
+binder 9934:9934 <> a:226
+binder 9936:9936 <> X:227
+binder 9938:9938 <> Y:228
+R9954:9957 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9941:9943 General.genT <> InT ind
+R9953:9953 General.genT <> Y:228 var
+R9950:9950 General.genT <> A:225 var
+R9946:9946 General.genT <> a:226 var
+R9958:9960 General.genT <> InT ind
+R9966:9969 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R9965:9965 General.genT <> X:227 var
+R9970:9970 General.genT <> Y:228 var
+R9962:9962 General.genT <> a:226 var
+R10032:10039 General.genT <> InT_cons constr
+R10032:10039 General.genT <> InT_cons constr
+R10144:10151 General.genT <> InT_appR thm
+R10127:10134 General.genT <> InT_appL thm
+R10108:10115 General.genT <> InT_cons constr
+R10086:10091 General.genT <> InT_eq thm
+prf 10178:10186 <> InT_appE'
+binder 10196:10196 <> A:229
+binder 10198:10198 <> a:230
+binder 10200:10200 <> Z:231
+R10216:10223 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10203:10205 General.genT <> InT ind
+R10215:10215 General.genT <> Z:231 var
+R10212:10212 General.genT <> A:229 var
+R10208:10208 General.genT <> a:230 var
+binder 10231:10231 <> X:232
+binder 10233:10233 <> Y:233
+R10246:10249 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10237:10239 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10236:10236 General.genT <> Z:231 var
+R10241:10244 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R10240:10240 General.genT <> X:232 var
+R10245:10245 General.genT <> Y:233 var
+R10257:10259 Coq.Init.Datatypes <> ::type_scope:x_'+'_x not
+R10250:10252 General.genT <> InT ind
+R10256:10256 General.genT <> X:232 var
+R10254:10254 General.genT <> a:230 var
+R10260:10262 General.genT <> InT ind
+R10266:10266 General.genT <> Y:233 var
+R10264:10264 General.genT <> a:230 var
+R10362:10367 General.genT <> InT_eq thm
+R10362:10367 General.genT <> InT_eq thm
+R10411:10416 General.genT <> InT_eq thm
+R10411:10416 General.genT <> InT_eq thm
+R10466:10473 General.genT <> InT_cons constr
+R10466:10473 General.genT <> InT_cons constr
+R10524:10530 Coq.Init.Logic <> eq_refl constr
+R10533:10536 Coq.Init.Datatypes <> list ind
+R10524:10530 Coq.Init.Logic <> eq_refl constr
+R10533:10536 Coq.Init.Datatypes <> list ind
+R10584:10591 General.genT <> InT_cons constr
+R10584:10591 General.genT <> InT_cons constr
+prf 10641:10648 <> InT_appE
+binder 10658:10658 <> A:234
+binder 10660:10660 <> a:235
+binder 10662:10662 <> X:236
+binder 10664:10664 <> Y:237
+R10687:10690 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10667:10669 General.genT <> InT ind
+R10681:10684 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R10680:10680 General.genT <> X:236 var
+R10685:10685 General.genT <> Y:237 var
+R10676:10676 General.genT <> A:234 var
+R10672:10672 General.genT <> a:235 var
+R10698:10700 Coq.Init.Datatypes <> ::type_scope:x_'+'_x not
+R10691:10693 General.genT <> InT ind
+R10697:10697 General.genT <> X:236 var
+R10695:10695 General.genT <> a:235 var
+R10701:10703 General.genT <> InT ind
+R10707:10707 General.genT <> Y:237 var
+R10705:10705 General.genT <> a:235 var
+R10734:10742 General.genT <> InT_appE' thm
+R10734:10742 General.genT <> InT_appE' thm
+prf 10785:10793 <> InT_nilE'
+binder 10803:10803 <> A:238
+binder 10805:10805 <> a:239
+binder 10807:10807 <> Z:240
+binder 10809:10811 <> any:241
+R10827:10830 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10814:10816 General.genT <> InT ind
+R10826:10826 General.genT <> Z:240 var
+R10823:10823 General.genT <> A:238 var
+R10819:10819 General.genT <> a:239 var
+R10837:10840 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10832:10834 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10831:10831 General.genT <> Z:240 var
+R10835:10836 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R10841:10843 General.genT <> any:241 var
+prf 10904:10911 <> InT_nilE
+binder 10921:10921 <> A:242
+binder 10923:10923 <> a:243
+binder 10925:10927 <> any:244
+R10944:10947 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10930:10932 General.genT <> InT ind
+R10942:10943 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R10939:10939 General.genT <> A:242 var
+R10935:10935 General.genT <> a:243 var
+R10948:10950 General.genT <> any:244 var
+R10977:10985 General.genT <> InT_nilE' thm
+R10977:10985 General.genT <> InT_nilE' thm
+prf 11028:11036 <> InT_split
+binder 11047:11047 <> A:245
+R11062:11062 General.genT <> A:245 var
+binder 11058:11058 <> x:246
+R11070:11073 Coq.Init.Datatypes <> list ind
+R11075:11075 General.genT <> A:245 var
+binder 11066:11066 <> l:247
+R11089:11092 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11082:11084 General.genT <> InT ind
+R11088:11088 General.genT <> l:247 var
+R11086:11086 General.genT <> x:246 var
+R11093:11096 Coq.Init.Specif <> sigT ind
+binder 11103:11104 <> l1:248
+R11109:11112 Coq.Init.Specif <> sigT ind
+binder 11119:11120 <> l2:249
+R11126:11128 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11125:11125 General.genT <> l:247 var
+R11131:11134 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R11129:11130 General.genT <> l1:248 var
+R11136:11139 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11135:11135 General.genT <> x:246 var
+R11140:11141 General.genT <> l2:249 var
+R11184:11185 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R11184:11185 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R11270:11273 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11270:11273 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+prf 11325:11331 <> InT_inv
+binder 11341:11341 <> A:250
+binder 11343:11343 <> a:251
+binder 11345:11345 <> b:252
+binder 11347:11347 <> Y:253
+R11370:11373 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11350:11352 General.genT <> InT ind
+R11364:11367 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11363:11363 General.genT <> b:252 var
+R11368:11368 General.genT <> Y:253 var
+R11359:11359 General.genT <> A:250 var
+R11355:11355 General.genT <> a:251 var
+R11374:11374 Coq.Init.Datatypes <> ::type_scope:x_'+'_x not
+R11380:11383 Coq.Init.Datatypes <> ::type_scope:x_'+'_x not
+R11376:11378 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11375:11375 General.genT <> b:252 var
+R11379:11379 General.genT <> a:251 var
+R11384:11386 General.genT <> InT ind
+R11390:11390 General.genT <> Y:253 var
+R11388:11388 General.genT <> a:251 var
+prf 11453:11459 <> InT_map
+binder 11470:11470 <> A:254
+binder 11472:11472 <> B:255
+R11488:11491 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11487:11487 General.genT <> A:254 var
+R11492:11492 General.genT <> B:255 var
+binder 11483:11483 <> f:256
+R11500:11503 Coq.Init.Datatypes <> list ind
+R11505:11505 General.genT <> A:254 var
+binder 11496:11496 <> l:257
+R11513:11513 General.genT <> A:254 var
+binder 11509:11509 <> x:258
+R11527:11530 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11520:11522 General.genT <> InT ind
+R11526:11526 General.genT <> l:257 var
+R11524:11524 General.genT <> x:258 var
+R11531:11533 General.genT <> InT ind
+R11542:11544 Coq.Lists.List <> map def
+R11548:11548 General.genT <> l:257 var
+R11546:11546 General.genT <> f:256 var
+R11536:11536 General.genT <> f:256 var
+R11538:11538 General.genT <> x:258 var
+R11602:11607 General.genT <> InT_eq thm
+R11602:11607 General.genT <> InT_eq thm
+R11624:11631 General.genT <> InT_cons constr
+R11624:11631 General.genT <> InT_cons constr
+prf 11660:11667 <> InT_mapE
+binder 11678:11678 <> A:259
+binder 11680:11680 <> B:260
+R11696:11699 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11695:11695 General.genT <> A:259 var
+R11700:11700 General.genT <> B:260 var
+binder 11691:11691 <> f:261
+R11708:11711 Coq.Init.Datatypes <> list ind
+R11713:11713 General.genT <> A:259 var
+binder 11704:11704 <> l:262
+R11721:11721 General.genT <> B:260 var
+binder 11717:11717 <> y:263
+R11733:11733 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11749:11754 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11795:11795 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11734:11736 General.genT <> InT ind
+R11741:11743 Coq.Lists.List <> map def
+R11747:11747 General.genT <> l:262 var
+R11745:11745 General.genT <> f:261 var
+R11738:11738 General.genT <> y:263 var
+R11755:11758 Coq.Init.Specif <> sigT ind
+binder 11765:11765 <> x:264
+R11770:11773 Coq.Init.Datatypes <> prod ind
+R11786:11788 General.genT <> InT ind
+R11792:11792 General.genT <> l:262 var
+R11790:11790 General.genT <> x:264 var
+R11779:11781 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11776:11776 General.genT <> f:261 var
+R11778:11778 General.genT <> x:264 var
+R11782:11782 General.genT <> y:263 var
+R11836:11843 General.genT <> InT_nilE thm
+R11836:11843 General.genT <> InT_nilE thm
+R11932:11937 General.genT <> InT_eq thm
+R11932:11937 General.genT <> InT_eq thm
+R12015:12022 General.genT <> InT_cons constr
+R12015:12022 General.genT <> InT_cons constr
+prf 12049:12060 <> InT_map_iffT
+binder 12071:12071 <> A:265
+binder 12073:12073 <> B:266
+R12089:12092 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12088:12088 General.genT <> A:265 var
+R12093:12093 General.genT <> B:266 var
+binder 12084:12084 <> f:267
+R12101:12104 Coq.Init.Datatypes <> list ind
+R12106:12106 General.genT <> A:265 var
+binder 12097:12097 <> l:268
+R12114:12114 General.genT <> B:266 var
+binder 12110:12110 <> y:269
+R12126:12129 Coq.Classes.CRelationClasses <> iffT def
+R12132:12134 General.genT <> InT ind
+R12139:12141 Coq.Lists.List <> map def
+R12145:12145 General.genT <> l:268 var
+R12143:12143 General.genT <> f:267 var
+R12136:12136 General.genT <> y:269 var
+R12150:12153 Coq.Init.Specif <> sigT ind
+binder 12160:12160 <> x:270
+R12165:12168 Coq.Init.Datatypes <> prod ind
+R12181:12183 General.genT <> InT ind
+R12187:12187 General.genT <> l:268 var
+R12185:12185 General.genT <> x:270 var
+R12174:12176 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12171:12171 General.genT <> f:267 var
+R12173:12173 General.genT <> x:270 var
+R12177:12177 General.genT <> y:269 var
+R12215:12218 Coq.Init.Datatypes <> pair constr
+R12215:12218 Coq.Init.Datatypes <> pair constr
+R12227:12234 General.genT <> InT_mapE thm
+R12227:12234 General.genT <> InT_mapE thm
+R12262:12268 General.genT <> InT_map thm
+R12262:12268 General.genT <> InT_map thm
+def 12300:12307 <> InT_mapI
+binder 12309:12309 <> A:271
+binder 12311:12311 <> B:272
+binder 12313:12313 <> f:273
+binder 12315:12315 <> l:274
+binder 12317:12317 <> y:275
+R12322:12328 General.genT <> iffT_D2 def
+R12332:12343 General.genT <> InT_map_iffT thm
+R12345:12345 General.genT <> A:271 var
+R12347:12347 General.genT <> B:272 var
+R12349:12349 General.genT <> f:273 var
+R12351:12351 General.genT <> l:274 var
+R12353:12353 General.genT <> y:275 var
+prf 12366:12375 <> InT_concat
+binder 12386:12386 <> A:276
+binder 12396:12396 <> a:277
+R12404:12407 Coq.Init.Datatypes <> list ind
+R12409:12409 General.genT <> A:276 var
+binder 12399:12400 <> xs:278
+binder 12412:12414 <> pss:279
+R12431:12434 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12423:12425 General.genT <> InT ind
+R12429:12430 General.genT <> xs:278 var
+R12427:12427 General.genT <> a:277 var
+R12445:12448 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12435:12437 General.genT <> InT ind
+R12442:12444 General.genT <> pss:279 var
+R12439:12440 General.genT <> xs:278 var
+R12449:12451 General.genT <> InT ind
+R12456:12461 Coq.Lists.List <> concat def
+R12463:12465 General.genT <> pss:279 var
+R12453:12453 General.genT <> a:277 var
+R12519:12526 General.genT <> InT_appL thm
+R12519:12526 General.genT <> InT_appL thm
+R12555:12562 General.genT <> InT_appR thm
+R12555:12562 General.genT <> InT_appR thm
+prf 12591:12603 <> Forall2T_ex_l
+binder 12613:12613 <> A:280
+binder 12615:12615 <> B:281
+R12623:12626 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12622:12622 General.genT <> A:280 var
+R12628:12631 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12627:12627 General.genT <> B:281 var
+binder 12618:12618 <> R:282
+binder 12638:12639 <> xs:283
+binder 12641:12642 <> ys:284
+binder 12644:12644 <> x:285
+R12666:12669 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12650:12657 General.genT <> Forall2T ind
+R12664:12665 General.genT <> ys:284 var
+R12661:12662 General.genT <> xs:283 var
+R12659:12659 General.genT <> R:282 var
+R12678:12681 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12670:12672 General.genT <> InT ind
+R12676:12677 General.genT <> xs:283 var
+R12674:12674 General.genT <> x:285 var
+R12682:12686 Coq.Init.Specif <> sigT2 ind
+binder 12713:12713 <> y:286
+R12718:12718 General.genT <> R:282 var
+R12722:12722 General.genT <> y:286 var
+R12720:12720 General.genT <> x:285 var
+binder 12693:12693 <> y:287
+R12698:12700 General.genT <> InT ind
+R12704:12705 General.genT <> ys:284 var
+R12702:12702 General.genT <> y:287 var
+R12786:12793 General.genT <> InT_nilE thm
+R12786:12793 General.genT <> InT_nilE thm
+R12859:12864 General.genT <> InT_eq thm
+R12859:12864 General.genT <> InT_eq thm
+R12926:12933 General.genT <> InT_cons constr
+R12926:12933 General.genT <> InT_cons constr
+prf 12976:12988 <> Forall2T_ex_r
+binder 12998:12998 <> A:288
+binder 13000:13000 <> B:289
+R13008:13011 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13007:13007 General.genT <> A:288 var
+R13013:13016 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13012:13012 General.genT <> B:289 var
+binder 13003:13003 <> R:290
+binder 13023:13024 <> xs:291
+binder 13026:13027 <> ys:292
+binder 13029:13029 <> x:293
+R13051:13054 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13035:13042 General.genT <> Forall2T ind
+R13049:13050 General.genT <> xs:291 var
+R13046:13047 General.genT <> ys:292 var
+R13044:13044 General.genT <> R:290 var
+R13063:13066 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13055:13057 General.genT <> InT ind
+R13061:13062 General.genT <> xs:291 var
+R13059:13059 General.genT <> x:293 var
+R13067:13071 Coq.Init.Specif <> sigT2 ind
+binder 13098:13098 <> y:294
+R13103:13103 General.genT <> R:290 var
+R13107:13107 General.genT <> x:293 var
+R13105:13105 General.genT <> y:294 var
+binder 13078:13078 <> y:295
+R13083:13085 General.genT <> InT ind
+R13089:13090 General.genT <> ys:292 var
+R13087:13087 General.genT <> y:295 var
+R13171:13178 General.genT <> InT_nilE thm
+R13171:13178 General.genT <> InT_nilE thm
+R13244:13249 General.genT <> InT_eq thm
+R13244:13249 General.genT <> InT_eq thm
+R13311:13318 General.genT <> InT_cons constr
+R13311:13318 General.genT <> InT_cons constr
+prf 13361:13374 <> ForallT_forall
+binder 13385:13385 <> A:296
+R13401:13404 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13400:13400 General.genT <> A:296 var
+binder 13396:13396 <> P:297
+R13416:13419 Coq.Init.Datatypes <> list ind
+R13421:13421 General.genT <> A:296 var
+binder 13412:13412 <> l:298
+R13428:13431 Coq.Classes.CRelationClasses <> iffT def
+R13434:13440 General.genT <> ForallT ind
+R13444:13444 General.genT <> l:298 var
+R13442:13442 General.genT <> P:297 var
+R13459:13459 General.genT <> A:296 var
+binder 13455:13455 <> x:299
+R13469:13472 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13462:13464 General.genT <> InT ind
+R13468:13468 General.genT <> l:298 var
+R13466:13466 General.genT <> x:299 var
+R13473:13473 General.genT <> P:297 var
+R13475:13475 General.genT <> x:299 var
+R13517:13520 Coq.Classes.CRelationClasses <> iffT def
+R13550:13557 General.genT <> InT_nilE thm
+R13550:13557 General.genT <> InT_nilE thm
+R13582:13592 General.genT <> ForallT_nil constr
+R13582:13592 General.genT <> ForallT_nil constr
+R13605:13608 Coq.Classes.CRelationClasses <> iffT def
+R13693:13696 Coq.Classes.CRelationClasses <> iffT def
+R13730:13741 General.genT <> ForallT_cons constr
+R13730:13741 General.genT <> ForallT_cons constr
+R13759:13764 General.genT <> InT_eq thm
+R13759:13764 General.genT <> InT_eq thm
+R13802:13809 General.genT <> InT_cons constr
+R13802:13809 General.genT <> InT_cons constr
+def 13841:13855 <> ForallTD_forall
+binder 13857:13857 <> A:300
+binder 13859:13859 <> P:301
+binder 13861:13861 <> x:302
+R13866:13872 General.genT <> iffT_D1 def
+R13876:13889 General.genT <> ForallT_forall thm
+R13891:13891 General.genT <> A:300 var
+R13893:13893 General.genT <> P:301 var
+R13895:13895 General.genT <> x:302 var
+def 13911:13925 <> ForallTI_forall
+binder 13927:13927 <> A:303
+binder 13929:13929 <> P:304
+binder 13931:13931 <> x:305
+R13936:13942 General.genT <> iffT_D2 def
+R13946:13959 General.genT <> ForallT_forall thm
+R13961:13961 General.genT <> A:303 var
+R13963:13963 General.genT <> P:304 var
+R13965:13965 General.genT <> x:305 var
+prf 13978:13983 <> InT_In
+binder 13993:13993 <> A:306
+binder 13995:13995 <> a:307
+binder 13997:13997 <> Y:308
+R14013:14016 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14000:14002 General.genT <> InT ind
+R14012:14012 General.genT <> Y:308 var
+R14009:14009 General.genT <> A:306 var
+R14005:14005 General.genT <> a:307 var
+R14017:14018 Coq.Lists.List <> In def
+R14022:14022 General.genT <> Y:308 var
+R14020:14020 General.genT <> a:307 var
+R14067:14071 Coq.Lists.List <> in_eq thm
+R14067:14071 Coq.Lists.List <> in_eq thm
+R14081:14087 Coq.Lists.List <> in_cons thm
+R14081:14087 Coq.Lists.List <> in_cons thm
+prf 14116:14121 <> In_InT
+binder 14131:14131 <> A:309
+binder 14133:14133 <> a:310
+binder 14135:14135 <> Y:311
+R14150:14153 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14138:14139 Coq.Lists.List <> In def
+R14149:14149 General.genT <> Y:311 var
+R14146:14146 General.genT <> A:309 var
+R14142:14142 General.genT <> a:310 var
+R14154:14155 Coq.Init.Logic <> ex ind
+R14166:14168 General.genT <> InT ind
+R14172:14172 General.genT <> Y:311 var
+R14170:14170 General.genT <> a:310 var
+R14177:14180 Coq.Init.Logic <> True ind
+R14221:14226 Coq.Lists.List <> in_nil thm
+R14221:14226 Coq.Lists.List <> in_nil thm
+R14256:14261 Coq.Lists.List <> in_inv thm
+R14256:14261 Coq.Lists.List <> in_inv thm
+R14302:14307 General.genT <> InT_eq thm
+R14302:14307 General.genT <> InT_eq thm
+R14316:14316 Coq.Init.Logic <> I constr
+R14316:14316 Coq.Init.Logic <> I constr
+R14362:14369 General.genT <> InT_cons constr
+R14362:14369 General.genT <> InT_cons constr
+R14390:14390 Coq.Init.Logic <> I constr
+R14390:14390 Coq.Init.Logic <> I constr
+def 14435:14438 <> anon
+binder 14441:14441 <> p:312
+R14454:14455 Coq.Init.Logic <> ex ind
+R14466:14466 General.genT <> p:312 var
+R14471:14474 Coq.Init.Logic <> True ind
+prf 14487:14491 <> anonI
+binder 14502:14502 <> p:313
+R14506:14509 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14505:14505 General.genT <> p:313 var
+R14510:14513 General.genT <> anon def
+R14515:14515 General.genT <> p:313 var
+R14542:14545 General.genT <> anon def
+R14574:14574 Coq.Init.Logic <> I constr
+R14574:14574 Coq.Init.Logic <> I constr
+prf 14591:14597 <> InT_In'
+binder 14607:14607 <> A:314
+binder 14609:14609 <> a:315
+binder 14611:14611 <> Y:316
+R14648:14651 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14614:14615 Coq.Init.Logic <> ex ind
+R14626:14628 General.genT <> InT ind
+R14638:14638 General.genT <> Y:316 var
+R14635:14635 General.genT <> A:314 var
+R14631:14631 General.genT <> a:315 var
+R14643:14646 Coq.Init.Logic <> True ind
+R14652:14653 Coq.Lists.List <> In def
+R14657:14657 General.genT <> Y:316 var
+R14655:14655 General.genT <> a:315 var
+R14695:14700 General.genT <> InT_In thm
+R14695:14700 General.genT <> InT_In thm
+prf 15030:15034 <> anonD
+binder 15045:15045 <> p:317
+binder 15048:15048 <> q:318
+R15059:15059 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R15066:15071 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R15083:15083 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R15061:15064 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R15060:15060 General.genT <> p:317 var
+R15065:15065 General.genT <> q:318 var
+R15078:15081 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R15072:15075 General.genT <> anon def
+R15077:15077 General.genT <> p:317 var
+R15082:15082 General.genT <> q:318 var
+R15101:15104 General.genT <> anon def
+prf 15149:15155 <> anon_eq
+binder 15165:15165 <> P:319
+R15181:15185 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R15175:15178 General.genT <> anon def
+R15180:15180 General.genT <> P:319 var
+R15186:15186 General.genT <> P:319 var
+R15212:15214 Coq.Init.Logic <> iff def
+R15230:15234 General.genT <> anonD thm
+R15230:15234 General.genT <> anonD thm
+R15250:15254 General.genT <> anonI thm
+R15250:15254 General.genT <> anonI thm
+prf 15273:15281 <> InT_In_eq
+binder 15291:15291 <> A:320
+binder 15293:15293 <> a:321
+binder 15295:15295 <> Y:322
+R15318:15322 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R15298:15301 General.genT <> anon def
+R15304:15306 General.genT <> InT ind
+R15316:15316 General.genT <> Y:322 var
+R15313:15313 General.genT <> A:320 var
+R15309:15309 General.genT <> a:321 var
+R15323:15324 Coq.Lists.List <> In def
+R15328:15328 General.genT <> Y:322 var
+R15326:15326 General.genT <> a:321 var
+R15346:15349 General.genT <> anon def
+R15367:15369 Coq.Init.Logic <> iff def
+R15395:15401 General.genT <> InT_In' thm
+R15395:15401 General.genT <> InT_In' thm
+R15422:15427 General.genT <> In_InT thm
+R15422:15427 General.genT <> In_InT thm
+prf 15456:15465 <> InT_In_eq'
+binder 15475:15475 <> A:323
+binder 15477:15477 <> a:324
+binder 15479:15479 <> Y:325
+R15502:15506 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R15482:15485 General.genT <> anon def
+R15488:15490 General.genT <> InT ind
+R15500:15500 General.genT <> Y:325 var
+R15497:15497 General.genT <> A:323 var
+R15493:15493 General.genT <> a:324 var
+R15507:15508 Coq.Lists.List <> In def
+R15512:15512 General.genT <> Y:325 var
+R15510:15510 General.genT <> a:324 var
+R15538:15540 Coq.Init.Logic <> iff def
+R15557:15561 General.genT <> anonD thm
+R15557:15561 General.genT <> anonD thm
+R15570:15575 General.genT <> InT_In thm
+R15570:15575 General.genT <> InT_In thm
+R15593:15596 General.genT <> anon def
+R15606:15611 General.genT <> In_InT thm
+R15606:15611 General.genT <> In_InT thm
+prf 15640:15648 <> anon_prod
+binder 15658:15658 <> t:326
+binder 15660:15660 <> u:327
+R15678:15682 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R15663:15666 General.genT <> anon def
+R15669:15672 Coq.Init.Datatypes <> prod ind
+R15676:15676 General.genT <> u:327 var
+R15674:15674 General.genT <> t:326 var
+R15689:15692 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R15683:15686 General.genT <> anon def
+R15688:15688 General.genT <> t:326 var
+R15693:15696 General.genT <> anon def
+R15698:15698 General.genT <> u:327 var
+R15726:15728 Coq.Init.Logic <> iff def
+R15738:15741 General.genT <> anon def
+prf 15812:15819 <> anon_sum
+binder 15829:15829 <> t:328
+binder 15831:15831 <> u:329
+R15848:15852 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R15834:15837 General.genT <> anon def
+R15840:15842 Coq.Init.Datatypes <> sum ind
+R15846:15846 General.genT <> u:329 var
+R15844:15844 General.genT <> t:328 var
+R15859:15862 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R15853:15856 General.genT <> anon def
+R15858:15858 General.genT <> t:328 var
+R15863:15866 General.genT <> anon def
+R15868:15868 General.genT <> u:329 var
+R15896:15898 Coq.Init.Logic <> iff def
+R15908:15911 General.genT <> anon def
+prf 16027:16034 <> anon_imp
+binder 16044:16044 <> t:330
+binder 16046:16046 <> u:331
+R16062:16066 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16083:16083 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16049:16052 General.genT <> anon def
+R16056:16059 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16055:16055 General.genT <> t:330 var
+R16060:16060 General.genT <> u:331 var
+R16073:16076 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16067:16070 General.genT <> anon def
+R16072:16072 General.genT <> t:330 var
+R16077:16080 General.genT <> anon def
+R16082:16082 General.genT <> u:331 var
+R16102:16105 General.genT <> anon def
+prf 16152:16160 <> anon_iffT
+binder 16170:16170 <> t:332
+binder 16172:16172 <> u:333
+R16190:16194 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16212:16212 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16175:16178 General.genT <> anon def
+R16181:16184 Coq.Classes.CRelationClasses <> iffT def
+R16186:16186 General.genT <> t:332 var
+R16188:16188 General.genT <> u:333 var
+R16201:16205 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R16195:16198 General.genT <> anon def
+R16200:16200 General.genT <> t:332 var
+R16206:16209 General.genT <> anon def
+R16211:16211 General.genT <> u:333 var
+R16231:16233 Coq.Init.Logic <> iff def
+R16243:16246 Coq.Classes.CRelationClasses <> iffT def
+R16270:16278 General.genT <> anon_prod thm
+R16270:16278 General.genT <> anon_prod thm
+R16270:16278 General.genT <> anon_prod thm
+R16324:16331 General.genT <> anon_imp thm
+R16324:16331 General.genT <> anon_imp thm
+R16324:16331 General.genT <> anon_imp thm
+prf 16362:16370 <> anon_sigT
+binder 16380:16380 <> A:334
+binder 16382:16382 <> P:335
+R16401:16404 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16385:16388 General.genT <> anon def
+R16392:16395 Coq.Init.Specif <> sigT ind
+R16397:16397 General.genT <> A:334 var
+R16399:16399 General.genT <> P:335 var
+R16406:16407 Coq.Init.Logic <> ex ind
+R16409:16409 General.genT <> A:334 var
+binder 16416:16416 <> x:336
+R16421:16424 General.genT <> anon def
+R16427:16427 General.genT <> P:335 var
+R16429:16429 General.genT <> x:336 var
+R16450:16453 General.genT <> anon def
+R16505:16505 Coq.Init.Logic <> I constr
+R16505:16505 Coq.Init.Logic <> I constr
+prf 16522:16532 <> anon_forall
+binder 16542:16542 <> T:337
+binder 16544:16544 <> P:338
+R16575:16578 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16551:16554 General.genT <> anon def
+R16568:16568 General.genT <> T:337 var
+binder 16564:16564 <> x:339
+R16571:16571 General.genT <> P:338 var
+R16573:16573 General.genT <> x:339 var
+R16590:16590 General.genT <> T:337 var
+binder 16586:16586 <> x:340
+R16593:16596 General.genT <> anon def
+R16599:16599 General.genT <> P:338 var
+R16601:16601 General.genT <> x:340 var
+R16621:16624 General.genT <> anon def
+R16675:16675 Coq.Init.Logic <> I constr
+R16675:16675 Coq.Init.Logic <> I constr
+prf 16692:16706 <> ForallT_Forall'
+binder 16716:16716 <> A:341
+R16724:16727 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16723:16723 General.genT <> A:341 var
+binder 16719:16719 <> P:342
+R16740:16743 Coq.Init.Datatypes <> list ind
+R16745:16745 General.genT <> A:341 var
+binder 16735:16736 <> xs:343
+R16764:16767 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16752:16758 General.genT <> ForallT ind
+R16762:16763 General.genT <> xs:343 var
+R16760:16760 General.genT <> P:342 var
+R16768:16773 Coq.Lists.List <> Forall ind
+R16777:16778 General.genT <> xs:343 var
+R16775:16775 General.genT <> P:342 var
+R16818:16827 Coq.Lists.List <> Forall_nil constr
+R16818:16827 Coq.Lists.List <> Forall_nil constr
+R16837:16847 Coq.Lists.List <> Forall_cons constr
+R16837:16847 Coq.Lists.List <> Forall_cons constr
+prf 16888:16901 <> ForallT_Forall
+binder 16911:16911 <> A:344
+binder 16913:16913 <> P:345
+R16921:16924 Coq.Init.Datatypes <> list ind
+R16926:16926 General.genT <> A:344 var
+binder 16916:16917 <> xs:346
+R16945:16948 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16933:16939 General.genT <> ForallT ind
+R16943:16944 General.genT <> xs:346 var
+R16941:16941 General.genT <> P:345 var
+R16949:16954 Coq.Lists.List <> Forall ind
+R16978:16979 General.genT <> xs:346 var
+binder 16961:16961 <> x:347
+R16966:16969 General.genT <> anon def
+R16972:16972 General.genT <> P:345 var
+R16974:16974 General.genT <> x:347 var
+R17019:17028 Coq.Lists.List <> Forall_nil constr
+R17019:17028 Coq.Lists.List <> Forall_nil constr
+R17038:17048 Coq.Lists.List <> Forall_cons constr
+R17038:17048 Coq.Lists.List <> Forall_cons constr
+R17057:17061 General.genT <> anonI thm
+R17057:17061 General.genT <> anonI thm
+prf 17102:17115 <> Forall_ForallT
+binder 17125:17125 <> A:348
+binder 17127:17127 <> P:349
+R17135:17138 Coq.Init.Datatypes <> list ind
+R17140:17140 General.genT <> A:348 var
+binder 17130:17131 <> xs:350
+R17158:17161 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17147:17152 Coq.Lists.List <> Forall ind
+R17156:17157 General.genT <> xs:350 var
+R17154:17154 General.genT <> P:349 var
+R17162:17165 General.genT <> anon def
+R17168:17174 General.genT <> ForallT ind
+R17178:17179 General.genT <> xs:350 var
+R17176:17176 General.genT <> P:349 var
+R17220:17224 General.genT <> anonI thm
+R17220:17224 General.genT <> anonI thm
+R17233:17243 General.genT <> ForallT_nil constr
+R17233:17243 General.genT <> ForallT_nil constr
+R17254:17257 General.genT <> anon def
+R17283:17287 General.genT <> anonI thm
+R17283:17287 General.genT <> anonI thm
+R17327:17338 General.genT <> ForallT_cons constr
+R17327:17338 General.genT <> ForallT_cons constr
+prf 17459:17473 <> Forall_ForallT'
+binder 17483:17483 <> A:351
+binder 17485:17485 <> P:352
+R17493:17496 Coq.Init.Datatypes <> list ind
+R17498:17498 General.genT <> A:351 var
+binder 17488:17489 <> xs:353
+R17513:17516 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17502:17507 Coq.Lists.List <> Forall ind
+R17511:17512 General.genT <> xs:353 var
+R17509:17509 General.genT <> P:352 var
+R17517:17523 General.genT <> ForallT ind
+R17527:17528 General.genT <> xs:353 var
+R17525:17525 General.genT <> P:352 var
+R17568:17578 General.genT <> ForallT_nil constr
+R17568:17578 General.genT <> ForallT_nil constr
+R17588:17599 General.genT <> ForallT_cons constr
+R17588:17599 General.genT <> ForallT_cons constr
+prf 17697:17710 <> inhabited_anon
+binder 17720:17720 <> A:354
+R17734:17738 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R17723:17731 Coq.Init.Logic <> inhabited ind
+R17733:17733 General.genT <> A:354 var
+R17739:17742 General.genT <> anon def
+R17744:17744 General.genT <> A:354 var
+R17762:17764 Coq.Init.Logic <> iff def
+R17775:17778 General.genT <> anon def
+R17857:17864 Coq.Init.Logic <> inhabits constr
+R17857:17864 Coq.Init.Logic <> inhabits constr
+prf 17893:17922 <> want_left_prod_under_universal
+binder 17934:17934 <> T:355
+R17950:17953 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17949:17949 General.genT <> T:355 var
+binder 17945:17945 <> P:356
+R17967:17970 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17966:17966 General.genT <> T:355 var
+binder 17961:17962 <> Q1:357
+binder 17978:17978 <> S:358
+R17994:17994 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18028:18037 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18006:18006 General.genT <> T:355 var
+binder 18002:18002 <> y:359
+R18012:18016 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18027:18027 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18009:18009 General.genT <> P:356 var
+R18011:18011 General.genT <> y:359 var
+R18017:18017 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18022:18025 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18018:18019 General.genT <> Q1:357 var
+R18021:18021 General.genT <> y:359 var
+R18026:18026 General.genT <> S:358 var
+R18049:18049 General.genT <> T:355 var
+binder 18045:18045 <> y:360
+R18055:18058 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18052:18052 General.genT <> P:356 var
+R18054:18054 General.genT <> y:360 var
+R18059:18060 General.genT <> Q1:357 var
+R18062:18062 General.genT <> y:360 var
+prf 18099:18129 <> want_right_prod_under_universal
+binder 18141:18141 <> T:361
+R18157:18160 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18156:18156 General.genT <> T:361 var
+binder 18152:18152 <> P:362
+R18174:18177 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18173:18173 General.genT <> T:361 var
+binder 18168:18169 <> Q1:363
+binder 18185:18185 <> S:364
+R18201:18201 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18235:18244 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18213:18213 General.genT <> T:361 var
+binder 18209:18209 <> y:365
+R18219:18223 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18234:18234 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18216:18216 General.genT <> P:362 var
+R18218:18218 General.genT <> y:365 var
+R18225:18228 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18233:18233 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18224:18224 General.genT <> S:364 var
+R18229:18230 General.genT <> Q1:363 var
+R18232:18232 General.genT <> y:365 var
+R18256:18256 General.genT <> T:361 var
+binder 18252:18252 <> y:366
+R18262:18265 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18259:18259 General.genT <> P:362 var
+R18261:18261 General.genT <> y:366 var
+R18266:18267 General.genT <> Q1:363 var
+R18269:18269 General.genT <> y:366 var
+prf 18306:18337 <> want_right_prod_under_universal'
+binder 18349:18349 <> T:367
+R18365:18368 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18364:18364 General.genT <> T:367 var
+binder 18360:18360 <> P:368
+R18384:18387 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18383:18383 General.genT <> T:367 var
+binder 18376:18377 <> Q1:369
+binder 18379:18379 <> S:370
+R18400:18400 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18438:18447 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18412:18412 General.genT <> T:367 var
+binder 18408:18408 <> y:371
+R18418:18422 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18437:18437 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18415:18415 General.genT <> P:368 var
+R18417:18417 General.genT <> y:371 var
+R18423:18423 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18427:18431 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18436:18436 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18424:18424 General.genT <> S:370 var
+R18426:18426 General.genT <> y:371 var
+R18432:18433 General.genT <> Q1:369 var
+R18435:18435 General.genT <> y:371 var
+R18459:18459 General.genT <> T:367 var
+binder 18455:18455 <> y:372
+R18465:18468 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18462:18462 General.genT <> P:368 var
+R18464:18464 General.genT <> y:372 var
+R18469:18470 General.genT <> Q1:369 var
+R18472:18472 General.genT <> y:372 var
+prf 18509:18534 <> want_prod_under_universal4
+binder 18546:18546 <> T:373
+R18562:18565 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18561:18561 General.genT <> T:373 var
+binder 18557:18557 <> P:374
+R18588:18591 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18587:18587 General.genT <> T:373 var
+binder 18573:18574 <> Q1:375
+binder 18576:18577 <> Q2:376
+binder 18579:18580 <> Q3:377
+binder 18582:18583 <> Q4:378
+R18604:18604 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18661:18670 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18616:18616 General.genT <> T:373 var
+binder 18612:18612 <> y:379
+R18622:18626 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18660:18660 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18619:18619 General.genT <> P:374 var
+R18621:18621 General.genT <> y:379 var
+R18651:18654 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18659:18659 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18642:18645 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18650:18650 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18627:18627 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18632:18636 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18641:18641 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18628:18629 General.genT <> Q1:375 var
+R18631:18631 General.genT <> y:379 var
+R18637:18638 General.genT <> Q2:376 var
+R18640:18640 General.genT <> y:379 var
+R18646:18647 General.genT <> Q3:377 var
+R18649:18649 General.genT <> y:379 var
+R18655:18656 General.genT <> Q4:378 var
+R18658:18658 General.genT <> y:379 var
+R18768:18776 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18802:18802 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18733:18741 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18767:18767 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18671:18671 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18697:18706 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18732:18732 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18683:18683 General.genT <> T:373 var
+binder 18679:18679 <> y:380
+R18689:18692 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18686:18686 General.genT <> P:374 var
+R18688:18688 General.genT <> y:380 var
+R18693:18694 General.genT <> Q1:375 var
+R18696:18696 General.genT <> y:380 var
+R18718:18718 General.genT <> T:373 var
+binder 18714:18714 <> y:381
+R18724:18727 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18721:18721 General.genT <> P:374 var
+R18723:18723 General.genT <> y:381 var
+R18728:18729 General.genT <> Q2:376 var
+R18731:18731 General.genT <> y:381 var
+R18753:18753 General.genT <> T:373 var
+binder 18749:18749 <> y:382
+R18759:18762 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18756:18756 General.genT <> P:374 var
+R18758:18758 General.genT <> y:382 var
+R18763:18764 General.genT <> Q3:377 var
+R18766:18766 General.genT <> y:382 var
+R18788:18788 General.genT <> T:373 var
+binder 18784:18784 <> y:383
+R18794:18797 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18791:18791 General.genT <> P:374 var
+R18793:18793 General.genT <> y:383 var
+R18798:18799 General.genT <> Q4:378 var
+R18801:18801 General.genT <> y:383 var
+prf 18839:18852 <> prod_nat_split
+R18868:18868 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18878:18882 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18872:18874 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18869:18871 Coq.Init.Datatypes <> nat ind
+R18875:18877 Coq.Init.Datatypes <> nat ind
+binder 18864:18864 <> P:384
+R18895:18895 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18921:18931 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18957:18957 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18910:18912 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R18907:18909 Coq.Init.Datatypes <> nat ind
+R18913:18915 Coq.Init.Datatypes <> nat ind
+binder 18903:18903 <> y:385
+R18918:18918 General.genT <> P:384 var
+R18920:18920 General.genT <> y:385 var
+R18945:18947 Coq.Init.Datatypes <> nat ind
+binder 18939:18939 <> n:386
+binder 18941:18941 <> m:387
+R18950:18950 General.genT <> P:384 var
+R18952:18952 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18954:18954 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18956:18956 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R18953:18953 General.genT <> n:386 var
+R18955:18955 General.genT <> m:387 var
+ind 19000:19004 <> empty
+scheme 19000:19004 <> empty_rect
+scheme 19000:19004 <> empty_ind
+scheme 19000:19004 <> empty_rec
+scheme 19000:19004 <> empty_sind
+prf 19027:19041 <> empty_explosion
+binder 19053:19053 <> A:390
+R19069:19072 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19064:19068 General.genT <> empty ind
+R19073:19073 General.genT <> A:390 var
+R19138:19141 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19142:19146 General.genT <> empty ind
+not 19126:19126 <> :::'T~'_x
+prf 19173:19183 <> False_empty
+R19192:19195 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19187:19191 Coq.Init.Logic <> False ind
+R19196:19200 General.genT <> empty ind
+prf 19248:19258 <> empty_False
+R19267:19270 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19262:19266 General.genT <> empty ind
+R19271:19275 Coq.Init.Logic <> False ind
+ind 19327:19329 <> leT
+constr 19363:19367 <> leT_n
+constr 19381:19385 <> leT_S
+R19336:19338 Coq.Init.Datatypes <> nat ind
+binder 19332:19332 <> n:391
+R19346:19349 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19343:19345 Coq.Init.Datatypes <> nat ind
+R19371:19373 General.genT <> leT:392 ind
+R19377:19377 General.genT <> n:391 var
+R19375:19375 General.genT <> n:391 var
+R19400:19402 Coq.Init.Datatypes <> nat ind
+binder 19396:19396 <> m:394
+R19412:19415 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19405:19407 General.genT <> leT:392 ind
+R19411:19411 General.genT <> m:394 var
+R19409:19409 General.genT <> n:391 var
+R19416:19418 General.genT <> leT:392 ind
+R19423:19423 Coq.Init.Datatypes <> S constr
+R19425:19425 General.genT <> m:394 var
+R19420:19420 General.genT <> n:391 var
+scheme 19327:19329 <> leT_rect
+scheme 19327:19329 <> leT_ind
+scheme 19327:19329 <> leT_rec
+scheme 19327:19329 <> leT_sind
+prf 19440:19446 <> leT_n_S
+binder 19457:19457 <> n:395
+binder 19459:19459 <> m:396
+R19469:19472 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19462:19464 General.genT <> leT ind
+R19468:19468 General.genT <> m:396 var
+R19466:19466 General.genT <> n:395 var
+R19473:19475 General.genT <> leT ind
+R19484:19484 Coq.Init.Datatypes <> S constr
+R19486:19486 General.genT <> m:396 var
+R19478:19478 Coq.Init.Datatypes <> S constr
+R19480:19480 General.genT <> n:395 var
+R19525:19529 General.genT <> leT_n constr
+R19525:19529 General.genT <> leT_n constr
+R19539:19543 General.genT <> leT_S constr
+R19539:19543 General.genT <> leT_S constr
+prf 19567:19574 <> leT_S_n'
+binder 19585:19586 <> sn:397
+binder 19588:19589 <> sm:398
+R19601:19608 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19592:19594 General.genT <> leT ind
+R19599:19600 General.genT <> sm:398 var
+R19596:19597 General.genT <> sn:397 var
+binder 19616:19616 <> n:399
+binder 19618:19618 <> m:400
+R19629:19632 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19623:19625 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19621:19622 General.genT <> sn:397 var
+R19626:19626 Coq.Init.Datatypes <> S constr
+R19628:19628 General.genT <> n:399 var
+R19641:19644 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19635:19637 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19633:19634 General.genT <> sm:398 var
+R19638:19638 Coq.Init.Datatypes <> S constr
+R19640:19640 General.genT <> m:400 var
+R19645:19647 General.genT <> leT ind
+R19651:19651 General.genT <> m:400 var
+R19649:19649 General.genT <> n:399 var
+R19727:19731 General.genT <> leT_n constr
+R19727:19731 General.genT <> leT_n constr
+R19828:19834 Coq.Init.Logic <> eq_refl constr
+R19836:19842 Coq.Init.Logic <> eq_refl constr
+R19828:19834 Coq.Init.Logic <> eq_refl constr
+R19836:19842 Coq.Init.Logic <> eq_refl constr
+R19869:19873 General.genT <> leT_S constr
+R19869:19873 General.genT <> leT_S constr
+def 19947:19953 <> leT_S_n
+binder 19955:19955 <> n:401
+binder 19957:19957 <> m:402
+binder 19959:19959 <> l:403
+R19965:19972 General.genT <> leT_S_n' thm
+R19978:19978 General.genT <> l:403 var
+R19980:19980 General.genT <> n:401 var
+R19982:19982 General.genT <> m:402 var
+R19984:19990 Coq.Init.Logic <> eq_refl constr
+R19992:19998 Coq.Init.Logic <> eq_refl constr
+prf 20010:20019 <> leT_trans'
+binder 20021:20021 <> l:404
+binder 20023:20023 <> m:405
+binder 20025:20025 <> n:406
+R20035:20038 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20028:20030 General.genT <> leT ind
+R20034:20034 General.genT <> n:406 var
+R20032:20032 General.genT <> m:405 var
+R20046:20049 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20039:20041 General.genT <> leT ind
+R20045:20045 General.genT <> m:405 var
+R20043:20043 General.genT <> l:404 var
+R20050:20052 General.genT <> leT ind
+R20056:20056 General.genT <> n:406 var
+R20054:20054 General.genT <> l:404 var
+R20111:20115 General.genT <> leT_S constr
+R20111:20115 General.genT <> leT_S constr
+def 20149:20157 <> leT_trans
+binder 20159:20159 <> l:407
+binder 20161:20161 <> m:408
+binder 20163:20163 <> n:409
+binder 20165:20167 <> llm:410
+binder 20169:20171 <> lmn:411
+R20177:20186 General.genT <> leT_trans' thm
+R20188:20188 General.genT <> l:407 var
+R20190:20190 General.genT <> m:408 var
+R20192:20192 General.genT <> n:409 var
+R20194:20196 General.genT <> lmn:411 var
+R20198:20200 General.genT <> llm:410 var
+prf 20212:20218 <> leT_0_n
+binder 20220:20220 <> n:412
+R20223:20225 General.genT <> leT ind
+R20229:20229 General.genT <> n:412 var
+R20260:20264 General.genT <> leT_n constr
+R20260:20264 General.genT <> leT_n constr
+R20274:20278 General.genT <> leT_S constr
+R20274:20278 General.genT <> leT_S constr
+prf 20300:20309 <> leT_plus_r
+binder 20311:20311 <> n:413
+binder 20313:20313 <> m:414
+R20317:20319 General.genT <> leT ind
+R20325:20327 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R20324:20324 General.genT <> n:413 var
+R20328:20328 General.genT <> m:414 var
+R20321:20321 General.genT <> m:414 var
+R20367:20371 General.genT <> leT_n constr
+R20367:20371 General.genT <> leT_n constr
+R20381:20385 General.genT <> leT_S constr
+R20381:20385 General.genT <> leT_S constr
+prf 20407:20416 <> leT_plus_l
+binder 20418:20418 <> n:415
+binder 20420:20420 <> m:416
+R20424:20426 General.genT <> leT ind
+R20432:20434 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R20431:20431 General.genT <> n:415 var
+R20435:20435 General.genT <> m:416 var
+R20428:20428 General.genT <> n:415 var
+R20474:20480 General.genT <> leT_0_n thm
+R20474:20480 General.genT <> leT_0_n thm
+R20490:20496 General.genT <> leT_n_S thm
+R20490:20496 General.genT <> leT_n_S thm
+prf 20520:20525 <> eq_S_F
+binder 20527:20527 <> n:417
+R20538:20541 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20534:20536 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20531:20531 Coq.Init.Datatypes <> S constr
+R20533:20533 General.genT <> n:417 var
+R20537:20537 General.genT <> n:417 var
+R20542:20546 Coq.Init.Logic <> False ind
+prf 20614:20620 <> leT_S_F
+binder 20622:20622 <> n:418
+R20637:20640 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20626:20628 General.genT <> leT ind
+R20636:20636 General.genT <> n:418 var
+R20631:20631 Coq.Init.Datatypes <> S constr
+R20633:20633 General.genT <> n:418 var
+R20641:20645 Coq.Init.Logic <> False ind
+R20696:20702 General.genT <> leT_S_n def
+R20696:20702 General.genT <> leT_S_n def
+prf 20731:20741 <> leT_S_or_eq
+binder 20743:20743 <> n:419
+binder 20745:20745 <> m:420
+R20756:20759 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20749:20751 General.genT <> leT ind
+R20755:20755 General.genT <> m:420 var
+R20753:20753 General.genT <> n:419 var
+R20771:20774 Coq.Init.Datatypes <> ::type_scope:x_'+'_x not
+R20780:20780 Coq.Init.Datatypes <> ::type_scope:x_'+'_x not
+R20760:20762 General.genT <> leT ind
+R20770:20770 General.genT <> m:420 var
+R20765:20765 Coq.Init.Datatypes <> S constr
+R20767:20767 General.genT <> n:419 var
+R20776:20778 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20775:20775 General.genT <> n:419 var
+R20779:20779 General.genT <> m:420 var
+R20833:20839 General.genT <> leT_n_S thm
+R20833:20839 General.genT <> leT_n_S thm
+prf 20859:20867 <> leT_or_gt
+binder 20869:20869 <> n:421
+binder 20871:20871 <> m:422
+R20882:20884 Coq.Init.Datatypes <> ::type_scope:x_'+'_x not
+R20875:20877 General.genT <> leT ind
+R20881:20881 General.genT <> m:422 var
+R20879:20879 General.genT <> n:421 var
+R20885:20887 General.genT <> leT ind
+R20895:20895 General.genT <> n:421 var
+R20890:20890 Coq.Init.Datatypes <> S constr
+R20892:20892 General.genT <> m:422 var
+R20931:20937 General.genT <> leT_0_n thm
+R20931:20937 General.genT <> leT_0_n thm
+R20961:20971 General.genT <> leT_S_or_eq thm
+R20961:20971 General.genT <> leT_S_or_eq thm
+R20998:21000 Coq.Init.Datatypes <> inl constr
+R20998:21000 Coq.Init.Datatypes <> inl constr
+R21021:21023 Coq.Init.Datatypes <> inr constr
+R21026:21030 General.genT <> leT_n constr
+R21021:21023 Coq.Init.Datatypes <> inr constr
+R21026:21030 General.genT <> leT_n constr
+R21045:21047 Coq.Init.Datatypes <> inr constr
+R21050:21054 General.genT <> leT_S constr
+R21045:21047 Coq.Init.Datatypes <> inr constr
+R21050:21054 General.genT <> leT_S constr
+prf 21075:21085 <> leT_ex_plus
+binder 21087:21087 <> k:423
+binder 21089:21089 <> n:424
+R21100:21103 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21093:21095 General.genT <> leT ind
+R21099:21099 General.genT <> n:424 var
+R21097:21097 General.genT <> k:423 var
+R21104:21105 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R21107:21109 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R21113:21115 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R21131:21132 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'&'_x_'}' not
+R21110:21112 Coq.Init.Datatypes <> nat ind
+binder 21106:21106 <> m:425
+R21127:21129 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21116:21122 Coq.Init.Nat <> add def
+R21124:21124 General.genT <> m:425 var
+R21126:21126 General.genT <> k:423 var
+R21130:21130 General.genT <> n:424 var
+R21219:21219 Coq.Init.Datatypes <> S constr
+R21219:21219 Coq.Init.Datatypes <> S constr

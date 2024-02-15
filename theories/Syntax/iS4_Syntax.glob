@@ -1,0 +1,827 @@
+DIGEST 52ce4007fc36a312e96264bece6707ce
+FSyntax.iS4_Syntax
+R15:18 Coq.Lists.List <> <> lib
+R28:40 Coq.Lists.List ListNotations <> mod
+R58:62 Coq.Arith.Arith <> <> lib
+R80:88 Coq.Sets.Ensembles <> <> lib
+ind 299:302 <> form
+constr 317:319 <> Var
+constr 338:340 <> Bot
+constr 352:354 <> And
+constr 382:383 <> Or
+constr 411:413 <> Imp
+constr 441:443 <> Box
+R326:329 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R323:325 Coq.Init.Datatypes <> nat ind
+R330:333 Syntax.iS4_Syntax <> form:1 ind
+R344:347 Syntax.iS4_Syntax <> form:1 ind
+R362:365 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R358:361 Syntax.iS4_Syntax <> form:1 ind
+R370:373 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R366:369 Syntax.iS4_Syntax <> form:1 ind
+R374:377 Syntax.iS4_Syntax <> form:1 ind
+R391:394 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R387:390 Syntax.iS4_Syntax <> form:1 ind
+R399:402 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R395:398 Syntax.iS4_Syntax <> form:1 ind
+R403:406 Syntax.iS4_Syntax <> form:1 ind
+R421:424 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R417:420 Syntax.iS4_Syntax <> form:1 ind
+R429:432 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R425:428 Syntax.iS4_Syntax <> form:1 ind
+R433:436 Syntax.iS4_Syntax <> form:1 ind
+R451:454 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R447:450 Syntax.iS4_Syntax <> form:1 ind
+R455:458 Syntax.iS4_Syntax <> form:1 ind
+scheme 299:302 <> form_rect
+scheme 299:302 <> form_ind
+scheme 299:302 <> form_rec
+scheme 299:302 <> form_sind
+def 500:502 <> Neg
+R509:512 Syntax.iS4_Syntax <> form ind
+binder 505:505 <> A:3
+R518:520 Syntax.iS4_Syntax <> Imp constr
+R525:527 Syntax.iS4_Syntax <> Bot constr
+R522:522 Syntax.iS4_Syntax <> A:3 var
+def 542:544 <> Top
+R549:551 Syntax.iS4_Syntax <> Imp constr
+R557:559 Syntax.iS4_Syntax <> Bot constr
+R553:555 Syntax.iS4_Syntax <> Bot constr
+R640:642 Syntax.iS4_Syntax <> Var constr
+not 630:630 <> ::My_scope:'#'_x
+R695:697 Syntax.iS4_Syntax <> Imp constr
+not 681:681 <> ::My_scope:x_'-->'_x
+R774:775 Syntax.iS4_Syntax <> Or constr
+not 760:760 <> ::My_scope:x_'∨'_x
+R852:854 Syntax.iS4_Syntax <> And constr
+not 838:838 <> ::My_scope:x_'∧'_x
+R926:928 Syntax.iS4_Syntax <> Bot constr
+not 917:917 <> ::My_scope:'⊥'
+R977:981 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R982:984 Syntax.iS4_Syntax <> ::My_scope:'⊥' not
+not 965:965 <> ::My_scope:'¬'_x
+def 1136:1142 <> subform
+R1150:1153 Syntax.iS4_Syntax <> form ind
+binder 1145:1146 <> φ:4
+R1158:1165 Coq.Sets.Ensembles <> Ensemble def
+R1167:1170 Syntax.iS4_Syntax <> form ind
+R1182:1183 Syntax.iS4_Syntax <> φ:4 var
+R1193:1195 Syntax.iS4_Syntax <> Var constr
+R1202:1210 Coq.Sets.Ensembles <> Singleton ind
+R1215:1217 Syntax.iS4_Syntax <> Var constr
+R1225:1227 Syntax.iS4_Syntax <> Bot constr
+R1232:1240 Coq.Sets.Ensembles <> Singleton ind
+R1244:1246 Syntax.iS4_Syntax <> Bot constr
+R1253:1257 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R1264:1268 Coq.Sets.Ensembles <> Union ind
+R1273:1281 Coq.Sets.Ensembles <> Singleton ind
+R1288:1292 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R1299:1303 Coq.Sets.Ensembles <> Union ind
+R1308:1314 Syntax.iS4_Syntax <> subform:5 def
+R1321:1327 Syntax.iS4_Syntax <> subform:5 def
+R1339:1343 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R1350:1354 Coq.Sets.Ensembles <> Union ind
+R1359:1367 Coq.Sets.Ensembles <> Singleton ind
+R1374:1378 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R1385:1389 Coq.Sets.Ensembles <> Union ind
+R1394:1400 Syntax.iS4_Syntax <> subform:5 def
+R1407:1413 Syntax.iS4_Syntax <> subform:5 def
+R1425:1429 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R1436:1440 Coq.Sets.Ensembles <> Union ind
+R1445:1453 Coq.Sets.Ensembles <> Singleton ind
+R1460:1464 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R1471:1475 Coq.Sets.Ensembles <> Union ind
+R1480:1486 Syntax.iS4_Syntax <> subform:5 def
+R1493:1499 Syntax.iS4_Syntax <> subform:5 def
+R1509:1511 Syntax.iS4_Syntax <> Box constr
+R1519:1523 Coq.Sets.Ensembles <> Union ind
+R1528:1536 Coq.Sets.Ensembles <> Singleton ind
+R1541:1543 Syntax.iS4_Syntax <> Box constr
+R1551:1557 Syntax.iS4_Syntax <> subform:5 def
+def 1581:1591 <> subformlist
+R1599:1602 Syntax.iS4_Syntax <> form ind
+binder 1594:1595 <> φ:7
+R1607:1610 Coq.Init.Datatypes <> list ind
+R1612:1615 Syntax.iS4_Syntax <> form ind
+R1627:1628 Syntax.iS4_Syntax <> φ:7 var
+R1638:1640 Syntax.iS4_Syntax <> Var constr
+R1647:1647 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1653:1657 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1648:1650 Syntax.iS4_Syntax <> Var constr
+R1658:1660 Coq.Init.Datatypes <> nil constr
+R1665:1667 Syntax.iS4_Syntax <> Bot constr
+R1672:1672 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1676:1676 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1673:1675 Syntax.iS4_Syntax <> Bot constr
+R1683:1687 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R1694:1694 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1704:1708 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1697:1701 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R1709:1709 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R1724:1729 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R1744:1744 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R1710:1720 Syntax.iS4_Syntax <> subformlist:8 def
+R1730:1740 Syntax.iS4_Syntax <> subformlist:8 def
+R1751:1755 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R1762:1762 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1772:1776 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1765:1769 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R1777:1777 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R1792:1797 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R1812:1812 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R1778:1788 Syntax.iS4_Syntax <> subformlist:8 def
+R1798:1808 Syntax.iS4_Syntax <> subformlist:8 def
+R1819:1823 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R1830:1830 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1840:1844 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1831:1833 Syntax.iS4_Syntax <> Imp constr
+R1845:1845 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R1860:1865 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R1880:1880 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R1846:1856 Syntax.iS4_Syntax <> subformlist:8 def
+R1866:1876 Syntax.iS4_Syntax <> subformlist:8 def
+R1885:1887 Syntax.iS4_Syntax <> Box constr
+R1895:1895 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1902:1907 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1922:1922 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1896:1898 Syntax.iS4_Syntax <> Box constr
+R1908:1918 Syntax.iS4_Syntax <> subformlist:8 def
+prf 1939:1951 <> subform_trans
+binder 1962:1963 <> φ:10
+binder 1965:1966 <> ψ:11
+binder 1968:1969 <> χ:12
+R1999:2005 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1972:1978 Coq.Lists.List <> In def
+R1984:1994 Syntax.iS4_Syntax <> subformlist def
+R1996:1997 Syntax.iS4_Syntax <> ψ:11 var
+R1980:1981 Syntax.iS4_Syntax <> φ:10 var
+R2033:2036 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2006:2012 Coq.Lists.List <> In def
+R2018:2028 Syntax.iS4_Syntax <> subformlist def
+R2030:2031 Syntax.iS4_Syntax <> φ:10 var
+R2014:2015 Syntax.iS4_Syntax <> χ:12 var
+R2037:2043 Coq.Lists.List <> In def
+R2049:2059 Syntax.iS4_Syntax <> subformlist def
+R2061:2062 Syntax.iS4_Syntax <> ψ:11 var
+R2045:2046 Syntax.iS4_Syntax <> χ:12 var
+R2303:2311 Coq.Lists.List <> in_app_or thm
+R2303:2311 Coq.Lists.List <> in_app_or thm
+R2345:2353 Coq.Lists.List <> in_or_app thm
+R2345:2353 Coq.Lists.List <> in_or_app thm
+R2413:2421 Coq.Lists.List <> in_or_app thm
+R2413:2421 Coq.Lists.List <> in_or_app thm
+R2535:2543 Coq.Lists.List <> in_app_or thm
+R2535:2543 Coq.Lists.List <> in_app_or thm
+R2577:2585 Coq.Lists.List <> in_or_app thm
+R2577:2585 Coq.Lists.List <> in_or_app thm
+R2645:2653 Coq.Lists.List <> in_or_app thm
+R2645:2653 Coq.Lists.List <> in_or_app thm
+R2767:2775 Coq.Lists.List <> in_app_or thm
+R2767:2775 Coq.Lists.List <> in_app_or thm
+R2809:2817 Coq.Lists.List <> in_or_app thm
+R2809:2817 Coq.Lists.List <> in_or_app thm
+R2877:2885 Coq.Lists.List <> in_or_app thm
+R2877:2885 Coq.Lists.List <> in_or_app thm
+prf 3048:3058 <> eq_dec_form
+R3075:3078 Syntax.iS4_Syntax <> form ind
+binder 3069:3069 <> x:13
+binder 3071:3071 <> y:14
+R3081:3081 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3087:3089 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3096:3096 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3083:3085 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3082:3082 Syntax.iS4_Syntax <> x:13 var
+R3086:3086 Syntax.iS4_Syntax <> y:14 var
+R3091:3094 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R3090:3090 Syntax.iS4_Syntax <> x:13 var
+R3095:3095 Syntax.iS4_Syntax <> y:14 var
+def 3150:3154 <> subst
+R3165:3168 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3162:3164 Coq.Init.Datatypes <> nat ind
+R3169:3172 Syntax.iS4_Syntax <> form ind
+binder 3157:3158 <> σ:15
+R3181:3184 Syntax.iS4_Syntax <> form ind
+binder 3176:3177 <> φ:16
+R3189:3192 Syntax.iS4_Syntax <> form ind
+R3204:3205 Syntax.iS4_Syntax <> φ:16 var
+R3215:3216 Syntax.iS4_Syntax <> ::My_scope:'#'_x not
+R3223:3224 Syntax.iS4_Syntax <> σ:15 var
+R3232:3234 Syntax.iS4_Syntax <> Bot constr
+R3239:3241 Syntax.iS4_Syntax <> Bot constr
+R3248:3252 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R3259:3259 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R3271:3277 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R3289:3289 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R3260:3264 Syntax.iS4_Syntax <> subst:17 def
+R3266:3267 Syntax.iS4_Syntax <> σ:15 var
+R3278:3282 Syntax.iS4_Syntax <> subst:17 def
+R3284:3285 Syntax.iS4_Syntax <> σ:15 var
+R3296:3300 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R3307:3307 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R3319:3325 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R3337:3337 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R3308:3312 Syntax.iS4_Syntax <> subst:17 def
+R3314:3315 Syntax.iS4_Syntax <> σ:15 var
+R3326:3330 Syntax.iS4_Syntax <> subst:17 def
+R3332:3333 Syntax.iS4_Syntax <> σ:15 var
+R3344:3348 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R3355:3355 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R3367:3373 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R3385:3385 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R3356:3360 Syntax.iS4_Syntax <> subst:17 def
+R3362:3363 Syntax.iS4_Syntax <> σ:15 var
+R3374:3378 Syntax.iS4_Syntax <> subst:17 def
+R3380:3381 Syntax.iS4_Syntax <> σ:15 var
+R3390:3392 Syntax.iS4_Syntax <> Box constr
+R3400:3402 Syntax.iS4_Syntax <> Box constr
+R3405:3409 Syntax.iS4_Syntax <> subst:17 def
+R3411:3412 Syntax.iS4_Syntax <> σ:15 var
+def 3436:3443 <> list_Imp
+R3450:3453 Syntax.iS4_Syntax <> form ind
+binder 3446:3446 <> A:19
+R3461:3464 Coq.Init.Datatypes <> list ind
+R3466:3469 Syntax.iS4_Syntax <> form ind
+binder 3457:3457 <> l:20
+R3474:3477 Syntax.iS4_Syntax <> form ind
+R3489:3489 Syntax.iS4_Syntax <> l:20 var
+R3500:3502 Coq.Init.Datatypes <> nil constr
+R3507:3507 Syntax.iS4_Syntax <> A:19 var
+R3514:3517 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R3524:3529 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R3542:3542 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R3530:3537 Syntax.iS4_Syntax <> list_Imp:21 def
+R3539:3539 Syntax.iS4_Syntax <> A:19 var
+def 3564:3571 <> Box_list
+R3578:3581 Coq.Init.Datatypes <> list ind
+R3583:3586 Syntax.iS4_Syntax <> form ind
+binder 3574:3574 <> l:23
+R3591:3594 Coq.Init.Datatypes <> list ind
+R3596:3599 Syntax.iS4_Syntax <> form ind
+R3604:3606 Coq.Lists.List <> map def
+R3612:3612 Syntax.iS4_Syntax <> l:23 var
+R3608:3610 Syntax.iS4_Syntax <> Box constr
+prf 3624:3634 <> In_form_dec
+binder 3645:3645 <> l:24
+R3652:3655 Syntax.iS4_Syntax <> form ind
+binder 3648:3648 <> A:25
+R3659:3659 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3671:3675 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3696:3696 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3660:3666 Coq.Lists.List <> In def
+R3670:3670 Syntax.iS4_Syntax <> l:24 var
+R3668:3668 Syntax.iS4_Syntax <> A:25 var
+R3687:3690 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3676:3682 Coq.Lists.List <> In def
+R3686:3686 Syntax.iS4_Syntax <> l:24 var
+R3684:3684 Syntax.iS4_Syntax <> A:25 var
+R3691:3695 Coq.Init.Logic <> False ind
+R3782:3792 Syntax.iS4_Syntax <> eq_dec_form thm
+R3782:3792 Syntax.iS4_Syntax <> eq_dec_form thm
+def 3861:3866 <> BoxOne
+binder 3868:3869 <> φ:26
+R3873:3876 Syntax.iS4_Syntax <> form ind
+R3890:3891 Syntax.iS4_Syntax <> φ:26 var
+R3903:3905 Syntax.iS4_Syntax <> Box constr
+R3913:3915 Syntax.iS4_Syntax <> Box constr
+R3930:3932 Syntax.iS4_Syntax <> Box constr
+R3934:3935 Syntax.iS4_Syntax <> φ:26 var
+def 3959:3964 <> BoxTwo
+binder 3966:3967 <> φ:28
+R3971:3974 Syntax.iS4_Syntax <> form ind
+R3988:3989 Syntax.iS4_Syntax <> φ:28 var
+R4001:4003 Syntax.iS4_Syntax <> Box constr
+R4047:4049 Syntax.iS4_Syntax <> Box constr
+R4057:4058 Syntax.iS4_Syntax <> φ:28 var
+R4087:4089 Syntax.iS4_Syntax <> Box constr
+R4091:4092 Syntax.iS4_Syntax <> φ:28 var
+R4128:4130 Syntax.iS4_Syntax <> Box constr
+R4133:4135 Syntax.iS4_Syntax <> Box constr
+R4137:4138 Syntax.iS4_Syntax <> φ:28 var
+def 4163:4167 <> UnBox
+binder 4169:4170 <> φ:31
+R4174:4177 Syntax.iS4_Syntax <> form ind
+R4191:4192 Syntax.iS4_Syntax <> φ:31 var
+R4204:4206 Syntax.iS4_Syntax <> Box constr
+R4227:4228 Syntax.iS4_Syntax <> φ:31 var
+def 4252:4261 <> ClosOneBox
+binder 4263:4264 <> Γ:33
+R4268:4275 Coq.Sets.Ensembles <> Ensemble def
+R4277:4280 Syntax.iS4_Syntax <> form ind
+R4285:4289 Coq.Sets.Ensembles <> Union ind
+R4293:4294 Syntax.iS4_Syntax <> Γ:33 var
+binder 4301:4302 <> φ:34
+R4307:4313 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4316:4317 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4314:4315 <> ψ:35
+R4328:4331 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4318:4319 Coq.Sets.Ensembles <> In def
+R4323:4324 Syntax.iS4_Syntax <> Γ:33 var
+R4326:4327 Syntax.iS4_Syntax <> ψ:35 var
+R4334:4336 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4332:4333 Syntax.iS4_Syntax <> φ:34 var
+R4337:4342 Syntax.iS4_Syntax <> BoxOne def
+R4344:4345 Syntax.iS4_Syntax <> ψ:35 var
+def 4363:4372 <> ClosTwoBox
+binder 4374:4375 <> Γ:36
+R4379:4386 Coq.Sets.Ensembles <> Ensemble def
+R4388:4391 Syntax.iS4_Syntax <> form ind
+R4396:4400 Coq.Sets.Ensembles <> Union ind
+R4404:4405 Syntax.iS4_Syntax <> Γ:36 var
+binder 4412:4413 <> φ:37
+R4418:4424 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4427:4428 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4425:4426 <> ψ:38
+R4439:4442 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4429:4430 Coq.Sets.Ensembles <> In def
+R4434:4435 Syntax.iS4_Syntax <> Γ:36 var
+R4437:4438 Syntax.iS4_Syntax <> ψ:38 var
+R4445:4447 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4443:4444 Syntax.iS4_Syntax <> φ:37 var
+R4448:4453 Syntax.iS4_Syntax <> BoxTwo def
+R4455:4456 Syntax.iS4_Syntax <> ψ:38 var
+def 4474:4486 <> ClosOneTwoBox
+binder 4488:4489 <> Γ:39
+R4493:4500 Coq.Sets.Ensembles <> Ensemble def
+R4502:4505 Syntax.iS4_Syntax <> form ind
+R4513:4517 Coq.Sets.Ensembles <> Union ind
+R4521:4522 Syntax.iS4_Syntax <> Γ:39 var
+R4525:4529 Coq.Sets.Ensembles <> Union ind
+binder 4538:4539 <> φ:40
+R4544:4550 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4553:4554 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4551:4552 <> ψ:41
+R4565:4568 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4555:4556 Coq.Sets.Ensembles <> In def
+R4560:4561 Syntax.iS4_Syntax <> Γ:39 var
+R4563:4564 Syntax.iS4_Syntax <> ψ:41 var
+R4571:4573 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4569:4570 Syntax.iS4_Syntax <> φ:40 var
+R4574:4579 Syntax.iS4_Syntax <> BoxOne def
+R4581:4582 Syntax.iS4_Syntax <> ψ:41 var
+binder 4590:4591 <> φ:42
+R4596:4602 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4605:4606 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4603:4604 <> ψ:43
+R4617:4620 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4607:4608 Coq.Sets.Ensembles <> In def
+R4612:4613 Syntax.iS4_Syntax <> Γ:39 var
+R4615:4616 Syntax.iS4_Syntax <> ψ:43 var
+R4623:4625 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4621:4622 Syntax.iS4_Syntax <> φ:42 var
+R4626:4631 Syntax.iS4_Syntax <> BoxTwo def
+R4633:4634 Syntax.iS4_Syntax <> ψ:43 var
+def 4653:4663 <> ClosSubform
+binder 4665:4666 <> Γ:44
+R4670:4677 Coq.Sets.Ensembles <> Ensemble def
+R4679:4682 Syntax.iS4_Syntax <> form ind
+binder 4691:4692 <> φ:45
+R4697:4703 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4706:4707 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4704:4705 <> ψ:46
+R4718:4721 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4708:4709 Coq.Sets.Ensembles <> In def
+R4713:4714 Syntax.iS4_Syntax <> Γ:44 var
+R4716:4717 Syntax.iS4_Syntax <> ψ:46 var
+R4722:4728 Coq.Lists.List <> In def
+R4734:4744 Syntax.iS4_Syntax <> subformlist def
+R4746:4747 Syntax.iS4_Syntax <> ψ:46 var
+R4730:4731 Syntax.iS4_Syntax <> φ:45 var
+def 4765:4768 <> Clos
+binder 4770:4771 <> Γ:47
+R4775:4782 Coq.Sets.Ensembles <> Ensemble def
+R4784:4787 Syntax.iS4_Syntax <> form ind
+R4792:4804 Syntax.iS4_Syntax <> ClosOneTwoBox def
+R4807:4817 Syntax.iS4_Syntax <> ClosSubform def
+R4819:4820 Syntax.iS4_Syntax <> Γ:47 var
+prf 4833:4852 <> Incl_Set_ClosSubform
+binder 4863:4864 <> Γ:48
+R4867:4874 Coq.Sets.Ensembles <> Included def
+R4878:4879 Syntax.iS4_Syntax <> Γ:48 var
+R4882:4892 Syntax.iS4_Syntax <> ClosSubform def
+R4894:4895 Syntax.iS4_Syntax <> Γ:48 var
+R4933:4934 Coq.Sets.Ensembles <> In def
+prf 5006:5026 <> Incl_ClosSubform_Clos
+binder 5037:5038 <> Γ:49
+R5041:5048 Coq.Sets.Ensembles <> Included def
+R5053:5063 Syntax.iS4_Syntax <> ClosSubform def
+R5066:5069 Syntax.iS4_Syntax <> Clos def
+R5071:5072 Syntax.iS4_Syntax <> Γ:49 var
+R5077:5080 Syntax.iS4_Syntax <> Clos def
+R5082:5083 Syntax.iS4_Syntax <> Γ:49 var
+R5121:5122 Coq.Sets.Ensembles <> In def
+R5137:5140 Syntax.iS4_Syntax <> Clos def
+R5155:5167 Syntax.iS4_Syntax <> ClosOneTwoBox def
+R5183:5193 Syntax.iS4_Syntax <> ClosSubform def
+R5234:5235 Coq.Sets.Ensembles <> In def
+R5299:5310 Coq.Sets.Ensembles <> Union_introl constr
+R5299:5310 Coq.Sets.Ensembles <> Union_introl constr
+R5320:5321 Coq.Sets.Ensembles <> In def
+R5358:5370 Syntax.iS4_Syntax <> subform_trans thm
+R5358:5370 Syntax.iS4_Syntax <> subform_trans thm
+R5410:5411 Coq.Sets.Ensembles <> In def
+R5454:5455 Coq.Sets.Ensembles <> In def
+R5597:5608 Coq.Sets.Ensembles <> Union_intror constr
+R5597:5608 Coq.Sets.Ensembles <> Union_intror constr
+R5618:5619 Coq.Sets.Ensembles <> In def
+R5628:5639 Coq.Sets.Ensembles <> Union_introl constr
+R5628:5639 Coq.Sets.Ensembles <> Union_introl constr
+R5649:5650 Coq.Sets.Ensembles <> In def
+R5661:5662 Syntax.iS4_Syntax <> ::My_scope:'#'_x not
+R5661:5662 Syntax.iS4_Syntax <> ::My_scope:'#'_x not
+R5737:5748 Coq.Sets.Ensembles <> Union_introl constr
+R5737:5748 Coq.Sets.Ensembles <> Union_introl constr
+R5758:5759 Coq.Sets.Ensembles <> In def
+R5805:5816 Coq.Sets.Ensembles <> Union_intror constr
+R5805:5816 Coq.Sets.Ensembles <> Union_intror constr
+R5826:5827 Coq.Sets.Ensembles <> In def
+R5836:5847 Coq.Sets.Ensembles <> Union_introl constr
+R5836:5847 Coq.Sets.Ensembles <> Union_introl constr
+R5857:5858 Coq.Sets.Ensembles <> In def
+R5868:5870 Syntax.iS4_Syntax <> Bot constr
+R5868:5870 Syntax.iS4_Syntax <> Bot constr
+R5943:5954 Coq.Sets.Ensembles <> Union_introl constr
+R5943:5954 Coq.Sets.Ensembles <> Union_introl constr
+R5964:5965 Coq.Sets.Ensembles <> In def
+R6011:6022 Coq.Sets.Ensembles <> Union_intror constr
+R6011:6022 Coq.Sets.Ensembles <> Union_intror constr
+R6032:6033 Coq.Sets.Ensembles <> In def
+R6042:6053 Coq.Sets.Ensembles <> Union_introl constr
+R6042:6053 Coq.Sets.Ensembles <> Union_introl constr
+R6063:6064 Coq.Sets.Ensembles <> In def
+R6079:6083 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R6079:6083 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R6161:6172 Coq.Sets.Ensembles <> Union_introl constr
+R6161:6172 Coq.Sets.Ensembles <> Union_introl constr
+R6182:6183 Coq.Sets.Ensembles <> In def
+R6215:6226 Coq.Sets.Ensembles <> Union_introl constr
+R6215:6226 Coq.Sets.Ensembles <> Union_introl constr
+R6236:6237 Coq.Sets.Ensembles <> In def
+R6305:6309 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R6277:6289 Syntax.iS4_Syntax <> subform_trans thm
+R6305:6309 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R6277:6289 Syntax.iS4_Syntax <> subform_trans thm
+R6350:6361 Coq.Sets.Ensembles <> Union_intror constr
+R6350:6361 Coq.Sets.Ensembles <> Union_intror constr
+R6371:6372 Coq.Sets.Ensembles <> In def
+R6381:6392 Coq.Sets.Ensembles <> Union_introl constr
+R6381:6392 Coq.Sets.Ensembles <> Union_introl constr
+R6402:6403 Coq.Sets.Ensembles <> In def
+R6418:6422 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R6418:6422 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R6500:6511 Coq.Sets.Ensembles <> Union_introl constr
+R6500:6511 Coq.Sets.Ensembles <> Union_introl constr
+R6521:6522 Coq.Sets.Ensembles <> In def
+R6554:6565 Coq.Sets.Ensembles <> Union_introl constr
+R6554:6565 Coq.Sets.Ensembles <> Union_introl constr
+R6575:6576 Coq.Sets.Ensembles <> In def
+R6644:6648 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R6616:6628 Syntax.iS4_Syntax <> subform_trans thm
+R6644:6648 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R6616:6628 Syntax.iS4_Syntax <> subform_trans thm
+R6689:6700 Coq.Sets.Ensembles <> Union_intror constr
+R6689:6700 Coq.Sets.Ensembles <> Union_intror constr
+R6710:6711 Coq.Sets.Ensembles <> In def
+R6720:6731 Coq.Sets.Ensembles <> Union_introl constr
+R6720:6731 Coq.Sets.Ensembles <> Union_introl constr
+R6741:6742 Coq.Sets.Ensembles <> In def
+R6757:6761 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R6757:6761 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R6839:6850 Coq.Sets.Ensembles <> Union_introl constr
+R6839:6850 Coq.Sets.Ensembles <> Union_introl constr
+R6860:6861 Coq.Sets.Ensembles <> In def
+R6893:6904 Coq.Sets.Ensembles <> Union_introl constr
+R6893:6904 Coq.Sets.Ensembles <> Union_introl constr
+R6914:6915 Coq.Sets.Ensembles <> In def
+R6983:6987 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R6955:6967 Syntax.iS4_Syntax <> subform_trans thm
+R6983:6987 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R6955:6967 Syntax.iS4_Syntax <> subform_trans thm
+R7028:7039 Coq.Sets.Ensembles <> Union_intror constr
+R7028:7039 Coq.Sets.Ensembles <> Union_intror constr
+R7049:7050 Coq.Sets.Ensembles <> In def
+R7059:7070 Coq.Sets.Ensembles <> Union_introl constr
+R7059:7070 Coq.Sets.Ensembles <> Union_introl constr
+R7080:7081 Coq.Sets.Ensembles <> In def
+R7092:7094 Syntax.iS4_Syntax <> Box constr
+R7092:7094 Syntax.iS4_Syntax <> Box constr
+R7150:7161 Coq.Sets.Ensembles <> Union_introl constr
+R7150:7161 Coq.Sets.Ensembles <> Union_introl constr
+R7171:7172 Coq.Sets.Ensembles <> In def
+R7236:7238 Syntax.iS4_Syntax <> Box constr
+R7212:7224 Syntax.iS4_Syntax <> subform_trans thm
+R7236:7238 Syntax.iS4_Syntax <> Box constr
+R7212:7224 Syntax.iS4_Syntax <> subform_trans thm
+R7278:7279 Coq.Sets.Ensembles <> In def
+R7454:7465 Coq.Sets.Ensembles <> Union_intror constr
+R7454:7465 Coq.Sets.Ensembles <> Union_intror constr
+R7475:7476 Coq.Sets.Ensembles <> In def
+R7485:7496 Coq.Sets.Ensembles <> Union_introl constr
+R7485:7496 Coq.Sets.Ensembles <> Union_introl constr
+R7506:7507 Coq.Sets.Ensembles <> In def
+R7518:7519 Syntax.iS4_Syntax <> ::My_scope:'#'_x not
+R7518:7519 Syntax.iS4_Syntax <> ::My_scope:'#'_x not
+R7611:7622 Coq.Sets.Ensembles <> Union_introl constr
+R7611:7622 Coq.Sets.Ensembles <> Union_introl constr
+R7632:7633 Coq.Sets.Ensembles <> In def
+R7686:7697 Coq.Sets.Ensembles <> Union_intror constr
+R7686:7697 Coq.Sets.Ensembles <> Union_intror constr
+R7707:7708 Coq.Sets.Ensembles <> In def
+R7717:7728 Coq.Sets.Ensembles <> Union_introl constr
+R7717:7728 Coq.Sets.Ensembles <> Union_introl constr
+R7738:7739 Coq.Sets.Ensembles <> In def
+R7749:7751 Syntax.iS4_Syntax <> Bot constr
+R7749:7751 Syntax.iS4_Syntax <> Bot constr
+R7841:7852 Coq.Sets.Ensembles <> Union_introl constr
+R7841:7852 Coq.Sets.Ensembles <> Union_introl constr
+R7862:7863 Coq.Sets.Ensembles <> In def
+R7916:7927 Coq.Sets.Ensembles <> Union_intror constr
+R7916:7927 Coq.Sets.Ensembles <> Union_intror constr
+R7937:7938 Coq.Sets.Ensembles <> In def
+R7947:7958 Coq.Sets.Ensembles <> Union_introl constr
+R7947:7958 Coq.Sets.Ensembles <> Union_introl constr
+R7968:7969 Coq.Sets.Ensembles <> In def
+R7984:7988 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R7984:7988 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R8066:8077 Coq.Sets.Ensembles <> Union_introl constr
+R8066:8077 Coq.Sets.Ensembles <> Union_introl constr
+R8087:8088 Coq.Sets.Ensembles <> In def
+R8120:8131 Coq.Sets.Ensembles <> Union_introl constr
+R8120:8131 Coq.Sets.Ensembles <> Union_introl constr
+R8141:8142 Coq.Sets.Ensembles <> In def
+R8210:8214 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R8182:8194 Syntax.iS4_Syntax <> subform_trans thm
+R8210:8214 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R8182:8194 Syntax.iS4_Syntax <> subform_trans thm
+R8276:8287 Coq.Sets.Ensembles <> Union_intror constr
+R8276:8287 Coq.Sets.Ensembles <> Union_intror constr
+R8297:8298 Coq.Sets.Ensembles <> In def
+R8307:8318 Coq.Sets.Ensembles <> Union_introl constr
+R8307:8318 Coq.Sets.Ensembles <> Union_introl constr
+R8328:8329 Coq.Sets.Ensembles <> In def
+R8344:8348 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R8344:8348 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R8426:8437 Coq.Sets.Ensembles <> Union_introl constr
+R8426:8437 Coq.Sets.Ensembles <> Union_introl constr
+R8447:8448 Coq.Sets.Ensembles <> In def
+R8480:8491 Coq.Sets.Ensembles <> Union_introl constr
+R8480:8491 Coq.Sets.Ensembles <> Union_introl constr
+R8501:8502 Coq.Sets.Ensembles <> In def
+R8570:8574 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R8542:8554 Syntax.iS4_Syntax <> subform_trans thm
+R8570:8574 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R8542:8554 Syntax.iS4_Syntax <> subform_trans thm
+R8636:8647 Coq.Sets.Ensembles <> Union_intror constr
+R8636:8647 Coq.Sets.Ensembles <> Union_intror constr
+R8657:8658 Coq.Sets.Ensembles <> In def
+R8667:8678 Coq.Sets.Ensembles <> Union_introl constr
+R8667:8678 Coq.Sets.Ensembles <> Union_introl constr
+R8688:8689 Coq.Sets.Ensembles <> In def
+R8704:8708 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R8704:8708 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R8786:8797 Coq.Sets.Ensembles <> Union_introl constr
+R8786:8797 Coq.Sets.Ensembles <> Union_introl constr
+R8807:8808 Coq.Sets.Ensembles <> In def
+R8840:8851 Coq.Sets.Ensembles <> Union_introl constr
+R8840:8851 Coq.Sets.Ensembles <> Union_introl constr
+R8861:8862 Coq.Sets.Ensembles <> In def
+R8930:8934 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R8902:8914 Syntax.iS4_Syntax <> subform_trans thm
+R8930:8934 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R8902:8914 Syntax.iS4_Syntax <> subform_trans thm
+R9066:9077 Coq.Sets.Ensembles <> Union_introl constr
+R9066:9077 Coq.Sets.Ensembles <> Union_introl constr
+R9087:9088 Coq.Sets.Ensembles <> In def
+R9143:9154 Coq.Sets.Ensembles <> Union_introl constr
+R9143:9154 Coq.Sets.Ensembles <> Union_introl constr
+R9164:9165 Coq.Sets.Ensembles <> In def
+R9232:9234 Syntax.iS4_Syntax <> Box constr
+R9236:9237 Syntax.iS4_Syntax <> ::My_scope:'#'_x not
+R9207:9219 Syntax.iS4_Syntax <> subform_trans thm
+R9232:9234 Syntax.iS4_Syntax <> Box constr
+R9236:9237 Syntax.iS4_Syntax <> ::My_scope:'#'_x not
+R9207:9219 Syntax.iS4_Syntax <> subform_trans thm
+R9313:9324 Coq.Sets.Ensembles <> Union_introl constr
+R9313:9324 Coq.Sets.Ensembles <> Union_introl constr
+R9334:9335 Coq.Sets.Ensembles <> In def
+R9390:9401 Coq.Sets.Ensembles <> Union_introl constr
+R9390:9401 Coq.Sets.Ensembles <> Union_introl constr
+R9411:9412 Coq.Sets.Ensembles <> In def
+R9479:9481 Syntax.iS4_Syntax <> Box constr
+R9483:9485 Syntax.iS4_Syntax <> Bot constr
+R9454:9466 Syntax.iS4_Syntax <> subform_trans thm
+R9479:9481 Syntax.iS4_Syntax <> Box constr
+R9483:9485 Syntax.iS4_Syntax <> Bot constr
+R9454:9466 Syntax.iS4_Syntax <> subform_trans thm
+R9560:9571 Coq.Sets.Ensembles <> Union_introl constr
+R9560:9571 Coq.Sets.Ensembles <> Union_introl constr
+R9581:9582 Coq.Sets.Ensembles <> In def
+R9637:9648 Coq.Sets.Ensembles <> Union_introl constr
+R9637:9648 Coq.Sets.Ensembles <> Union_introl constr
+R9658:9659 Coq.Sets.Ensembles <> In def
+R9726:9728 Syntax.iS4_Syntax <> Box constr
+R9735:9739 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R9701:9713 Syntax.iS4_Syntax <> subform_trans thm
+R9726:9728 Syntax.iS4_Syntax <> Box constr
+R9735:9739 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R9701:9713 Syntax.iS4_Syntax <> subform_trans thm
+R9784:9795 Coq.Sets.Ensembles <> Union_introl constr
+R9784:9795 Coq.Sets.Ensembles <> Union_introl constr
+R9805:9806 Coq.Sets.Ensembles <> In def
+R9873:9875 Syntax.iS4_Syntax <> Box constr
+R9882:9886 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R9848:9860 Syntax.iS4_Syntax <> subform_trans thm
+R9873:9875 Syntax.iS4_Syntax <> Box constr
+R9882:9886 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R9848:9860 Syntax.iS4_Syntax <> subform_trans thm
+R9952:9963 Coq.Sets.Ensembles <> Union_introl constr
+R9952:9963 Coq.Sets.Ensembles <> Union_introl constr
+R9973:9974 Coq.Sets.Ensembles <> In def
+R10029:10040 Coq.Sets.Ensembles <> Union_introl constr
+R10029:10040 Coq.Sets.Ensembles <> Union_introl constr
+R10050:10051 Coq.Sets.Ensembles <> In def
+R10118:10120 Syntax.iS4_Syntax <> Box constr
+R10127:10131 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R10093:10105 Syntax.iS4_Syntax <> subform_trans thm
+R10118:10120 Syntax.iS4_Syntax <> Box constr
+R10127:10131 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R10093:10105 Syntax.iS4_Syntax <> subform_trans thm
+R10176:10187 Coq.Sets.Ensembles <> Union_introl constr
+R10176:10187 Coq.Sets.Ensembles <> Union_introl constr
+R10197:10198 Coq.Sets.Ensembles <> In def
+R10265:10267 Syntax.iS4_Syntax <> Box constr
+R10274:10278 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R10240:10252 Syntax.iS4_Syntax <> subform_trans thm
+R10265:10267 Syntax.iS4_Syntax <> Box constr
+R10274:10278 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R10240:10252 Syntax.iS4_Syntax <> subform_trans thm
+R10344:10355 Coq.Sets.Ensembles <> Union_introl constr
+R10344:10355 Coq.Sets.Ensembles <> Union_introl constr
+R10365:10366 Coq.Sets.Ensembles <> In def
+R10421:10432 Coq.Sets.Ensembles <> Union_introl constr
+R10421:10432 Coq.Sets.Ensembles <> Union_introl constr
+R10442:10443 Coq.Sets.Ensembles <> In def
+R10510:10512 Syntax.iS4_Syntax <> Box constr
+R10519:10523 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R10485:10497 Syntax.iS4_Syntax <> subform_trans thm
+R10510:10512 Syntax.iS4_Syntax <> Box constr
+R10519:10523 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R10485:10497 Syntax.iS4_Syntax <> subform_trans thm
+R10568:10579 Coq.Sets.Ensembles <> Union_introl constr
+R10568:10579 Coq.Sets.Ensembles <> Union_introl constr
+R10589:10590 Coq.Sets.Ensembles <> In def
+R10657:10659 Syntax.iS4_Syntax <> Box constr
+R10666:10670 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R10632:10644 Syntax.iS4_Syntax <> subform_trans thm
+R10657:10659 Syntax.iS4_Syntax <> Box constr
+R10666:10670 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R10632:10644 Syntax.iS4_Syntax <> subform_trans thm
+R10736:10747 Coq.Sets.Ensembles <> Union_introl constr
+R10736:10747 Coq.Sets.Ensembles <> Union_introl constr
+R10757:10758 Coq.Sets.Ensembles <> In def
+R10813:10824 Coq.Sets.Ensembles <> Union_introl constr
+R10813:10824 Coq.Sets.Ensembles <> Union_introl constr
+R10834:10835 Coq.Sets.Ensembles <> In def
+R10901:10903 Syntax.iS4_Syntax <> Box constr
+R10906:10908 Syntax.iS4_Syntax <> Box constr
+R10877:10889 Syntax.iS4_Syntax <> subform_trans thm
+R10901:10903 Syntax.iS4_Syntax <> Box constr
+R10906:10908 Syntax.iS4_Syntax <> Box constr
+R10877:10889 Syntax.iS4_Syntax <> subform_trans thm
+R10951:10962 Coq.Sets.Ensembles <> Union_introl constr
+R10951:10962 Coq.Sets.Ensembles <> Union_introl constr
+R10972:10973 Coq.Sets.Ensembles <> In def
+R11039:11041 Syntax.iS4_Syntax <> Box constr
+R11044:11046 Syntax.iS4_Syntax <> Box constr
+R11015:11027 Syntax.iS4_Syntax <> subform_trans thm
+R11039:11041 Syntax.iS4_Syntax <> Box constr
+R11044:11046 Syntax.iS4_Syntax <> Box constr
+R11015:11027 Syntax.iS4_Syntax <> subform_trans thm
+prf 11092:11110 <> Box_UnBox_BoxTwo_id
+binder 11121:11121 <> l:50
+R11158:11160 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11124:11126 Coq.Lists.List <> map def
+R11133:11135 Coq.Lists.List <> map def
+R11144:11146 Coq.Lists.List <> map def
+R11155:11155 Syntax.iS4_Syntax <> l:50 var
+R11148:11153 Syntax.iS4_Syntax <> BoxTwo def
+R11137:11141 Syntax.iS4_Syntax <> UnBox def
+R11128:11130 Syntax.iS4_Syntax <> Box constr
+R11161:11163 Coq.Lists.List <> map def
+R11172:11172 Syntax.iS4_Syntax <> l:50 var
+R11165:11170 Syntax.iS4_Syntax <> BoxTwo def
+prf 11346:11357 <> UnBox_BoxOne
+binder 11368:11369 <> φ:51
+R11381:11383 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11372:11377 Syntax.iS4_Syntax <> BoxOne def
+R11379:11380 Syntax.iS4_Syntax <> φ:51 var
+R11384:11386 Syntax.iS4_Syntax <> Box constr
+R11389:11393 Syntax.iS4_Syntax <> UnBox def
+R11395:11396 Syntax.iS4_Syntax <> φ:51 var
+prf 11453:11464 <> UnBox_BoxTwo
+binder 11475:11476 <> φ:52
+R11488:11490 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11479:11484 Syntax.iS4_Syntax <> BoxTwo def
+R11486:11487 Syntax.iS4_Syntax <> φ:52 var
+R11491:11493 Syntax.iS4_Syntax <> Box constr
+R11496:11498 Syntax.iS4_Syntax <> Box constr
+R11501:11505 Syntax.iS4_Syntax <> UnBox def
+R11508:11512 Syntax.iS4_Syntax <> UnBox def
+R11514:11515 Syntax.iS4_Syntax <> φ:52 var
+prf 11603:11623 <> BoxTwo_UnBox_fixpoint
+binder 11634:11635 <> φ:53
+R11647:11649 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11638:11643 Syntax.iS4_Syntax <> BoxTwo def
+R11645:11646 Syntax.iS4_Syntax <> φ:53 var
+R11650:11652 Syntax.iS4_Syntax <> Box constr
+R11655:11659 Syntax.iS4_Syntax <> UnBox def
+R11662:11667 Syntax.iS4_Syntax <> BoxTwo def
+R11669:11670 Syntax.iS4_Syntax <> φ:53 var
+prf 11757:11771 <> In_Clos_not_box
+binder 11782:11783 <> Γ:54
+binder 11785:11786 <> φ:55
+R11789:11789 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11823:11827 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11790:11790 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11813:11817 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11791:11797 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R11800:11801 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 11798:11799 <> ψ:56
+R11804:11806 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11802:11803 Syntax.iS4_Syntax <> φ:55 var
+R11807:11809 Syntax.iS4_Syntax <> Box constr
+R11811:11812 Syntax.iS4_Syntax <> ψ:56 var
+R11818:11822 Coq.Init.Logic <> False ind
+R11840:11843 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11829:11832 Syntax.iS4_Syntax <> Clos def
+R11834:11835 Syntax.iS4_Syntax <> Γ:54 var
+R11838:11839 Syntax.iS4_Syntax <> φ:55 var
+R11845:11855 Syntax.iS4_Syntax <> ClosSubform def
+R11857:11858 Syntax.iS4_Syntax <> Γ:54 var
+R11861:11862 Syntax.iS4_Syntax <> φ:55 var
+R11983:11987 Syntax.iS4_Syntax <> UnBox def
+R11983:11987 Syntax.iS4_Syntax <> UnBox def
+R12000:12011 Syntax.iS4_Syntax <> UnBox_BoxOne thm
+R12000:12011 Syntax.iS4_Syntax <> UnBox_BoxOne thm
+R12076:12078 Syntax.iS4_Syntax <> Box constr
+R12081:12085 Syntax.iS4_Syntax <> UnBox def
+R12088:12092 Syntax.iS4_Syntax <> UnBox def
+R12076:12078 Syntax.iS4_Syntax <> Box constr
+R12081:12085 Syntax.iS4_Syntax <> UnBox def
+R12088:12092 Syntax.iS4_Syntax <> UnBox def
+R12108:12119 Syntax.iS4_Syntax <> UnBox_BoxTwo thm
+R12108:12119 Syntax.iS4_Syntax <> UnBox_BoxTwo thm
+prf 12137:12150 <> In_Clos_BoxTwo
+binder 12161:12162 <> Γ:57
+binder 12164:12165 <> φ:58
+R12180:12183 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12169:12172 Syntax.iS4_Syntax <> Clos def
+R12174:12175 Syntax.iS4_Syntax <> Γ:57 var
+R12178:12179 Syntax.iS4_Syntax <> φ:58 var
+R12185:12188 Syntax.iS4_Syntax <> Clos def
+R12190:12191 Syntax.iS4_Syntax <> Γ:57 var
+R12195:12200 Syntax.iS4_Syntax <> BoxTwo def
+R12202:12203 Syntax.iS4_Syntax <> φ:58 var
+R12251:12262 Coq.Sets.Ensembles <> Union_intror constr
+R12272:12283 Coq.Sets.Ensembles <> Union_intror constr
+R12318:12332 Syntax.iS4_Syntax <> In_Clos_not_box thm
+R12251:12262 Coq.Sets.Ensembles <> Union_intror constr
+R12251:12262 Coq.Sets.Ensembles <> Union_intror constr
+R12251:12262 Coq.Sets.Ensembles <> Union_intror constr
+R12251:12262 Coq.Sets.Ensembles <> Union_intror constr
+R12251:12262 Coq.Sets.Ensembles <> Union_intror constr
+R12272:12283 Coq.Sets.Ensembles <> Union_intror constr
+R12272:12283 Coq.Sets.Ensembles <> Union_intror constr
+R12272:12283 Coq.Sets.Ensembles <> Union_intror constr
+R12272:12283 Coq.Sets.Ensembles <> Union_intror constr
+R12272:12283 Coq.Sets.Ensembles <> Union_intror constr
+R12318:12332 Syntax.iS4_Syntax <> In_Clos_not_box thm
+R12318:12332 Syntax.iS4_Syntax <> In_Clos_not_box thm
+R12318:12332 Syntax.iS4_Syntax <> In_Clos_not_box thm
+R12318:12332 Syntax.iS4_Syntax <> In_Clos_not_box thm
+R12318:12332 Syntax.iS4_Syntax <> In_Clos_not_box thm
+R12454:12474 Syntax.iS4_Syntax <> Incl_ClosSubform_Clos thm
+R12454:12474 Syntax.iS4_Syntax <> Incl_ClosSubform_Clos thm
+R12454:12474 Syntax.iS4_Syntax <> Incl_ClosSubform_Clos thm
+R12454:12474 Syntax.iS4_Syntax <> Incl_ClosSubform_Clos thm
+R12454:12474 Syntax.iS4_Syntax <> Incl_ClosSubform_Clos thm
+R12454:12474 Syntax.iS4_Syntax <> Incl_ClosSubform_Clos thm
+R12486:12488 Syntax.iS4_Syntax <> Box constr
+R12491:12492 Syntax.iS4_Syntax <> ::My_scope:'#'_x not
+R12486:12488 Syntax.iS4_Syntax <> Box constr
+R12491:12492 Syntax.iS4_Syntax <> ::My_scope:'#'_x not
+R12529:12531 Syntax.iS4_Syntax <> Box constr
+R12533:12535 Syntax.iS4_Syntax <> Bot constr
+R12529:12531 Syntax.iS4_Syntax <> Box constr
+R12533:12535 Syntax.iS4_Syntax <> Bot constr
+R12570:12572 Syntax.iS4_Syntax <> Box constr
+R12578:12582 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R12570:12572 Syntax.iS4_Syntax <> Box constr
+R12578:12582 Syntax.iS4_Syntax <> ::My_scope:x_'∧'_x not
+R12621:12623 Syntax.iS4_Syntax <> Box constr
+R12629:12633 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R12621:12623 Syntax.iS4_Syntax <> Box constr
+R12629:12633 Syntax.iS4_Syntax <> ::My_scope:x_'∨'_x not
+R12672:12674 Syntax.iS4_Syntax <> Box constr
+R12680:12684 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R12672:12674 Syntax.iS4_Syntax <> Box constr
+R12680:12684 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not

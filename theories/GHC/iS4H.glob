@@ -1,0 +1,545 @@
+DIGEST 01f34f2773fabf6a6489d98a6ccfb50c
+FGHC.iS4H
+R15:18 Coq.Lists.List <> <> lib
+R28:40 Coq.Lists.List ListNotations <> mod
+R58:62 Coq.Arith.Arith <> <> lib
+R80:88 Coq.Sets.Ensembles <> <> lib
+R107:120 General.general_export <> <> lib
+R139:148 Syntax.iS4_Syntax <> <> lib
+def 212:214 <> IA1
+R223:226 Syntax.iS4_Syntax <> form ind
+binder 217:217 <> A:1
+binder 219:219 <> B:2
+R231:234 Syntax.iS4_Syntax <> form ind
+R240:245 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R253:253 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R239:239 GHC.iS4H <> A:1 var
+R247:251 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R246:246 GHC.iS4H <> B:2 var
+R252:252 GHC.iS4H <> A:1 var
+def 267:269 <> IA2
+R280:283 Syntax.iS4_Syntax <> form ind
+binder 272:272 <> A:3
+binder 274:274 <> B:4
+binder 276:276 <> C:5
+R288:291 Syntax.iS4_Syntax <> form ind
+R296:296 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R312:318 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R342:342 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R298:303 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R311:311 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R297:297 GHC.iS4H <> A:3 var
+R305:309 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R304:304 GHC.iS4H <> B:4 var
+R310:310 GHC.iS4H <> C:5 var
+R319:319 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R327:333 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R341:341 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R321:325 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R320:320 GHC.iS4H <> A:3 var
+R326:326 GHC.iS4H <> B:4 var
+R335:339 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R334:334 GHC.iS4H <> A:3 var
+R340:340 GHC.iS4H <> C:5 var
+def 356:358 <> IA3
+R367:370 Syntax.iS4_Syntax <> form ind
+binder 361:361 <> A:6
+binder 363:363 <> B:7
+R375:378 Syntax.iS4_Syntax <> form ind
+R384:389 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R396:396 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R383:383 GHC.iS4H <> A:6 var
+R390:391 Syntax.iS4_Syntax <> Or constr
+R395:395 GHC.iS4H <> B:7 var
+R393:393 GHC.iS4H <> A:6 var
+def 410:412 <> IA4
+R421:424 Syntax.iS4_Syntax <> form ind
+binder 415:415 <> A:8
+binder 417:417 <> B:9
+R429:432 Syntax.iS4_Syntax <> form ind
+R438:443 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R450:450 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R437:437 GHC.iS4H <> B:9 var
+R444:445 Syntax.iS4_Syntax <> Or constr
+R449:449 GHC.iS4H <> B:9 var
+R447:447 GHC.iS4H <> A:8 var
+def 464:466 <> IA5
+R477:480 Syntax.iS4_Syntax <> form ind
+binder 469:469 <> A:10
+binder 471:471 <> B:11
+binder 473:473 <> C:12
+R485:488 Syntax.iS4_Syntax <> form ind
+R493:493 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R501:507 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R538:538 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R495:499 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R494:494 GHC.iS4H <> A:10 var
+R500:500 GHC.iS4H <> C:12 var
+R508:508 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R516:522 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R537:537 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R510:514 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R509:509 GHC.iS4H <> B:11 var
+R515:515 GHC.iS4H <> C:12 var
+R523:523 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R530:535 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R524:525 Syntax.iS4_Syntax <> Or constr
+R529:529 GHC.iS4H <> B:11 var
+R527:527 GHC.iS4H <> A:10 var
+R536:536 GHC.iS4H <> C:12 var
+def 552:554 <> IA6
+R563:566 Syntax.iS4_Syntax <> form ind
+binder 557:557 <> A:13
+binder 559:559 <> B:14
+R571:574 Syntax.iS4_Syntax <> form ind
+R579:579 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R587:592 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R580:582 Syntax.iS4_Syntax <> And constr
+R586:586 GHC.iS4H <> B:14 var
+R584:584 GHC.iS4H <> A:13 var
+R593:593 GHC.iS4H <> A:13 var
+def 607:609 <> IA7
+R618:621 Syntax.iS4_Syntax <> form ind
+binder 612:612 <> A:15
+binder 614:614 <> B:16
+R626:629 Syntax.iS4_Syntax <> form ind
+R634:634 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R642:647 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R635:637 Syntax.iS4_Syntax <> And constr
+R641:641 GHC.iS4H <> B:16 var
+R639:639 GHC.iS4H <> A:15 var
+R648:648 GHC.iS4H <> B:16 var
+def 662:664 <> IA8
+R675:678 Syntax.iS4_Syntax <> form ind
+binder 667:667 <> A:17
+binder 669:669 <> B:18
+binder 671:671 <> C:19
+R683:686 Syntax.iS4_Syntax <> form ind
+R691:691 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R699:705 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R737:737 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R693:697 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R692:692 GHC.iS4H <> A:17 var
+R698:698 GHC.iS4H <> B:18 var
+R706:706 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R714:720 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R736:736 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R708:712 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R707:707 GHC.iS4H <> A:17 var
+R713:713 GHC.iS4H <> C:19 var
+R722:727 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R735:735 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R721:721 GHC.iS4H <> A:17 var
+R728:730 Syntax.iS4_Syntax <> And constr
+R734:734 GHC.iS4H <> C:19 var
+R732:732 GHC.iS4H <> B:18 var
+def 751:753 <> IA9
+R760:763 Syntax.iS4_Syntax <> form ind
+binder 756:756 <> A:20
+R768:771 Syntax.iS4_Syntax <> form ind
+R779:783 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R776:778 Syntax.iS4_Syntax <> Bot constr
+R784:784 GHC.iS4H <> A:20 var
+ind 798:804 <> IAxioms
+constr 830:834 <> IA1_I
+constr 882:886 <> IA2_I
+constr 938:942 <> IA3_I
+constr 991:995 <> IA4_I
+constr 1044:1048 <> IA5_I
+constr 1100:1104 <> IA6_I
+constr 1153:1157 <> IA7_I
+constr 1206:1210 <> IA8_I
+constr 1262:1266 <> IA9_I
+R811:814 Syntax.iS4_Syntax <> form ind
+binder 807:807 <> A:21
+R838:838 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R864:868 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R839:845 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R849:850 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 846:846 <> B:24
+binder 848:848 <> C:25
+R852:855 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R863:863 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R851:851 GHC.iS4H <> A:21 var
+R856:858 GHC.iS4H <> IA1 def
+R860:860 GHC.iS4H <> B:24 var
+R862:862 GHC.iS4H <> C:25 var
+R869:875 GHC.iS4H <> IAxioms:22 ind
+R877:877 GHC.iS4H <> A:21 var
+R890:890 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R920:924 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R891:897 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R903:904 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 898:898 <> B:26
+binder 900:900 <> C:27
+binder 902:902 <> D:28
+R906:909 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R919:919 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R905:905 GHC.iS4H <> A:21 var
+R910:912 GHC.iS4H <> IA2 def
+R914:914 GHC.iS4H <> B:26 var
+R916:916 GHC.iS4H <> C:27 var
+R918:918 GHC.iS4H <> D:28 var
+R925:931 GHC.iS4H <> IAxioms:22 ind
+R933:933 GHC.iS4H <> A:21 var
+R947:947 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R973:977 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R948:954 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R958:959 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 955:955 <> B:29
+binder 957:957 <> C:30
+R961:964 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R972:972 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R960:960 GHC.iS4H <> A:21 var
+R965:967 GHC.iS4H <> IA3 def
+R969:969 GHC.iS4H <> B:29 var
+R971:971 GHC.iS4H <> C:30 var
+R978:984 GHC.iS4H <> IAxioms:22 ind
+R986:986 GHC.iS4H <> A:21 var
+R1000:1000 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1026:1030 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1001:1007 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1011:1012 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1008:1008 <> B:31
+binder 1010:1010 <> C:32
+R1014:1017 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1025:1025 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1013:1013 GHC.iS4H <> A:21 var
+R1018:1020 GHC.iS4H <> IA4 def
+R1022:1022 GHC.iS4H <> B:31 var
+R1024:1024 GHC.iS4H <> C:32 var
+R1031:1037 GHC.iS4H <> IAxioms:22 ind
+R1039:1039 GHC.iS4H <> A:21 var
+R1052:1052 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1082:1086 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1053:1059 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1065:1066 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1060:1060 <> B:33
+binder 1062:1062 <> C:34
+binder 1064:1064 <> D:35
+R1068:1071 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1081:1081 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1067:1067 GHC.iS4H <> A:21 var
+R1072:1074 GHC.iS4H <> IA5 def
+R1076:1076 GHC.iS4H <> B:33 var
+R1078:1078 GHC.iS4H <> C:34 var
+R1080:1080 GHC.iS4H <> D:35 var
+R1087:1093 GHC.iS4H <> IAxioms:22 ind
+R1095:1095 GHC.iS4H <> A:21 var
+R1109:1109 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1135:1139 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1110:1116 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1120:1121 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1117:1117 <> B:36
+binder 1119:1119 <> C:37
+R1123:1126 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1134:1134 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1122:1122 GHC.iS4H <> A:21 var
+R1127:1129 GHC.iS4H <> IA6 def
+R1131:1131 GHC.iS4H <> B:36 var
+R1133:1133 GHC.iS4H <> C:37 var
+R1140:1146 GHC.iS4H <> IAxioms:22 ind
+R1148:1148 GHC.iS4H <> A:21 var
+R1162:1162 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1188:1192 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1163:1169 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1173:1174 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1170:1170 <> B:38
+binder 1172:1172 <> C:39
+R1176:1179 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1187:1187 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1175:1175 GHC.iS4H <> A:21 var
+R1180:1182 GHC.iS4H <> IA7 def
+R1184:1184 GHC.iS4H <> B:38 var
+R1186:1186 GHC.iS4H <> C:39 var
+R1193:1199 GHC.iS4H <> IAxioms:22 ind
+R1201:1201 GHC.iS4H <> A:21 var
+R1214:1214 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1244:1248 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1215:1221 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1227:1228 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1222:1222 <> B:40
+binder 1224:1224 <> C:41
+binder 1226:1226 <> D:42
+R1230:1233 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1243:1243 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1229:1229 GHC.iS4H <> A:21 var
+R1234:1236 GHC.iS4H <> IA8 def
+R1238:1238 GHC.iS4H <> B:40 var
+R1240:1240 GHC.iS4H <> C:41 var
+R1242:1242 GHC.iS4H <> D:42 var
+R1249:1255 GHC.iS4H <> IAxioms:22 ind
+R1257:1257 GHC.iS4H <> A:21 var
+R1270:1270 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1292:1296 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1271:1277 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1279:1280 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1278:1278 <> B:43
+R1282:1285 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1291:1291 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1281:1281 GHC.iS4H <> A:21 var
+R1286:1288 GHC.iS4H <> IA9 def
+R1290:1290 GHC.iS4H <> B:43 var
+R1297:1303 GHC.iS4H <> IAxioms:22 ind
+R1305:1305 GHC.iS4H <> A:21 var
+scheme 798:804 <> IAxioms_ind
+scheme 798:804 <> IAxioms_sind
+def 1360:1362 <> MAK
+R1371:1374 Syntax.iS4_Syntax <> form ind
+binder 1365:1365 <> A:44
+binder 1367:1367 <> B:45
+R1379:1382 Syntax.iS4_Syntax <> form ind
+R1400:1405 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R1421:1421 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R1387:1389 Syntax.iS4_Syntax <> Box constr
+R1393:1397 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R1392:1392 GHC.iS4H <> A:44 var
+R1398:1398 GHC.iS4H <> B:45 var
+R1411:1415 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R1406:1408 Syntax.iS4_Syntax <> Box constr
+R1410:1410 GHC.iS4H <> A:44 var
+R1416:1418 Syntax.iS4_Syntax <> Box constr
+R1420:1420 GHC.iS4H <> B:45 var
+def 1435:1437 <> MAT
+R1444:1447 Syntax.iS4_Syntax <> form ind
+binder 1440:1440 <> A:46
+R1452:1455 Syntax.iS4_Syntax <> form ind
+R1465:1469 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R1460:1462 Syntax.iS4_Syntax <> Box constr
+R1464:1464 GHC.iS4H <> A:46 var
+R1470:1470 GHC.iS4H <> A:46 var
+def 1484:1486 <> MA4
+R1493:1496 Syntax.iS4_Syntax <> form ind
+binder 1489:1489 <> A:47
+R1501:1504 Syntax.iS4_Syntax <> form ind
+R1514:1518 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R1509:1511 Syntax.iS4_Syntax <> Box constr
+R1513:1513 GHC.iS4H <> A:47 var
+R1519:1521 Syntax.iS4_Syntax <> Box constr
+R1524:1526 Syntax.iS4_Syntax <> Box constr
+R1528:1528 GHC.iS4H <> A:47 var
+ind 1543:1549 <> MAxioms
+constr 1575:1579 <> MAK_I
+constr 1628:1632 <> MAT_I
+constr 1676:1680 <> MA4_I
+R1556:1559 Syntax.iS4_Syntax <> form ind
+binder 1552:1552 <> A:48
+R1583:1583 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1610:1614 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1584:1590 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1595:1596 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1591:1591 <> B:51
+binder 1594:1594 <> C:52
+R1598:1601 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1609:1609 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1597:1597 GHC.iS4H <> A:48 var
+R1602:1604 GHC.iS4H <> MAK def
+R1606:1606 GHC.iS4H <> B:51 var
+R1608:1608 GHC.iS4H <> C:52 var
+R1615:1621 GHC.iS4H <> MAxioms:49 ind
+R1623:1623 GHC.iS4H <> A:48 var
+R1636:1636 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1658:1662 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1637:1643 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1645:1646 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1644:1644 <> B:53
+R1648:1651 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1657:1657 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1647:1647 GHC.iS4H <> A:48 var
+R1652:1654 GHC.iS4H <> MAT def
+R1656:1656 GHC.iS4H <> B:53 var
+R1663:1669 GHC.iS4H <> MAxioms:49 ind
+R1671:1671 GHC.iS4H <> A:48 var
+R1685:1685 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1707:1711 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1686:1692 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1694:1695 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1693:1693 <> B:54
+R1697:1700 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1706:1706 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1696:1696 GHC.iS4H <> A:48 var
+R1701:1703 GHC.iS4H <> MA4 def
+R1705:1705 GHC.iS4H <> B:54 var
+R1712:1718 GHC.iS4H <> MAxioms:49 ind
+R1720:1720 GHC.iS4H <> A:48 var
+scheme 1543:1549 <> MAxioms_ind
+scheme 1543:1549 <> MAxioms_sind
+def 1735:1740 <> Axioms
+R1747:1750 Syntax.iS4_Syntax <> form ind
+binder 1743:1743 <> A:55
+R1772:1775 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R1763:1769 GHC.iS4H <> IAxioms ind
+R1771:1771 GHC.iS4H <> A:55 var
+R1776:1782 GHC.iS4H <> MAxioms ind
+R1784:1784 GHC.iS4H <> A:55 var
+ind 1931:1936 <> IdRule
+constr 1976:1983 <> IdRule_I
+R1940:1942 General.gen <> rls def
+R1945:1945 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1959:1962 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1946:1953 Coq.Sets.Ensembles <> Ensemble def
+R1955:1958 Syntax.iS4_Syntax <> form ind
+R1963:1966 Syntax.iS4_Syntax <> form ind
+binder 1994:1994 <> A:58
+R2002:2009 Coq.Sets.Ensembles <> Ensemble def
+binder 1997:1998 <> Γ:59
+R2033:2033 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2043:2047 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2034:2035 Coq.Sets.Ensembles <> In def
+R2039:2040 GHC.iS4H <> Γ:59 var
+R2042:2042 GHC.iS4H <> A:58 var
+R2048:2053 GHC.iS4H <> IdRule:56 ind
+R2058:2058 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2061:2063 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2065:2065 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2059:2060 GHC.iS4H <> Γ:59 var
+R2064:2064 GHC.iS4H <> A:58 var
+R2055:2056 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+scheme 1931:1936 <> IdRule_ind
+scheme 1931:1936 <> IdRule_sind
+ind 2079:2084 <> AxRule
+constr 2124:2131 <> AxRule_I
+R2088:2090 General.gen <> rls def
+R2093:2093 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2107:2110 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2094:2101 Coq.Sets.Ensembles <> Ensemble def
+R2103:2106 Syntax.iS4_Syntax <> form ind
+R2111:2114 Syntax.iS4_Syntax <> form ind
+binder 2142:2143 <> Γ:62
+R2150:2153 Syntax.iS4_Syntax <> form ind
+binder 2146:2146 <> A:63
+R2167:2167 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2176:2180 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2168:2173 GHC.iS4H <> Axioms def
+R2175:2175 GHC.iS4H <> A:63 var
+R2181:2186 GHC.iS4H <> AxRule:60 ind
+R2191:2191 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2194:2196 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2198:2198 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2192:2193 GHC.iS4H <> Γ:62 var
+R2197:2197 GHC.iS4H <> A:63 var
+R2188:2189 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+scheme 2079:2084 <> AxRule_ind
+scheme 2079:2084 <> AxRule_sind
+ind 2212:2217 <> MPRule
+constr 2257:2264 <> MPRule_I
+R2221:2223 General.gen <> rls def
+R2226:2226 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2240:2243 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2227:2234 Coq.Sets.Ensembles <> Ensemble def
+R2236:2239 Syntax.iS4_Syntax <> form ind
+R2244:2247 Syntax.iS4_Syntax <> form ind
+binder 2275:2275 <> A:66
+binder 2277:2277 <> B:67
+binder 2279:2280 <> Γ:68
+R2293:2298 GHC.iS4H <> MPRule:64 ind
+R2347:2347 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2350:2352 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2354:2354 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2348:2349 GHC.iS4H <> Γ:68 var
+R2353:2353 GHC.iS4H <> B:67 var
+R2300:2300 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2315:2316 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2325:2325 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2301:2301 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2304:2306 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2314:2314 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2302:2303 GHC.iS4H <> Γ:68 var
+R2308:2312 Syntax.iS4_Syntax <> ::My_scope:x_'-->'_x not
+R2307:2307 GHC.iS4H <> A:66 var
+R2313:2313 GHC.iS4H <> B:67 var
+R2317:2317 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2320:2322 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2324:2324 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2318:2319 GHC.iS4H <> Γ:68 var
+R2323:2323 GHC.iS4H <> A:66 var
+scheme 2212:2217 <> MPRule_ind
+scheme 2212:2217 <> MPRule_sind
+ind 2368:2374 <> NecRule
+constr 2414:2422 <> NecRule_I
+R2378:2380 General.gen <> rls def
+R2383:2383 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2397:2400 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2384:2391 Coq.Sets.Ensembles <> Ensemble def
+R2393:2396 Syntax.iS4_Syntax <> form ind
+R2401:2404 Syntax.iS4_Syntax <> form ind
+R2438:2441 Syntax.iS4_Syntax <> form ind
+binder 2434:2434 <> A:71
+binder 2444:2445 <> Γ:72
+R2458:2464 GHC.iS4H <> NecRule:69 ind
+R2526:2526 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2529:2531 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2537:2537 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2527:2528 GHC.iS4H <> Γ:72 var
+R2532:2534 Syntax.iS4_Syntax <> Box constr
+R2536:2536 GHC.iS4H <> A:71 var
+R2466:2466 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2487:2487 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2467:2467 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2482:2484 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2486:2486 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2468:2476 Coq.Sets.Ensembles <> Empty_set ind
+R2478:2481 Syntax.iS4_Syntax <> form ind
+R2485:2485 GHC.iS4H <> A:71 var
+scheme 2368:2374 <> NecRule_ind
+scheme 2368:2374 <> NecRule_sind
+ind 2599:2608 <> iS4H_rules
+constr 2652:2653 <> Id
+constr 2689:2690 <> Ax
+constr 2726:2727 <> MP
+constr 2827:2829 <> Nec
+R2616:2616 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2627:2630 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2617:2624 Coq.Sets.Ensembles <> Ensemble def
+R2631:2634 Syntax.iS4_Syntax <> form ind
+binder 2611:2611 <> s:73
+R2668:2671 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2657:2662 GHC.iS4H <> IdRule ind
+R2664:2665 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R2667:2667 GHC.iS4H <> s:73 var
+R2672:2681 GHC.iS4H <> iS4H_rules:74 ind
+R2683:2683 GHC.iS4H <> s:73 var
+R2705:2708 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2694:2699 GHC.iS4H <> AxRule ind
+R2701:2702 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R2704:2704 GHC.iS4H <> s:73 var
+R2709:2718 GHC.iS4H <> iS4H_rules:74 ind
+R2720:2720 GHC.iS4H <> s:73 var
+binder 2738:2739 <> ps:76
+R2742:2742 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2790:2794 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 2750:2753 <> prem:77
+R2771:2774 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2756:2762 Coq.Lists.List <> In def
+R2769:2770 GHC.iS4H <> ps:76 var
+R2764:2767 GHC.iS4H <> prem:77 var
+R2775:2784 GHC.iS4H <> iS4H_rules:74 ind
+R2786:2789 GHC.iS4H <> prem:77 var
+R2806:2809 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2795:2800 GHC.iS4H <> MPRule ind
+R2802:2803 GHC.iS4H <> ps:76 var
+R2805:2805 GHC.iS4H <> s:73 var
+R2810:2819 GHC.iS4H <> iS4H_rules:74 ind
+R2821:2821 GHC.iS4H <> s:73 var
+binder 2840:2841 <> ps:78
+R2844:2844 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2892:2896 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 2852:2855 <> prem:79
+R2873:2876 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2858:2864 Coq.Lists.List <> In def
+R2871:2872 GHC.iS4H <> ps:78 var
+R2866:2869 GHC.iS4H <> prem:79 var
+R2877:2886 GHC.iS4H <> iS4H_rules:74 ind
+R2888:2891 GHC.iS4H <> prem:79 var
+R2909:2912 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2897:2903 GHC.iS4H <> NecRule ind
+R2905:2906 GHC.iS4H <> ps:78 var
+R2908:2908 GHC.iS4H <> s:73 var
+R2913:2922 GHC.iS4H <> iS4H_rules:74 ind
+R2924:2924 GHC.iS4H <> s:73 var
+scheme 2599:2608 <> iS4H_rules_ind
+scheme 2599:2608 <> iS4H_rules_sind
+def 2988:2995 <> iS4H_prv
+binder 2997:2997 <> s:80
+R3002:3011 GHC.iS4H <> iS4H_rules ind
+R3013:3013 GHC.iS4H <> s:80 var
