@@ -16,7 +16,7 @@ Require Import iS4_Lindenbaum_lem.
 
 Section Completeness.
 
-(* We first create the canonical poset. *)
+(* We first create the canonical preorder. *)
 
 Class Canon_worlds Γ : Type :=
   { world : @Ensemble form ;
@@ -42,7 +42,7 @@ intro. intros. unfold Canon_rel in H0. unfold Canon_rel in H.
 apply H0. apply H. auto.
 Qed.
 
-Instance CPos Γ : poset :=
+Instance CPre Γ : preorder :=
       {|
         nodes := Canon_worlds Γ ;
 
@@ -51,19 +51,19 @@ Instance CPos Γ : poset :=
         reach_tran := C_R_trans Γ ;
       |}.
 
-(* Then we create interior operator for the canonical poset. *)
+(* Then we create interior operator for the canonical preorder. *)
 
-Definition Theories Γ φ : Ensemble (@nodes (CPos Γ)) :=
+Definition Theories Γ φ : Ensemble (@nodes (CPre Γ)) :=
   fun x => In _ (@world Γ x) φ.
 
 Lemma Theories_upset : forall Γ φ,
-  forall (w : @nodes (CPos Γ)), ((Theories Γ φ) w) ->
-            forall y, @reachable (CPos Γ) w y -> ((Theories Γ φ) y).
+  forall (w : @nodes (CPre Γ)), ((Theories Γ φ) w) ->
+            forall y, @reachable (CPre Γ) w y -> ((Theories Γ φ) y).
 Proof.
 intros. unfold Theories, In in *. unfold reachable in H0. simpl in H0. apply H0 ; auto.
 Qed.
 
-Instance upTheories Γ φ : (upset (CPos Γ)) :=
+Instance upTheories Γ φ : (upset (CPre Γ)) :=
       {|
         uset := Theories Γ φ;
         is_upset := Theories_upset Γ φ
@@ -82,15 +82,15 @@ Definition Inf_Union {X : Type} (E : Ensemble (Ensemble X)) : Ensemble X :=
 
  (* We define the function Ci, the interior function on the canonical model.  *)
 
-Definition Ci_uset Γ (u : upset (CPos Γ)) : Ensemble (@nodes (CPos Γ)) :=
+Definition Ci_uset Γ (u : upset (CPre Γ)) : Ensemble (@nodes (CPre Γ)) :=
    Inf_Union (fun x => exists (l: list form),
      (Included _ (fun y => List.In y (map Box l)) (Clos Γ)) /\ (* All formulae in Box l are in Clos Γ. *)
       Included _ (Weird_Fin_Intersection (map (Theories Γ) l)) (@uset _ u) /\
       x = Weird_Fin_Intersection (map (Theories _) (map Box l))).
 
-Lemma Ci_upset : forall Γ (u : upset (CPos Γ)),
-  forall (w : @nodes (CPos Γ)), ((Ci_uset Γ u) w) ->
-            forall y, @reachable (CPos Γ) w y -> ((Ci_uset Γ u) y).
+Lemma Ci_upset : forall Γ (u : upset (CPre Γ)),
+  forall (w : @nodes (CPre Γ)), ((Ci_uset Γ u) w) ->
+            forall y, @reachable (CPre Γ) w y -> ((Ci_uset Γ u) y).
 Proof.
 intros. unfold Ci_uset, Inf_Union in *. destruct H. destruct H.
 unfold In in H. destruct H as ( l & H2 & H3 & H4). subst.
@@ -110,7 +110,7 @@ repeat split.
   split. unfold Theories. auto. apply in_map_iff ; exists x0 ; auto.
 Qed.
 
-Instance Ci Γ (u : upset (CPos Γ)) : (upset (CPos Γ)) :=
+Instance Ci Γ (u : upset (CPre Γ)) : (upset (CPre Γ)) :=
       {|
         uset := Ci_uset Γ u;
         is_upset := Ci_upset Γ u
@@ -118,7 +118,7 @@ Instance Ci Γ (u : upset (CPos Γ)) : (upset (CPos Γ)) :=
 
   (* Then, we proceed to show that Ci is indeed an interior operator. *)
 
-Lemma Ci_unit Γ : Ci Γ (unit_upset (CPos Γ)) = (unit_upset (CPos Γ)).
+Lemma Ci_unit Γ : Ci Γ (unit_upset (CPre Γ)) = (unit_upset (CPre Γ)).
 Proof.
 apply upset_prf_irrel. apply Extensionality_Ensembles. split ; intros A HA ; auto.
 unfold In. unfold uset. simpl ; auto. unfold In in *. unfold uset in * ; simpl in *.
@@ -128,7 +128,7 @@ simpl. apply Extensionality_Ensembles. split ; intros B HB ; simpl in *. unfold 
 unfold In. intros. inversion H. unfold In ; auto.
 Qed.
 
-Lemma Ci_inter Γ : forall u0 u1, @uset _ (Ci  Γ (inter_upset (CPos Γ) u0 u1)) = @uset _ (inter_upset (CPos Γ) (Ci Γ u0) (Ci Γ u1)).
+Lemma Ci_inter Γ : forall u0 u1, @uset _ (Ci  Γ (inter_upset (CPre Γ) u0 u1)) = @uset _ (inter_upset (CPre Γ) (Ci Γ u0) (Ci Γ u1)).
 Proof.
 intros. unfold uset ; simpl. unfold Ci_uset ; simpl.
 unfold Inf_Union ; simpl. apply Extensionality_Ensembles. split ; intros A HA ; auto.
@@ -160,7 +160,7 @@ unfold Inf_Union ; simpl. apply Extensionality_Ensembles. split ; intros A HA ; 
      apply in_map_iff. exists (Box x2). split ; auto. apply in_map_iff ; exists x2 ; split ; auto.
 Qed.
 
-Lemma Ci_T Γ :forall u, Included _ (@uset (CPos Γ) (Ci Γ u)) (@uset (CPos Γ) u).
+Lemma Ci_T Γ :forall u, Included _ (@uset (CPre Γ) (Ci Γ u)) (@uset (CPre Γ) u).
 Proof.
 intros u A HA. unfold In in *. unfold uset in *. simpl in *. unfold Ci_uset in HA. unfold Inf_Union in HA.
 destruct HA. unfold In in H. destruct H. destruct H. destruct H. destruct H1 ; subst.
@@ -199,7 +199,7 @@ apply subform_trans with (φ:=(Box (Box x1))) ; auto.
 simpl. auto.
 Qed.
 
-Lemma Ci_4 Γ : forall u, Included _ (@uset (CPos Γ) (Ci Γ u)) (@uset (CPos Γ) (Ci Γ (Ci Γ u))).
+Lemma Ci_4 Γ : forall u, Included _ (@uset (CPre Γ) (Ci Γ u)) (@uset (CPre Γ) (Ci Γ (Ci Γ u))).
 Proof.
 intros u w Hw. unfold In in *. unfold uset in *. simpl in *. unfold Ci_uset in Hw. unfold Inf_Union in Hw.
 unfold In in *. destruct Hw. destruct H as (H0 & H1). destruct H0 as (l & H2 & H3 & H4) ; subst.
@@ -234,7 +234,7 @@ Qed.
 
 (* We define the canonical valuation. *)
 
-Definition Canon_val Γ (q : nat) : upset (CPos Γ) := upTheories Γ (# q).
+Definition Canon_val Γ (q : nat) : upset (CPre Γ) := upTheories Γ (# q).
 
 Lemma C_val_persist : forall Γ u v, Canon_rel Γ u v -> forall p, In _ (@uset _ (Canon_val Γ p)) u -> In _ (@uset _ (Canon_val Γ p)) v.
 Proof.
@@ -245,7 +245,7 @@ Qed.
 
 Instance CM Γ : model :=
       {|
-        pos := CPos Γ ;
+        pre := CPre Γ ;
 
         i := Ci Γ ;
         i_unit := Ci_unit Γ ;
