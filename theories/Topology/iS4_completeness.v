@@ -503,5 +503,3 @@ End Completeness.
 
 Print Assumptions Completeness.
 
-
-  
