@@ -24,7 +24,7 @@ Class Canon_worlds Γ : Type :=
     wNotDer : ~ iS4H_prv (world, Bot) ;
     wClosed : restr_closed (Clos Γ) world ;
     wStable : restr_stable (Clos Γ) world ;
-    wPrime : restr_quasi_prime (Clos Γ) world
+    wPrime : quasi_prime world
   }.
 
 Definition Canon_rel Γ (P0 P1 : Canon_worlds Γ) : Prop :=
@@ -261,13 +261,13 @@ Instance CM Γ : model :=
 
 Axiom LEM : forall P, P \/ ~ P.
 
-Lemma LEM_restr_prime Γ Δ :
-  restr_quasi_prime Γ Δ  -> restr_prime Γ Δ .
+Lemma LEM_prime Δ :
+  quasi_prime Δ  -> prime Δ .
 Proof.
-  intros H1 A B H2 H3.
-  apply H1 in H3 ; auto. destruct (LEM (Δ  A)) ; auto.
-  destruct (LEM (Δ  B)) ; auto. exfalso. apply H3.
-  intro. destruct H4; auto.
+  intros H1 A B H2.
+  apply H1 in H2 ; auto. destruct (LEM (Δ  A)) ; auto.
+  destruct (LEM (Δ  B)) ; auto. exfalso. apply H2.
+  intro. destruct H3 ; auto.
 Qed.
 
 Lemma LEM_Lindenbaum Γ Δ ψ :
@@ -278,12 +278,12 @@ Lemma LEM_Lindenbaum Γ Δ ψ :
            /\ Included _ Δm (Clos Γ)
            /\ restr_closed (Clos Γ) Δm
            /\ restr_stable (Clos Γ) Δm
-           /\ restr_prime (Clos Γ) Δm
+           /\ prime Δm
            /\ ~ iS4H_prv (Δm, ψ).
 Proof.
 intros. apply Lindenbaum with (Γ:=Γ) in H1 ; auto.
 destruct H1 as (Δm & H2 & H3 & H4 & H5 & H6 & H7).
-exists Δm ; repeat split ; auto. apply LEM_restr_prime ; auto.
+exists Δm ; repeat split ; auto. apply LEM_prime ; auto.
 Qed.
 
 Lemma LEM_world Γ ψ Δ :
@@ -299,7 +299,7 @@ Proof.
     apply MP with (ps:=[(Δm, Bot --> ψ);(Δm, Bot)]). 2: apply MPRule_I.
     intros. inversion H9 ; subst. apply Ax. apply AxRule_I. left. apply IA9_I.
     eexists ; auto. inversion H10 ; subst ; auto. inversion H11.
-    intros A B H8 H9 H10. apply H6 in H9 ; auto.
+    intros A B H8 H9. apply H6 in H8 ; auto.
   - intuition. apply H7. apply Id. apply IdRule_I ; auto.
 Qed.
 
@@ -405,7 +405,7 @@ induction ψ ; intros ; split ; intros ; simpl ; try simpl in H1 ; auto.
   assert (Jψ2: Clos Γ ψ2).
   apply Incl_ClosSubform_Clos. unfold In. exists (ψ1 ∨ ψ2). split ; simpl ; auto. right.
   apply in_or_app ; right ; destruct ψ2 ; simpl ; auto.
-  pose (LEM_restr_prime _ world  wPrime). apply r in H0 ; auto. destruct H0.
+  pose (LEM_prime _  wPrime). apply p in H0. destruct H0.
   left. apply IHψ1 ; auto.
   right. apply IHψ2 ; auto.
 (* Imp ψ1 ψ2 *)

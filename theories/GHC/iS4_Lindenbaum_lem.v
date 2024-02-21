@@ -29,17 +29,11 @@ Definition restr_closed Γ Δ :=
 Definition restr_stable (Γ Δ  : @Ensemble form) :=
   forall φ, Γ φ -> ~ ~ Δ φ -> Δ φ.
 
-(* Definition prime (Γ : @Ensemble form) :=
-  forall φ ψ, Γ (Or φ ψ) -> Γ φ \/ Γ ψ. *)
+Definition prime (Γ : @Ensemble form) :=
+  forall φ ψ, Γ (Or φ ψ) -> Γ φ \/ Γ ψ.
 
-Definition restr_prime (Γ Δ : @Ensemble form) :=
-  forall φ ψ, Γ (Or φ ψ) -> Δ (Or φ ψ) -> (Δ φ \/ Δ ψ).
-
-(* Definition quasi_prime (Γ : @Ensemble form) :=
-  forall φ ψ, Γ (Or φ ψ) -> ~ ~ (Γ φ \/ Γ ψ). *)
-
-Definition restr_quasi_prime (Γ Δ : @Ensemble form) :=
-  forall φ ψ, Γ (Or φ ψ) -> Δ (Or φ ψ) -> ~ ~ (Δ φ \/ Δ ψ).
+Definition quasi_prime (Γ : @Ensemble form) :=
+  forall φ ψ, Γ (Or φ ψ) -> ~ ~ (Γ φ \/ Γ ψ).
 
 End Sets_of_forms.
 
@@ -273,18 +267,19 @@ Qed.
 
 (* A prime pair is prime. *)
 
-Lemma restr_quasi_prime_Lind_theory: forall Γ Δ ψ,
+Lemma quasi_prime_Lind_theory: forall Γ Δ ψ,
   Included _ Δ (Clos Γ) ->
   ~ iS4H_prv (Δ, ψ) ->
-  restr_quasi_prime (Clos Γ) (Lind_theory (Clos Γ) Δ ψ).
+  quasi_prime (Lind_theory (Clos Γ) Δ ψ).
 Proof.
-intros Γ Δ ψ Incl H0 a b Horg Hor H1. remember (Clos Γ) as CΓ.
+intros Γ Δ ψ Incl H0 a b Hor H1. remember (Clos Γ) as CΓ.
 
 apply H1. left. exists (form_index a).
 remember (form_index a) as n. destruct n ; simpl.
 - unfold choice_code. unfold choice_form. unfold In.
   right. repeat split. 3: rewrite Heqn ; apply form_enum_index.
   subst. apply Incl_ClosSubform_Clos. exists (a ∨ b). split ; auto.
+  apply incl_Lind_theory in Hor ; auto.
   simpl. right ; apply in_or_app ; left ; destruct a ; simpl ; auto.
   intro. apply H1. right. exists (form_index b).
   remember (form_index b) as m. destruct m ; simpl.
@@ -311,6 +306,7 @@ remember (form_index a) as n. destruct n ; simpl.
     inversion H3 ; subst. 2: inversion H4. apply Id. apply IdRule_I ; auto.
   + subst. unfold choice_code. unfold choice_form. unfold In. right. repeat split.
      subst. apply Incl_ClosSubform_Clos. exists (a ∨ b). split ; auto.
+     apply incl_Lind_theory in Hor ; auto.
      simpl. right ; apply in_or_app ; right ; destruct b ; simpl ; auto.
      2: rewrite Heqm ; apply form_enum_index. intro.
      pose (Under_Lind_theory (Clos Γ) Δ ψ Incl H0). apply n.
@@ -335,11 +331,13 @@ remember (form_index a) as n. destruct n ; simpl.
 - unfold choice_code. unfold choice_form. unfold In.
   right. repeat split. 3: rewrite Heqn ; apply form_enum_index.
   subst. apply Incl_ClosSubform_Clos. exists (a ∨ b). split ; auto.
+  apply incl_Lind_theory in Hor ; auto.
   simpl. right ; apply in_or_app ; left ; destruct a ; simpl ; auto.
   intro. apply H1. right. exists (form_index b).
   remember (form_index b) as m. destruct m ; simpl.
   + subst. unfold choice_code. unfold choice_form. unfold In. right. repeat split.
      subst. apply Incl_ClosSubform_Clos. exists (a ∨ b). split ; auto.
+     apply incl_Lind_theory in Hor ; auto.
      simpl. right ; apply in_or_app ; right ; destruct b ; simpl ; auto.
      2: rewrite Heqm ; apply form_enum_index. intro.
      pose (Under_Lind_theory (Clos Γ) Δ ψ Incl H0). apply n0.
@@ -363,6 +361,7 @@ remember (form_index a) as n. destruct n ; simpl.
      inversion H4 ; subst. 2: inversion H5. apply Id. apply IdRule_I ; auto.
   + subst. unfold choice_code. unfold choice_form. unfold In. right. repeat split.
      subst. apply Incl_ClosSubform_Clos. exists (a ∨ b). split ; auto.
+     apply incl_Lind_theory in Hor ; auto.
      simpl. right ; apply in_or_app ; right ; destruct b ; simpl ; auto.
      2: rewrite Heqm ; apply form_enum_index. intro.
      pose (Under_Lind_theory (Clos Γ) Δ ψ Incl H0). apply n0.
@@ -386,18 +385,19 @@ remember (form_index a) as n. destruct n ; simpl.
      inversion H4 ; subst. 2: inversion H5. apply Id. apply IdRule_I ; auto.
 Qed.
 
-Lemma restr_quasi_prime_Lind_theory': forall Γ Δ ψ,
+Lemma quasi_prime_Lind_theory': forall Γ Δ ψ,
   Included _ Δ (Clos' Γ) ->
   ~ iS4H_prv (Δ, ψ) ->
-  restr_quasi_prime (Clos' Γ) (Lind_theory (Clos' Γ) Δ ψ).
+  quasi_prime (Lind_theory (Clos' Γ) Δ ψ).
 Proof.
-intros Γ Δ ψ Incl H0 a b Horg Hor H1. remember (Clos' Γ) as CΓ.
+intros Γ Δ ψ Incl H0 a b Hor H1. remember (Clos' Γ) as CΓ.
 
 apply H1. left. exists (form_index a).
 remember (form_index a) as n. destruct n ; simpl.
 - unfold choice_code. unfold choice_form. unfold In.
   right. repeat split. 3: rewrite Heqn ; apply form_enum_index.
   subst. apply Incl_ClosSubform_Clos'. exists (a ∨ b). split ; auto.
+  apply incl_Lind_theory in Hor ; auto.
   simpl. right ; apply in_or_app ; left ; destruct a ; simpl ; auto.
   intro. apply H1. right. exists (form_index b).
   remember (form_index b) as m. destruct m ; simpl.
@@ -424,6 +424,7 @@ remember (form_index a) as n. destruct n ; simpl.
     inversion H3 ; subst. 2: inversion H4. apply Id. apply IdRule_I ; auto.
   + subst. unfold choice_code. unfold choice_form. unfold In. right. repeat split.
      subst. apply Incl_ClosSubform_Clos'. exists (a ∨ b). split ; auto.
+     apply incl_Lind_theory in Hor ; auto.
      simpl. right ; apply in_or_app ; right ; destruct b ; simpl ; auto.
      2: rewrite Heqm ; apply form_enum_index. intro.
      pose (Under_Lind_theory (Clos' Γ) Δ ψ Incl H0). apply n.
@@ -448,11 +449,13 @@ remember (form_index a) as n. destruct n ; simpl.
 - unfold choice_code. unfold choice_form. unfold In.
   right. repeat split. 3: rewrite Heqn ; apply form_enum_index.
   subst. apply Incl_ClosSubform_Clos'. exists (a ∨ b). split ; auto.
+  apply incl_Lind_theory in Hor ; auto.
   simpl. right ; apply in_or_app ; left ; destruct a ; simpl ; auto.
   intro. apply H1. right. exists (form_index b).
   remember (form_index b) as m. destruct m ; simpl.
   + subst. unfold choice_code. unfold choice_form. unfold In. right. repeat split.
      subst. apply Incl_ClosSubform_Clos'. exists (a ∨ b). split ; auto.
+     apply incl_Lind_theory in Hor ; auto.
      simpl. right ; apply in_or_app ; right ; destruct b ; simpl ; auto.
      2: rewrite Heqm ; apply form_enum_index. intro.
      pose (Under_Lind_theory (Clos' Γ) Δ ψ Incl H0). apply n0.
@@ -476,6 +479,7 @@ remember (form_index a) as n. destruct n ; simpl.
      inversion H4 ; subst. 2: inversion H5. apply Id. apply IdRule_I ; auto.
   + subst. unfold choice_code. unfold choice_form. unfold In. right. repeat split.
      subst. apply Incl_ClosSubform_Clos'. exists (a ∨ b). split ; auto.
+     apply incl_Lind_theory in Hor ; auto.
      simpl. right ; apply in_or_app ; right ; destruct b ; simpl ; auto.
      2: rewrite Heqm ; apply form_enum_index. intro.
      pose (Under_Lind_theory (Clos' Γ) Δ ψ Incl H0). apply n0.
@@ -566,7 +570,7 @@ Lemma Lindenbaum Γ Δ ψ :
            /\ Included _ Δm (Clos Γ)
            /\ restr_closed (Clos Γ) Δm
            /\ restr_stable (Clos Γ) Δm
-           /\ restr_quasi_prime (Clos Γ) Δm
+           /\ quasi_prime Δm
            /\ ~ iS4H_prv (Δm, ψ).
 Proof.
 intros.
@@ -576,7 +580,7 @@ repeat split.
 - apply incl_Lind_theory ; auto.
 - apply restr_closeder_Lind_theory ; auto.
 - apply stable_Lind_theory ; auto.
-- pose restr_quasi_prime_Lind_theory ; auto.
+- pose quasi_prime_Lind_theory ; auto.
 - intro. apply Under_Lind_theory with (Γ:=(Clos Γ)) in H1 ; auto.
 Qed.
 
@@ -588,7 +592,7 @@ Lemma Lindenbaum' Γ Δ ψ :
            /\ Included _ Δm (Clos' Γ)
            /\ restr_closed (Clos' Γ) Δm
            /\ restr_stable (Clos' Γ) Δm
-           /\ restr_quasi_prime (Clos' Γ) Δm
+           /\ quasi_prime Δm
            /\ ~ iS4H_prv (Δm, ψ).
 Proof.
 intros.
@@ -598,7 +602,7 @@ repeat split.
 - apply incl_Lind_theory ; auto.
 - apply restr_closeder_Lind_theory ; auto.
 - apply stable_Lind_theory ; auto.
-- pose restr_quasi_prime_Lind_theory' ; auto.
+- pose quasi_prime_Lind_theory' ; auto.
 - intro. apply Under_Lind_theory with (Γ:=(Clos' Γ)) in H1 ; auto.
 Qed.
 

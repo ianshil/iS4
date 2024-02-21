@@ -118,10 +118,7 @@ Definition BoxOne φ : form :=
 
 Definition BoxTwo φ : form :=
   match φ with
-  | Box ψ => match ψ with
-                   | Box χ => φ
-                   | _ => Box φ
-                   end
+  | Box ψ => Box (BoxOne ψ)
   | _ => Box (Box φ)
   end.
 
@@ -304,7 +301,6 @@ Qed.
 Lemma BoxTwo_UnBox_fixpoint : forall φ, BoxTwo φ = Box (UnBox (BoxTwo φ)).
 Proof.
 induction φ ; simpl ; auto.
-destruct φ ; simpl ; auto.
 Qed.
 
 Lemma In_Clos_not_box : forall Γ φ, ((exists ψ, φ = Box ψ) -> False) -> (Clos Γ) φ -> (ClosSubform Γ) φ.
