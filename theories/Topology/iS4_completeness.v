@@ -50,6 +50,25 @@ Instance CPre Γ : preorder :=
         reach_tran := C_R_trans Γ ;
       |}.
 
+(* As expected, we can create canonical worlds using our
+   Lindenbaum lemma. *)
+
+Lemma Lindenbaum_world Γ ψ Δ :
+  In _ (Clos Γ) ψ ->
+  Included _ Δ (Clos Γ) ->
+  ~ iS4H_prv (Δ, ψ) ->
+  exists w : Canon_worlds Γ, Included _ Δ world /\ ~ In _ world ψ.
+Proof.
+  intros. pose (Lindenbaum _ _ _ H H0 H1).
+  destruct e as (Δm & H2 & H3 & H4 & H5 & H6).
+  unshelve eexists.
+  - apply (Build_Canon_worlds Γ Δm); intuition ; simpl. apply H6.
+    apply MP with (ps:=[(Δm, Bot --> ψ);(Δm, Bot)]). 2: apply MPRule_I.
+    intros. inversion H8 ; subst. apply Ax. apply AxRule_I. left. apply IA9_I.
+    eexists ; auto. inversion H9 ; subst ; auto. inversion H10.
+  - intuition. apply H6. apply Id. apply IdRule_I ; auto.
+Qed.
+
 (* Then we create interior operator for the canonical preorder. *)
 
 Definition Theories Γ φ : Ensemble (@nodes (CPre Γ)) :=
@@ -260,6 +279,9 @@ Instance CM Γ : model :=
 
 Axiom LEM : forall P, P \/ ~ P.
 
+(* A crucial consequence of LEM is that quasi-prime sets
+   of formulas are now prime. *)
+
 Lemma LEM_prime Δ :
   quasi_prime Δ  -> prime Δ .
 Proof.
@@ -269,39 +291,9 @@ Proof.
   intro. destruct H3 ; auto.
 Qed.
 
-Lemma LEM_Lindenbaum Γ Δ ψ :
-  In _ (Clos Γ) ψ ->
-  Included _ Δ (Clos Γ) ->
-  ~ iS4H_prv (Δ, ψ) ->
-  exists Δm, Included _ Δ Δm
-           /\ Included _ Δm (Clos Γ)
-           /\ restr_closed (Clos Γ) Δm
-           /\ prime Δm
-           /\ ~ iS4H_prv (Δm, ψ).
-Proof.
-intros. apply Lindenbaum with (Γ:=Γ) in H1 ; auto.
-destruct H1 as (Δm & H2 & H3 & H4 & H5 & H6).
-exists Δm ; repeat split ; auto. apply LEM_prime ; auto.
-Qed.
-
-Lemma LEM_world Γ ψ Δ :
-  In _ (Clos Γ) ψ ->
-  Included _ Δ (Clos Γ) ->
-  ~ iS4H_prv (Δ, ψ) ->
-  exists w : Canon_worlds Γ, Included _ Δ world /\ ~ In _ world ψ.
-Proof.
-  intros. pose (LEM_Lindenbaum _ _ _ H H0 H1).
-  destruct e as (Δm & H2 & H3 & H4 & H5 & H6).
-  unshelve eexists.
-  - apply (Build_Canon_worlds Γ Δm); intuition ; simpl. apply H6.
-    apply MP with (ps:=[(Δm, Bot --> ψ);(Δm, Bot)]). 2: apply MPRule_I.
-    intros. inversion H8 ; subst. apply Ax. apply AxRule_I. left. apply IA9_I.
-    eexists ; auto. inversion H9 ; subst ; auto. inversion H10.
-    intros A B H8 H9. apply H5 in H8 ; auto.
-  - intuition. apply H6. apply Id. apply IdRule_I ; auto.
-Qed.
-
-(* Stepping stone for the truth lemma. *)
+(* Then, we can easily prove a stepping stone for the
+    truth lemma. This lemma may be proved constructively
+    but we could not find a constructive proof for it. *)
 
 Lemma j_list : forall Γ l0 l1,
   Included _ (fun y => List.In y (map Box l0)) (Clos Γ) ->
@@ -323,13 +315,13 @@ enough (iS4H_rules ((fun x => List.In x (map Box l0)), Box x0)).
      exists x ; split ; auto. unfold In in *. apply in_map_iff in HA. destruct HA. destruct H4 ; subst.
      exists x ; split ; auto.
      rewrite <- H4 ; auto.
-  + destruct (LEM (iS4H_prv (fun x : form => List.In x l0, x0))) ; auto. exfalso.
-     assert (J0: In form (Clos Γ) x0). apply Incl_ClosSubform_Clos. exists (Box x0). split ; auto. apply H0.
+  + assert (J0: In form (Clos Γ) x0). apply Incl_ClosSubform_Clos. exists (Box x0). split ; auto. apply H0.
      unfold In. apply in_map_iff. exists x0 ; auto. simpl ; right ; destruct x0 ; simpl ; auto.
      assert (J1: Included form (fun x : form => List.In x l0) (Clos Γ)).
      intros A HA. apply Incl_ClosSubform_Clos. exists (Box A). split ; auto.
      apply H. simpl ; apply in_map_iff. eexists ; auto. simpl ; right ; destruct A ; simpl ; auto.
-     pose (LEM_world _ _ _ J0 J1 H2). destruct e. destruct H4.
+     destruct (LEM (iS4H_prv (fun x : form => List.In x l0, x0))) ; auto. exfalso.
+     pose (Lindenbaum_world _ _ _ J0 J1 H2). destruct e. destruct H4.
      pose (H1 x). unfold In in *. apply H5. apply i.
      intros. apply in_map_iff in H6. destruct H6. destruct H6 ; subst. apply H4. auto.
      apply in_map_iff. exists x0. split ; auto.
@@ -419,7 +411,7 @@ induction ψ ; intros ; split ; intros ; simpl ; try simpl in H1 ; auto.
   apply H1. apply wClosed ; auto.
   assert (Included form (Union form world (Singleton form ψ1)) (Clos Γ)).
   intros A HA. inversion HA ; subst. apply wInclClos ; auto. inversion H3 ; subst ;  auto.
-  pose (LEM_world _ _ _ Jψ2 H3 H2). destruct e as [w [Hw1 Hw2]].
+  pose (Lindenbaum_world _ _ _ Jψ2 H3 H2). destruct e as [w [Hw1 Hw2]].
   assert (J2: Canon_rel _ cp w). unfold Canon_rel.
   intros A HA. apply Hw1. apply Union_introl. auto. simpl in H0.
   pose (H0 _ J2). apply Hw2. apply IHψ2 ; auto. apply f. apply IHψ1 ; auto.
@@ -477,7 +469,7 @@ Theorem QuasiCompleteness : forall s,
     (iS4H_rules s -> False) -> ((loc_conseq (fst s) (snd s)) -> False).
 Proof.
 intros s WD H. destruct s ; simpl in *.
-apply LEM_world with (Γ:=Union _ e (Singleton _ f)) in WD ; auto.
+apply Lindenbaum_world with (Γ:=Union _ e (Singleton _ f)) in WD ; auto.
 - destruct WD as (w & H1 & H2).
   assert ((forall A, In _ e A -> forces (CM _) w A)). intros. apply truth_lemma. 2: auto.
   apply wInclClos ; auto. apply H in H0. apply truth_lemma in H0 ; auto.
