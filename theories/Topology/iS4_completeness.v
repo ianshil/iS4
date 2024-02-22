@@ -21,9 +21,8 @@ Section Completeness.
 Class Canon_worlds Γ : Type :=
   { world : @Ensemble form ;
     wInclClos : Included _ world (Clos Γ) ;
-    wNotDer : ~ iS4H_prv (world, Bot) ;
     wClosed : restr_closed (Clos Γ) world ;
-    wStable : restr_stable (Clos Γ) world ;
+    wNotDer : ~ iS4H_prv (world, Bot) ;
     wPrime : quasi_prime world
   }.
 
@@ -277,12 +276,11 @@ Lemma LEM_Lindenbaum Γ Δ ψ :
   exists Δm, Included _ Δ Δm
            /\ Included _ Δm (Clos Γ)
            /\ restr_closed (Clos Γ) Δm
-           /\ restr_stable (Clos Γ) Δm
            /\ prime Δm
            /\ ~ iS4H_prv (Δm, ψ).
 Proof.
 intros. apply Lindenbaum with (Γ:=Γ) in H1 ; auto.
-destruct H1 as (Δm & H2 & H3 & H4 & H5 & H6 & H7).
+destruct H1 as (Δm & H2 & H3 & H4 & H5 & H6).
 exists Δm ; repeat split ; auto. apply LEM_prime ; auto.
 Qed.
 
@@ -293,14 +291,14 @@ Lemma LEM_world Γ ψ Δ :
   exists w : Canon_worlds Γ, Included _ Δ world /\ ~ In _ world ψ.
 Proof.
   intros. pose (LEM_Lindenbaum _ _ _ H H0 H1).
-  destruct e as (Δm & H2 & H3 & H4 & H5 & H6 & H7).
+  destruct e as (Δm & H2 & H3 & H4 & H5 & H6).
   unshelve eexists.
-  - apply (Build_Canon_worlds Γ Δm); intuition ; simpl. apply H7.
+  - apply (Build_Canon_worlds Γ Δm); intuition ; simpl. apply H6.
     apply MP with (ps:=[(Δm, Bot --> ψ);(Δm, Bot)]). 2: apply MPRule_I.
-    intros. inversion H9 ; subst. apply Ax. apply AxRule_I. left. apply IA9_I.
-    eexists ; auto. inversion H10 ; subst ; auto. inversion H11.
-    intros A B H8 H9. apply H6 in H8 ; auto.
-  - intuition. apply H7. apply Id. apply IdRule_I ; auto.
+    intros. inversion H8 ; subst. apply Ax. apply AxRule_I. left. apply IA9_I.
+    eexists ; auto. inversion H9 ; subst ; auto. inversion H10.
+    intros A B H8 H9. apply H5 in H8 ; auto.
+  - intuition. apply H6. apply Id. apply IdRule_I ; auto.
 Qed.
 
 (* Stepping stone for the truth lemma. *)
@@ -415,7 +413,7 @@ induction ψ ; intros ; split ; intros ; simpl ; try simpl in H1 ; auto.
   assert (Jψ2: Clos Γ ψ2).
   apply Incl_ClosSubform_Clos. unfold In. exists (ψ1 --> ψ2). split ; simpl ; auto. right.
   apply in_or_app ; right ; destruct ψ2 ; simpl ; auto.
-  apply wStable ; auto. intro H1.
+  destruct (LEM (In form world (ψ1 --> ψ2))) ; auto. exfalso.
   assert (iS4H_rules (Union _ (world) (Singleton _ ψ1), ψ2) -> False).
   intro. apply iS4H_Deduction_Theorem with (A:=ψ1) (B:=ψ2) (Γ:=world) in H2 ; auto.
   apply H1. apply wClosed ; auto.
