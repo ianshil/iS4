@@ -327,6 +327,8 @@ enough (iS4H_rules ((fun x => List.In x (map Box l0)), Box x0)).
      apply in_map_iff. exists x0. split ; auto.
 Qed.
 
+(* The truth lemma is then provable. *)
+
 Lemma truth_lemma Γ : forall ψ (cp : Canon_worlds Γ),
   (Clos Γ ψ) ->
   (forces (CM Γ) cp ψ) <-> (In _ (@world _ cp) ψ).
@@ -441,14 +443,13 @@ induction ψ ; intros ; split ; intros ; simpl ; try simpl in H1 ; auto.
   unfold In in *.
   unfold Ci_uset in H1. unfold Inf_Union in H1. destruct H1. unfold In in *.
   destruct H1. destruct H1. destruct H1. destruct H3 ; subst.
-  assert (Included form (fun y : form => List.In y (map Box (ψ :: x0))) (Clos Γ)).
-  intros A HA. inversion HA ; subst ; auto.
-  assert (Included nodes (Weird_Fin_Intersection (map (Theories Γ) x0)) (Weird_Fin_Intersection (map (Theories Γ) (ψ :: x0)))). 
+  assert (Included form (fun y : form => List.In y [Box ψ]) (Clos Γ)).
+  intros A HA. inversion HA ; subst ; auto. inversion H4.
+  assert (Included nodes (Weird_Fin_Intersection (map (Theories Γ) x0)) (Weird_Fin_Intersection (map (Theories Γ) [ψ]))). 
   intros A HA. unfold In in *. unfold Weird_Fin_Intersection in *. intros.
   simpl in *. destruct H5 ; unfold In in * ; subst. unfold Theories. unfold In. apply H3 ; auto.
-  apply in_map_iff in H5. destruct H5. destruct H5 ; subst. unfold Theories in *.
-  unfold In in * ; simpl in *. apply HA. apply in_map_iff. exists x ; split ; auto.
-  pose (j_list _ _ (ψ :: x0) H1 H4 H5).
+  inversion H5.
+  pose (j_list _ _ [ψ] H1 H4 H5).
   pose (i _ H2). unfold In in *. unfold Weird_Fin_Intersection in i0.
   apply i0. apply in_map_iff. exists (Box ψ). split ; auto. apply in_map_iff.
   exists ψ ; split ; auto. apply in_eq.
