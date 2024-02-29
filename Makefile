@@ -6,11 +6,17 @@ COQ_PROJ ?= _CoqProject
 COQDOCJS_DIR ?= coqdocjs
 COQDOCFLAGS ?= \
   --toc --toc-depth 2 --html --interpolate \
+	-d docs \
   --index indexpage --no-lib-name --parse-comments \
   --with-header $(EXTRA_DIR)/header.html --with-footer $(EXTRA_DIR)/footer.html
 export COQDOCFLAGS
 SUBDIR_ROOTS := theories
 DIRS := . $(shell find $(SUBDIR_ROOTS) -type d)
+
+_: makefile.coq
+
+makefile.coq:
+	coq_makefile -f _CoqProject -docroot docs -o $@
 
 all: $(COQMAKEFILE)
 	$(MAKE) -f $^ $@
@@ -18,14 +24,6 @@ all: $(COQMAKEFILE)
 clean: $(COQMAKEFILE)
 	$(MAKE) -f $^ cleanall
 	$(RM) $^ $^.conf
-
-$(COQMAKEFILE): $(COQ_PROJ)
-	$(COQBIN)coq_makefile -f $^ -o $@
-
-force $(COQ_PROJ) Makefile: ;
-
-%: $(COQMAKEFILE) force
-	@+$(MAKE) -f $< $@
 
 doc: makefile.coq
 	rm -fr html docs/*
