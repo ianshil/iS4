@@ -20,6 +20,7 @@ doc: makefile.coq
 	rm -fr html docs/*
 	COQDOCEXTRAFLAGS='--external $(PUBLIC_URL)'
 	@$(MAKE) -f makefile.coq html
+	cp html/* docs
 	cp $(EXTRA_DIR)/resources/* docs
 
 -include makefile.coq
