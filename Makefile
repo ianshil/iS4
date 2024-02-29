@@ -10,6 +10,7 @@ COQDOCFLAGS ?= \
   --index indexpage --no-lib-name --parse-comments \
   --with-header $(EXTRA_DIR)/header.html --with-footer $(EXTRA_DIR)/footer.html
 export COQDOCFLAGS
+PUBLIC_URL="https://ianshil.github.io/iS4"
 SUBDIR_ROOTS := theories
 DIRS := . $(shell find $(SUBDIR_ROOTS) -type d)
 
