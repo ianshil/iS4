@@ -9,7 +9,6 @@ COQDOCFLAGS ?= \
   --index indexpage --no-lib-name --parse-comments \
   --with-header $(EXTRA_DIR)/header.html --with-footer $(EXTRA_DIR)/footer.html
 export COQDOCFLAGS
-PUBLIC_URL="https://ianshil.github.io/iS4"
 SUBDIR_ROOTS := theories
 DIRS := . $(shell find $(SUBDIR_ROOTS) -type d)
 
@@ -28,14 +27,8 @@ force $(COQ_PROJ) Makefile: ;
 %: $(COQMAKEFILE) force
 	@+$(MAKE) -f $< $@
 
-docian: makefile.coq
-	rm -fr html
-	@$(MAKE) -f makefile.coq html
-	cp resources/* html
-
 doc: makefile.coq
 	rm -fr html docs/*
-	COQDOCEXTRAFLAGS='--external $(PUBLIC_URL)'
 	@$(MAKE) -f makefile.coq html
 	cp html/* docs
 	cp $(EXTRA_DIR)/resources/* docs
