@@ -1,5 +1,10 @@
+COQMAKEFILE ?= Makefile.coq
 EXTRA_DIR:= doc-config
-COQDOCFLAGS:= \
+COQDOCEXTRAFLAGS = -s
+COQDOCJS_LN = true
+COQ_PROJ ?= _CoqProject
+COQDOCJS_DIR ?= coqdocjs
+COQDOCFLAGS ?= \
   --toc --toc-depth 2 --html --interpolate \
   --index indexpage --no-lib-name --parse-comments \
   --with-header $(EXTRA_DIR)/header.html --with-footer $(EXTRA_DIR)/footer.html
@@ -7,14 +12,26 @@ export COQDOCFLAGS
 PUBLIC_URL="https://ianshil.github.io/iS4"
 SUBDIR_ROOTS := theories
 DIRS := . $(shell find $(SUBDIR_ROOTS) -type d)
-BUILD_PATTERNS := *.vok *.vos *.glob *.vo
-BUILD_FILES := $(foreach DIR,$(DIRS),$(addprefix $(DIR)/,$(BUILD_PATTERNS)))
 
-_: makefile.coq
+all: $(COQMAKEFILE)
+	$(MAKE) -f $^ $@
 
-makefile.coq:
-	coq_makefile -f _CoqProject -docroot docs -o $@
+clean: $(COQMAKEFILE)
+	$(MAKE) -f $^ cleanall
+	$(RM) $^ $^.conf
 
+$(COQMAKEFILE): $(COQ_PROJ)
+	$(COQBIN)coq_makefile -f $^ -o $@
+
+force $(COQ_PROJ) Makefile: ;
+
+%: $(COQMAKEFILE) force
+	@+$(MAKE) -f $< $@
+
+docian: makefile.coq
+	rm -fr html
+	@$(MAKE) -f makefile.coq html
+	cp resources/* html
 
 doc: makefile.coq
 	rm -fr html docs/*
@@ -23,10 +40,4 @@ doc: makefile.coq
 	cp html/* docs
 	cp $(EXTRA_DIR)/resources/* docs
 
--include makefile.coq
-
-clean::
-	rm makefile.coq makefile.coq.conf
-	rm -f $(BUILD_FILES)
-
-.PHONY: _
+.PHONY: clean all force
