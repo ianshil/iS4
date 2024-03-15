@@ -5,12 +5,8 @@ Require Import Lia.
 Require Import Ensembles.
 
 Require Import iS4_Syntax.
-Require Import iS4H.
-Require Import iS4H_logic.
-Require Import iS4H_properties.
-Require Import iS4_enum.
+Require Import iS4H_export.
 Require Import iS4_topol_sem.
-Require Import iS4_Lindenbaum_lem.
 
 
 
