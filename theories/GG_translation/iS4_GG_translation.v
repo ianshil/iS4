@@ -261,10 +261,6 @@ apply Extensionality_Ensembles. split ; intros D HD ; auto.
 - inversion HD.
 Qed.
 
-
-
-(* Prove lemmas showing the mapping of i to specific upsets. *)
-
 Lemma i_P_unit : i_P (unit_upset P) = (unit_upset P).
 Proof.
 apply upset_prf_irrel. rewrite i_ABC ; unfold uset ; unfold nodes in *.

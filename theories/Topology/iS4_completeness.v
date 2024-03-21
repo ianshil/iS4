@@ -86,7 +86,7 @@ Instance upTheories Γ φ : (upset (CPre Γ)) :=
 (* Note that the next definition outputs the entire type X in the case
     where l is nil. Else, it behaves as a normal finite intersection. *)
 
-Definition Weird_Fin_Intersection {X : Type} (l : list (Ensemble X)) : Ensemble X :=
+Definition Finite_Intersection {X : Type} (l : list (Ensemble X)) : Ensemble X :=
   fun x => forall y, List.In y l -> In _ y x.
 
 (* Next is the usual infinite union. *)
@@ -99,8 +99,8 @@ Definition Inf_Union {X : Type} (E : Ensemble (Ensemble X)) : Ensemble X :=
 Definition Ci_uset Γ (u : upset (CPre Γ)) : Ensemble (@nodes (CPre Γ)) :=
    Inf_Union (fun x => exists (l: list form),
      (Included _ (fun y => List.In y (map Box l)) (Clos Γ)) /\ (* All formulae in Box l are in Clos Γ. *)
-      Included _ (Weird_Fin_Intersection (map (Theories Γ) l)) (@uset _ u) /\
-      x = Weird_Fin_Intersection (map (Theories _) (map Box l))).
+      Included _ (Finite_Intersection (map (Theories Γ) l)) (@uset _ u) /\
+      x = Finite_Intersection (map (Theories _) (map Box l))).
 
 Lemma Ci_upset : forall Γ (u : upset (CPre Γ)),
   forall (w : @nodes (CPre Γ)), ((Ci_uset Γ u) w) ->
@@ -109,16 +109,16 @@ Proof.
 intros. unfold Ci_uset, Inf_Union in *. destruct H. destruct H.
 unfold In in H. destruct H as ( l & H2 & H3 & H4). subst.
 unfold In ; simpl.
-exists (Weird_Fin_Intersection (map (Theories Γ) (map Box l))).
+exists (Finite_Intersection (map (Theories Γ) (map Box l))).
 repeat split.
 - exists l. repeat split.
   + intros A HA. unfold In in HA. apply in_map_iff in HA. destruct HA. destruct H ; subst.
      apply H2. unfold In ; simpl. apply in_map_iff ; exists x ; auto.
-  + intros A HA. unfold In. unfold In in HA. unfold Weird_Fin_Intersection in *. unfold In in *.
+  + intros A HA. unfold In. unfold In in HA. unfold Finite_Intersection in *. unfold In in *.
      apply H3. unfold In. intros. apply in_map_iff in H. destruct H. destruct H ; subst.
      unfold Theories. apply HA. apply in_map_iff.
      exists x. unfold Theories. split ; auto.
-- unfold Weird_Fin_Intersection in *. unfold In in *. intros. apply in_map_iff in H. destruct H.
+- unfold Finite_Intersection in *. unfold In in *. intros. apply in_map_iff in H. destruct H.
   destruct H ; subst. unfold Theories. unfold In. apply in_map_iff in H4. destruct H4.
   destruct H ; subst. apply H0. apply H1 ; simpl. apply in_map_iff. exists (Box x0).
   split. unfold Theories. auto. apply in_map_iff ; exists x0 ; auto.
@@ -137,7 +137,7 @@ Proof.
 apply upset_prf_irrel. apply Extensionality_Ensembles. split ; intros A HA ; auto.
 unfold In. unfold uset. simpl ; auto. unfold In in *. unfold uset in * ; simpl in *.
 unfold Ci_uset. unfold Inf_Union. exists (fun x => True). unfold In ; simpl. repeat split ; auto.
-exists []. simpl ; repeat split ; auto. intros B HB. inversion HB. unfold Weird_Fin_Intersection.
+exists []. simpl ; repeat split ; auto. intros B HB. inversion HB. unfold Finite_Intersection.
 simpl. apply Extensionality_Ensembles. split ; intros B HB ; simpl in *. unfold In in HB.
 unfold In. intros. inversion H. unfold In ; auto.
 Qed.
@@ -147,27 +147,27 @@ Proof.
 intros. unfold uset ; simpl. unfold Ci_uset ; simpl.
 unfold Inf_Union ; simpl. apply Extensionality_Ensembles. split ; intros A HA ; auto.
 - unfold In in *. destruct HA. destruct H. destruct H. destruct H. destruct H1 ; subst. split.
-  + exists (Weird_Fin_Intersection (map (Theories Γ) (map Box x0))). split ; auto.
+  + exists (Finite_Intersection (map (Theories Γ) (map Box x0))). split ; auto.
      exists x0. repeat split ; auto. intros B HB. unfold In in *. unfold uset ; simpl.
      apply H1. unfold In. auto.
-  + exists (Weird_Fin_Intersection (map (Theories Γ) (map Box x0))). split ; auto.
+  + exists (Finite_Intersection (map (Theories Γ) (map Box x0))). split ; auto.
      exists x0. repeat split ; auto. intros B HB. unfold In in *. unfold uset ; simpl.
      apply H1. unfold In. auto.
 - unfold In in *. destruct HA. destruct H. destruct H. destruct H. destruct H. destruct H2. subst.
   destruct H0. destruct H0. destruct H0. destruct H0. destruct H4 ; subst.
-  exists (Weird_Fin_Intersection (map (Theories Γ) ((map Box x0) ++ (map Box x1)))). split ; auto.
+  exists (Finite_Intersection (map (Theories Γ) ((map Box x0) ++ (map Box x1)))). split ; auto.
   + exists (x0 ++ x1). repeat split ; auto.
      * intros B HB. unfold In in *. apply in_map_iff in HB. destruct HB.
        destruct H5 ; subst. apply in_app_or in H6. destruct H6. apply H ; unfold In.
        apply in_map_iff ; exists x ; split ; auto. apply H0 ; apply in_map_iff ; exists x ; split ; auto.
-     * unfold In in *. apply H2. unfold In. unfold Weird_Fin_Intersection in *. intros. unfold In in *.
+     * unfold In in *. apply H2. unfold In. unfold Finite_Intersection in *. intros. unfold In in *.
        apply in_map_iff in H6. destruct H6. destruct H6 ; subst. unfold Theories. unfold In in *. apply H5.
        apply in_map_iff. exists x2. split ; auto. apply in_or_app ; auto.
-     * unfold In in *. apply H4. unfold In. unfold Weird_Fin_Intersection in *. intros. unfold In in *.
+     * unfold In in *. apply H4. unfold In. unfold Finite_Intersection in *. intros. unfold In in *.
        apply in_map_iff in H6. destruct H6. destruct H6 ; subst. unfold Theories. unfold In in *. apply H5.
        apply in_map_iff. exists x2. split ; auto. apply in_or_app ; auto.
      * repeat rewrite map_app ; auto.
-  + unfold Weird_Fin_Intersection in *. intros. unfold In in *. apply in_map_iff in H5. destruct H5. destruct H5 ; subst. unfold Theories.
+  + unfold Finite_Intersection in *. intros. unfold In in *. apply in_map_iff in H5. destruct H5. destruct H5 ; subst. unfold Theories.
      apply in_app_or in H6. destruct H6. apply in_map_iff in H5. destruct H5. destruct H5 ; subst. unfold In. apply H1.
      apply in_map_iff. exists (Box x2). split ; auto. apply in_map_iff ; exists x2 ; split ; auto.
      apply H3 ; auto. apply in_map_iff in H5. destruct H5. destruct H5 ; subst.
@@ -178,7 +178,7 @@ Lemma Ci_T Γ :forall u, Included _ (@uset (CPre Γ) (Ci Γ u)) (@uset (CPre Γ)
 Proof.
 intros u A HA. unfold In in *. unfold uset in *. simpl in *. unfold Ci_uset in HA. unfold Inf_Union in HA.
 destruct HA. unfold In in H. destruct H. destruct H. destruct H. destruct H1 ; subst.
-unfold Weird_Fin_Intersection in * ; simpl in *. unfold In in *.
+unfold Finite_Intersection in * ; simpl in *. unfold In in *.
 apply H1. unfold In. intros. apply in_map_iff in H2. destruct H2. destruct H2 ; subst. unfold Theories.
 unfold In. apply wClosed.
 apply MP with (ps:=[(world, Box x --> x);(world, Box x)]). 2: apply MPRule_I.
@@ -217,9 +217,9 @@ Lemma Ci_4 Γ : forall u, Included _ (@uset (CPre Γ) (Ci Γ u)) (@uset (CPre Γ
 Proof.
 intros u w Hw. unfold In in *. unfold uset in *. simpl in *. unfold Ci_uset in Hw. unfold Inf_Union in Hw.
 unfold In in *. destruct Hw. destruct H as (H0 & H1). destruct H0 as (l & H2 & H3 & H4) ; subst.
-unfold Weird_Fin_Intersection in *. simpl in *. unfold In in *.
+unfold Finite_Intersection in *. simpl in *. unfold In in *.
 unfold Ci_uset. unfold Inf_Union. simpl ; unfold In.
-exists (Weird_Fin_Intersection (map (Theories Γ) (map BoxTwo l))). split ; auto.
+exists (Finite_Intersection (map (Theories Γ) (map BoxTwo l))). split ; auto.
 - rewrite <- Box_UnBox_BoxTwo_id. exists (map UnBox (map BoxTwo l)).
   repeat split ; auto.
   + intros A HA. unfold In in *. apply in_map_iff in HA. destruct HA. destruct H ; subst.
@@ -227,9 +227,9 @@ exists (Weird_Fin_Intersection (map (Theories Γ) (map BoxTwo l))). split ; auto
      destruct H0. destruct H ; subst. rewrite <- BoxTwo_UnBox_fixpoint.
      apply In_Clos_BoxTwo. apply Incl_ClosSubform_Clos. exists (Box x).
      simpl ; split ; auto. apply H2. apply in_map_iff. eexists ; split ; auto. right ; destruct x ; simpl ; auto.
-  + intros v Hv. unfold In in *. unfold Weird_Fin_Intersection in *. unfold In in *.
+  + intros v Hv. unfold In in *. unfold Finite_Intersection in *. unfold In in *.
      unfold Ci_uset. unfold Inf_Union. unfold In ; simpl.
-     exists (Weird_Fin_Intersection (map (Theories Γ) (map Box l))). split ; auto.
+     exists (Finite_Intersection (map (Theories Γ) (map Box l))). split ; auto.
      * exists l ; split ; auto.
      * intros u0 Hu0. apply in_map_iff in Hu0. destruct Hu0. destruct H ; subst.
        apply in_map_iff in H0. destruct H0. destruct H ; subst. unfold In.
@@ -291,13 +291,13 @@ Qed.
     truth lemma. This lemma may be proved constructively
     but we could not find a constructive proof for it. *)
 
-Lemma j_list : forall Γ l0 l1,
+Lemma K_finite_intersection : forall Γ l0 l1,
   Included _ (fun y => List.In y (map Box l0)) (Clos Γ) ->
   Included _ (fun y => List.In y (map Box l1)) (Clos Γ) ->
-  Included _ (Weird_Fin_Intersection (map (Theories Γ) l0)) (Weird_Fin_Intersection (map (Theories Γ) l1)) ->
-  Included _ (Weird_Fin_Intersection (map (Theories Γ) (map Box l0))) (Weird_Fin_Intersection (map (Theories Γ) (map Box l1))).
+  Included _ (Finite_Intersection (map (Theories Γ) l0)) (Finite_Intersection (map (Theories Γ) l1)) ->
+  Included _ (Finite_Intersection (map (Theories Γ) (map Box l0))) (Finite_Intersection (map (Theories Γ) (map Box l1))).
 Proof.
-intros. intros w Hw. unfold In in *. unfold Weird_Fin_Intersection in *. unfold In in *.
+intros. intros w Hw. unfold In in *. unfold Finite_Intersection in *. unfold In in *.
 intros. apply in_map_iff in H2. destruct H2. destruct H2 ; subst. apply in_map_iff in H3.
 destruct H3. destruct H2 ; subst. unfold Theories in *. simpl in *. unfold In in *.
 enough (iS4H_rules ((fun x => List.In x (map Box l0)), Box x0)).
@@ -441,24 +441,24 @@ induction ψ ; intros ; split ; intros ; simpl ; try simpl in H1 ; auto.
   destruct H1. destruct H1. destruct H1. destruct H3 ; subst.
   assert (Included form (fun y : form => List.In y [Box ψ]) (Clos Γ)).
   intros A HA. inversion HA ; subst ; auto. inversion H4.
-  assert (Included nodes (Weird_Fin_Intersection (map (Theories Γ) x0)) (Weird_Fin_Intersection (map (Theories Γ) [ψ]))). 
-  intros A HA. unfold In in *. unfold Weird_Fin_Intersection in *. intros.
+  assert (Included nodes (Finite_Intersection (map (Theories Γ) x0)) (Finite_Intersection (map (Theories Γ) [ψ]))). 
+  intros A HA. unfold In in *. unfold Finite_Intersection in *. intros.
   simpl in *. destruct H5 ; unfold In in * ; subst. unfold Theories. unfold In. apply H3 ; auto.
   inversion H5.
-  pose (j_list _ _ [ψ] H1 H4 H5).
-  pose (i _ H2). unfold In in *. unfold Weird_Fin_Intersection in i0.
+  pose (K_finite_intersection _ _ [ψ] H1 H4 H5).
+  pose (i _ H2). unfold In in *. unfold Finite_Intersection in i0.
   apply i0. apply in_map_iff. exists (Box ψ). split ; auto. apply in_map_iff.
   exists ψ ; split ; auto. apply in_eq.
 - assert (Jψ: Clos Γ ψ).
   apply Incl_ClosSubform_Clos. unfold In. exists (Box ψ). split ; simpl ; auto. right.
   destruct ψ ; simpl ; auto.
   intros. unfold Ci_uset. unfold Inf_Union. unfold In in *. simpl in *.
-  exists (Weird_Fin_Intersection [(Theories Γ (Box ψ))]). split ; auto.
+  exists (Finite_Intersection [(Theories Γ (Box ψ))]). split ; auto.
   + exists [ψ] ; repeat split ; simpl ; auto.
      intros A HA. inversion HA ; subst ; auto. inversion H2.
-     intros A HA. apply H1. unfold In in *. unfold Weird_Fin_Intersection in HA. unfold In in *.
+     intros A HA. apply H1. unfold In in *. unfold Finite_Intersection in HA. unfold In in *.
      apply IHψ ; auto. apply HA. unfold Theories. simpl. auto.
-  + unfold Weird_Fin_Intersection. unfold Theories ; unfold In in * ; simpl. intros.
+  + unfold Finite_Intersection. unfold Theories ; unfold In in * ; simpl. intros.
      destruct H2 ; subst ; try contradiction. auto.
 Qed.
 
