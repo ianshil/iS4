@@ -54,8 +54,6 @@ end.
 Definition Lind_theory Γ Δ ψ : @Ensemble form :=
   fun x => (exists n, In _ (nLind_theory Γ Δ ψ n) x).
 
-(* Properties of sets of formulas or pairs of sets of formulas. *)
-
 End Prime.
 
 
@@ -68,7 +66,7 @@ End Prime.
 
 Section PrimeProps.
 
-(* A prime pair is an extension of the initial pair. *)
+(* The Lindenbaum theory is an extension of the initial set of formulas. *)
 
 Lemma nLind_theory_extens : forall n Γ Δ ψ φ,
     In _ Δ φ -> In _ (nLind_theory Γ Δ ψ n) φ.
@@ -118,7 +116,7 @@ intros Γ Δ ψ H φ H0. unfold Lind_theory in H0. unfold In in *.
 destruct H0. apply incl_nLind_theory in H0 ; auto.
 Qed.
 
-(* A prime pair preserves derivability. *)
+(* The Lindenbaum theory preserves derivability from the initial set of formulas. *)
 
 Lemma der_nLind_theory_mLind_theory_le : forall n m Γ Δ ψ φ,
   (iS4H_rules (nLind_theory Γ Δ ψ n, φ)) -> (le n m) ->
@@ -163,7 +161,7 @@ intros s D. induction D ; intros.
   2: apply NecRule_I. intros. inversion H2. subst. auto. inversion H3.
 Qed.
 
-(* Each step of the construction preserves unprovability. *)
+(* Each step of the construction preserves underivability of the formula ψ. *)
 
 Lemma Under_nLind_theory : forall n Γ Δ ψ,
   Included _ Δ Γ ->
@@ -193,7 +191,7 @@ induction n.
   inversion Hb ; subst ; auto. inversion H3 ; subst ; auto. exfalso ; apply H2 ; rewrite <- H3 ; auto.
 Qed.
 
-(* A prime pair is unprovable (with initial set on the right). *)
+(* The Lindenbaum theory does not derive ψ. *)
 
 Lemma Under_Lind_theory: forall Γ Δ ψ,
   Included _ Δ Γ ->
@@ -208,7 +206,7 @@ pose (e _ _ _ _ H1 H2). destruct e0. clear e.
 pose (Under_nLind_theory x _ _ _ Incl H). apply n. auto.
 Qed.
 
-(* A prime pair is closed under derivation. *)
+(* The Lindenbaum theory is closed under derivation. *)
 
 Lemma restr_closeder_Lind_theory : forall Γ Δ ψ,
   Included _ Δ Γ ->
@@ -256,7 +254,7 @@ remember (form_index A) as n. pose (form_enum_index A). destruct n.
   rewrite Heqn ; auto.
 Qed.
 
-(* A prime pair is prime. *)
+(* The Lindenbaum theory is quasi-prime. *)
 
 Lemma quasi_prime_Lind_theory: forall Γ Δ ψ,
   Included _ Δ (Clos Γ) ->
@@ -376,7 +374,7 @@ remember (form_index a) as n. destruct n ; simpl.
      inversion H4 ; subst. 2: inversion H5. apply Id. apply IdRule_I ; auto.
 Qed.
 
-(* A prime pair is consistent. *)
+(* The Lindenbaum theory is consistent. *)
 
 Lemma Consist_nLind_theory : forall n Γ Δ ψ,
   Included _ Δ Γ ->

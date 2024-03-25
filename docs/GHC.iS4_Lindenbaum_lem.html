@@ -90,16 +90,13 @@
 &nbsp;&nbsp;<span class="id" title="keyword">fun</span> <a id="x:32" class="idref" href="#x:32"><span class="id" title="binder">x</span></a> =&gt; (<a class="idref" href="http://coq.inria.fr/distrib/V8.18.0/stdlib//Coq.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="n:33" class="idref" href="#n:33"><span class="id" title="binder">n</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.18.0/stdlib//Coq.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.18.0/stdlib//Coq.Sets.Ensembles.html#In"><span class="id" title="definition">In</span></a> <span class="id" title="var">_</span> (<a class="idref" href="GHC.iS4_Lindenbaum_lem.html#nLind_theory"><span class="id" title="definition">nLind_theory</span></a> <a class="idref" href="GHC.iS4_Lindenbaum_lem.html#0b505d350bf3c4269fbe0253bf0ba4a2"><span class="id" title="variable">Γ</span></a> <a class="idref" href="GHC.iS4_Lindenbaum_lem.html#e84ae5891f5ce99c6e2f3a0659ce481d"><span class="id" title="variable">Δ</span></a> <a class="idref" href="GHC.iS4_Lindenbaum_lem.html#65703fc6b913cf8967f240b98a9d121a"><span class="id" title="variable">ψ</span></a> <a class="idref" href="GHC.iS4_Lindenbaum_lem.html#n:33"><span class="id" title="variable">n</span></a>) <a class="idref" href="GHC.iS4_Lindenbaum_lem.html#x:32"><span class="id" title="variable">x</span></a>).<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Properties&nbsp;of&nbsp;sets&nbsp;of&nbsp;formulas&nbsp;or&nbsp;pairs&nbsp;of&nbsp;sets&nbsp;of&nbsp;formulas.&nbsp;*)</span><br/>
-
-<br/>
 <span class="id" title="keyword">End</span> <a class="idref" href="GHC.iS4_Lindenbaum_lem.html#Prime"><span class="id" title="section">Prime</span></a>.<br/>
 
 <br/>
 <span class="id" title="keyword">Section</span> <a id="PrimeProps" class="idref" href="#PrimeProps"><span class="id" title="section">PrimeProps</span></a>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;A&nbsp;prime&nbsp;pair&nbsp;is&nbsp;an&nbsp;extension&nbsp;of&nbsp;the&nbsp;initial&nbsp;pair.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;The&nbsp;Lindenbaum&nbsp;theory&nbsp;is&nbsp;an&nbsp;extension&nbsp;of&nbsp;the&nbsp;initial&nbsp;set&nbsp;of&nbsp;formulas.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="nLind_theory_extens" class="idref" href="#nLind_theory_extens"><span class="id" title="lemma">nLind_theory_extens</span></a> : <span class="id" title="keyword">forall</span> <a id="n:34" class="idref" href="#n:34"><span class="id" title="binder">n</span></a> <a id="a0f0bd398ad1ac70bdd831a240f6dcbd" class="idref" href="#a0f0bd398ad1ac70bdd831a240f6dcbd"><span class="id" title="binder">Γ</span></a> <a id="cb2aea9873e9c48b6aed75f059ae789d" class="idref" href="#cb2aea9873e9c48b6aed75f059ae789d"><span class="id" title="binder">Δ</span></a> <a id="12b836b5156d2c9c72effb5d94e30fdd" class="idref" href="#12b836b5156d2c9c72effb5d94e30fdd"><span class="id" title="binder">ψ</span></a> <a id="45adcad7835e823452d48ee82b096bec" class="idref" href="#45adcad7835e823452d48ee82b096bec"><span class="id" title="binder">φ</span></a>,<br/>
@@ -155,7 +152,7 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;A&nbsp;prime&nbsp;pair&nbsp;preserves&nbsp;derivability.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;The&nbsp;Lindenbaum&nbsp;theory&nbsp;preserves&nbsp;derivability&nbsp;from&nbsp;the&nbsp;initial&nbsp;set&nbsp;of&nbsp;formulas.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="der_nLind_theory_mLind_theory_le" class="idref" href="#der_nLind_theory_mLind_theory_le"><span class="id" title="lemma">der_nLind_theory_mLind_theory_le</span></a> : <span class="id" title="keyword">forall</span> <a id="n:56" class="idref" href="#n:56"><span class="id" title="binder">n</span></a> <a id="m:57" class="idref" href="#m:57"><span class="id" title="binder">m</span></a> <a id="5eea4560b18f98a58cb3519774a6b1ed" class="idref" href="#5eea4560b18f98a58cb3519774a6b1ed"><span class="id" title="binder">Γ</span></a> <a id="a34401480b9ee68b7620454cfaad3bdd" class="idref" href="#a34401480b9ee68b7620454cfaad3bdd"><span class="id" title="binder">Δ</span></a> <a id="44c2e6f5e4544a42febf28fc605b8764" class="idref" href="#44c2e6f5e4544a42febf28fc605b8764"><span class="id" title="binder">ψ</span></a> <a id="53ea00476cc8af7a1034e6f1fe029e7d" class="idref" href="#53ea00476cc8af7a1034e6f1fe029e7d"><span class="id" title="binder">φ</span></a>,<br/>
@@ -203,7 +200,7 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Each&nbsp;step&nbsp;of&nbsp;the&nbsp;construction&nbsp;preserves&nbsp;unprovability.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;Each&nbsp;step&nbsp;of&nbsp;the&nbsp;construction&nbsp;preserves&nbsp;underivability&nbsp;of&nbsp;the&nbsp;formula&nbsp;ψ.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="Under_nLind_theory" class="idref" href="#Under_nLind_theory"><span class="id" title="lemma">Under_nLind_theory</span></a> : <span class="id" title="keyword">forall</span> <a id="n:68" class="idref" href="#n:68"><span class="id" title="binder">n</span></a> <a id="d9cbd174a3bae4a421a199e380807c56" class="idref" href="#d9cbd174a3bae4a421a199e380807c56"><span class="id" title="binder">Γ</span></a> <a id="8f968192e18ee121db66203c0893cd62" class="idref" href="#8f968192e18ee121db66203c0893cd62"><span class="id" title="binder">Δ</span></a> <a id="d70a53eab1cf0a476aa5671d2965298f" class="idref" href="#d70a53eab1cf0a476aa5671d2965298f"><span class="id" title="binder">ψ</span></a>,<br/>
@@ -235,7 +232,7 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;A&nbsp;prime&nbsp;pair&nbsp;is&nbsp;unprovable&nbsp;(with&nbsp;initial&nbsp;set&nbsp;on&nbsp;the&nbsp;right).&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;The&nbsp;Lindenbaum&nbsp;theory&nbsp;does&nbsp;not&nbsp;derive&nbsp;ψ.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="Under_Lind_theory" class="idref" href="#Under_Lind_theory"><span class="id" title="lemma">Under_Lind_theory</span></a>: <span class="id" title="keyword">forall</span> <a id="885e6108c1350c686de92430329090ea" class="idref" href="#885e6108c1350c686de92430329090ea"><span class="id" title="binder">Γ</span></a> <a id="c547ef66520605a4a48b0782100af2d4" class="idref" href="#c547ef66520605a4a48b0782100af2d4"><span class="id" title="binder">Δ</span></a> <a id="ed111f9f41c0a1293d08246913f541b0" class="idref" href="#ed111f9f41c0a1293d08246913f541b0"><span class="id" title="binder">ψ</span></a>,<br/>
@@ -252,7 +249,7 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;A&nbsp;prime&nbsp;pair&nbsp;is&nbsp;closed&nbsp;under&nbsp;derivation.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;The&nbsp;Lindenbaum&nbsp;theory&nbsp;is&nbsp;closed&nbsp;under&nbsp;derivation.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="restr_closeder_Lind_theory" class="idref" href="#restr_closeder_Lind_theory"><span class="id" title="lemma">restr_closeder_Lind_theory</span></a> : <span class="id" title="keyword">forall</span> <a id="d3a38663d0c0158490276dc8366282f4" class="idref" href="#d3a38663d0c0158490276dc8366282f4"><span class="id" title="binder">Γ</span></a> <a id="b23b8783ae23f38cc03ba07a68baceae" class="idref" href="#b23b8783ae23f38cc03ba07a68baceae"><span class="id" title="binder">Δ</span></a> <a id="556f4ec6b7996235f58dd4761b43341e" class="idref" href="#556f4ec6b7996235f58dd4761b43341e"><span class="id" title="binder">ψ</span></a>,<br/>
@@ -304,7 +301,7 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;A&nbsp;prime&nbsp;pair&nbsp;is&nbsp;prime.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;The&nbsp;Lindenbaum&nbsp;theory&nbsp;is&nbsp;quasi-prime.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="quasi_prime_Lind_theory" class="idref" href="#quasi_prime_Lind_theory"><span class="id" title="lemma">quasi_prime_Lind_theory</span></a>: <span class="id" title="keyword">forall</span> <a id="d5364bc5fc249fbedcb7da053e2ed862" class="idref" href="#d5364bc5fc249fbedcb7da053e2ed862"><span class="id" title="binder">Γ</span></a> <a id="2796a1490d0bdb49ee247cdbb1368981" class="idref" href="#2796a1490d0bdb49ee247cdbb1368981"><span class="id" title="binder">Δ</span></a> <a id="1e92df8b017a63f045889ea6d994f1fb" class="idref" href="#1e92df8b017a63f045889ea6d994f1fb"><span class="id" title="binder">ψ</span></a>,<br/>
@@ -427,7 +424,7 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;A&nbsp;prime&nbsp;pair&nbsp;is&nbsp;consistent.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;The&nbsp;Lindenbaum&nbsp;theory&nbsp;is&nbsp;consistent.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <a id="Consist_nLind_theory" class="idref" href="#Consist_nLind_theory"><span class="id" title="lemma">Consist_nLind_theory</span></a> : <span class="id" title="keyword">forall</span> <a id="n:89" class="idref" href="#n:89"><span class="id" title="binder">n</span></a> <a id="db027aca38788e2b507c990d428e4c0e" class="idref" href="#db027aca38788e2b507c990d428e4c0e"><span class="id" title="binder">Γ</span></a> <a id="a3e1418c08ba6f3ef660e501f29833a3" class="idref" href="#a3e1418c08ba6f3ef660e501f29833a3"><span class="id" title="binder">Δ</span></a> <a id="df107c34d068073100ba3fa67337b5dd" class="idref" href="#df107c34d068073100ba3fa67337b5dd"><span class="id" title="binder">ψ</span></a>,<br/>

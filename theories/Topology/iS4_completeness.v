@@ -65,7 +65,7 @@ Proof.
   - intuition. apply H6. apply Id. apply IdRule_I ; auto.
 Qed.
 
-(* Then we create interior operator for the canonical preord_set. *)
+(* Then we create the interior operator for the canonical preord_set. *)
 
 Definition Theories Γ φ : Ensemble (@nodes (CPre Γ)) :=
   fun x => In _ (@world Γ x) φ.
@@ -84,7 +84,7 @@ Instance upTheories Γ φ : (upset (CPre Γ)) :=
       |}.
 
 (* Note that the next definition outputs the entire type X in the case
-    where l is nil. Else, it behaves as a normal finite intersection. *)
+    where the list l is nil. *)
 
 Definition Finite_Intersection {X : Type} (l : list (Ensemble X)) : Ensemble X :=
   fun x => forall y, List.In y l -> In _ y x.
@@ -94,7 +94,7 @@ Definition Finite_Intersection {X : Type} (l : list (Ensemble X)) : Ensemble X :
 Definition Inf_Union {X : Type} (E : Ensemble (Ensemble X)) : Ensemble X :=
   fun x => exists S, In _ E S /\ In _ S x.
 
- (* We define the function Ci, the interior function on the canonical model.  *)
+ (* We define the function Ci, the interior function of the canonical model.  *)
 
 Definition Ci_uset Γ (u : upset (CPre Γ)) : Ensemble (@nodes (CPre Γ)) :=
    Inf_Union (fun x => exists (l: list form),

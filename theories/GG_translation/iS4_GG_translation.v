@@ -25,7 +25,11 @@ apply Hy with y.
   unfold uset in *. apply i_T ; auto.
 Qed.
 
-(* But it does not. *)
+(* But it does not. To show this, we create an interior
+    preorder model with three points A, B and C such
+    that A forces ¬ ¬ Box 0, but does not force Box ¬ ¬ 0. *)
+
+(* We first construct the model. *)
 
 Inductive ABC  : Type :=
  | A : ABC
@@ -414,6 +418,8 @@ fun n => match n with
 | S n => Empty_upset
 end.
 
+(* We finally can define our model. *)
+
 Instance M : model :=
       {|
         pre := P ;
@@ -426,6 +432,9 @@ Instance M : model :=
 
         val := val_P ;
       |}.
+
+(* We show that our model is indeed a countermodel
+    to the formula mentioned initially. *)
 
 Lemma Failure : (iS4H_prv (Empty_set _, (¬ (¬ (Box (# 0)))) --> Box (¬ (¬ (# 0))))) -> False.
 Proof.
@@ -444,7 +453,7 @@ destruct D ; auto ; simpl.
 1-2: pose (i_B u J) ; unfold uset in e ; unfold i ; simpl ; rewrite <- e in H1.
 1-2: apply H1 ; destruct u ; rewrite J ; firstorder.
 
-(* But A forcing the conseequent leads to a contradiction. *)
+(* But A forcing the consequent leads to a contradiction. *)
 assert (F: forces M A (Box (¬ (¬ # 0)))).
 pose (f H0 A (reach_refl A)). simpl in f0. simpl. intros.
 apply f0 ; auto.

@@ -9,10 +9,10 @@ Section TopologicalSemantics.
 
     Class preord_set :=
       {
-        (* Carrier *)
+        (* Carrier set *)
         nodes : Type ;
 
-        (* Intuitionistic Relation *)
+        (* Intuitionistic relation (preorder) *)
         reachable : nodes -> nodes -> Prop ;
         reach_refl u : reachable u u ;
         reach_tran u v w : reachable u v -> reachable v w -> reachable u w
@@ -41,7 +41,8 @@ Section TopologicalSemantics.
         is_upset := unit_is_upset pre
       |}.
 
-  Lemma inter_is_upset : forall (pre : preord_set) (u0 u1 : upset pre), forall w, ((fun (x : @nodes pre) => (@uset pre u0) x /\ (@uset pre u1) x) w) ->
+  Lemma inter_is_upset : forall (pre : preord_set) (u0 u1 : upset pre),
+            forall w, ((fun (x : @nodes pre) => (@uset pre u0) x /\ (@uset pre u1) x) w) ->
             forall y, @reachable pre w y -> ((fun (x : @nodes pre) => (@uset pre u0) x /\ (@uset pre u1) x) y).
   Proof.
   intros. simpl in H. simpl. destruct H ; split.

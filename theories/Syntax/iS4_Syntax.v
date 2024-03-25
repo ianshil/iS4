@@ -8,8 +8,6 @@ Delimit Scope My_scope with M.
 Open Scope My_scope.
 Set Implicit Arguments.
 
-(* Definitions Language *)
-
 (* First, let us define the propositional formulas we use here. *)
 
 Inductive form : Type :=
@@ -20,7 +18,7 @@ Inductive form : Type :=
  | Imp : form -> form -> form
  | Box : form -> form.
 
-(* We define negation. *)
+(* We define negation and top. *)
 
 Definition Neg (A : form) := Imp A (Bot).
 Definition Top := Imp Bot Bot.

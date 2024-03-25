@@ -30,7 +30,7 @@ Inductive IAxioms (A : form) : Prop :=
  | IA8_I : (exists B C D, A = (IA8 B C D)) -> IAxioms A
  | IA9_I : (exists B, A = (IA9 B)) -> IAxioms A.
 
-(* We define then the modal axioms. *)
+(* We then define the modal axioms. *)
 
 Definition MAK (A B : form) : form := Box (A --> B) --> (Box A --> Box B).
 Definition MAT (A : form) : form := Box A --> A.
@@ -43,8 +43,8 @@ Inductive MAxioms (A : form) : Prop :=
 
 Definition Axioms (A : form) : Prop := IAxioms A \/ MAxioms A.
 
-(* Then, we can define the rules which constitute our calculus. We gather
-   them in a calculus in a definition appearing later. *)
+(* We can separately define the rules which constitute our calculus. 
+   We gather them in a calculus in a definition appearing later. *)
 
 Inductive IdRule : rls ((Ensemble form) * form) :=
   | IdRule_I : forall A (Γ : Ensemble _),
