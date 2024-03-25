@@ -61,7 +61,7 @@ Proof.
 intros. unfold ABCreach in * ; destruct n ; auto ; destruct m ; auto ; destruct k ; auto.
 Qed.
 
-(* We can create a preorder of the following form (omitting reflexive arrows): 
+(* We can create a preord_set of the following form (omitting reflexive arrows): 
 
                                (A) ==[ABCreach]==> (B)
 
@@ -69,7 +69,7 @@ Qed.
 
     So, B can be reached by A, and C is an isolated point. *)
 
-Instance P : preorder :=
+Instance P : preord_set :=
       {|
         nodes := ABC ;
         reachable := ABCreach ;
@@ -173,7 +173,7 @@ all: destruct H0 as (H1 & H2 & H3 & H4) ; unfold reachable in reachDE ; subst.
 - right ; right ; right ; right ; repeat split ; auto. destruct H4 ; subst ; auto ; destruct E ; auto ; subst ; try contradiction.
 Defined.
 
-(* The next lemma shows that upset in our preorder have a canonical representation. Note that in the
+(* The next lemma shows that upset in our preord_set have a canonical representation. Note that in the
     proof of it, we use LEM: as Ensembles are functions to Prop in Coq, and thus our upsets are defined over
     these functions, to prove that two functions are equal we can assume LEM. We could get rid of this feature
     by requiring that our semantics accepts only upsets which are decidable. *)

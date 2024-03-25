@@ -101,7 +101,7 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;We&nbsp;can&nbsp;create&nbsp;a&nbsp;preorder&nbsp;of&nbsp;the&nbsp;following&nbsp;form&nbsp;(omitting&nbsp;reflexive&nbsp;arrows):&nbsp;<br/>
+<span class="comment">(*&nbsp;We&nbsp;can&nbsp;create&nbsp;a&nbsp;preord_set&nbsp;of&nbsp;the&nbsp;following&nbsp;form&nbsp;(omitting&nbsp;reflexive&nbsp;arrows):&nbsp;<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A)&nbsp;==<span class="inlinecode"><span class="id" title="var">ABCreach</span></span>==&gt;&nbsp;(B)<br/>
 <br/>
@@ -110,7 +110,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;So,&nbsp;B&nbsp;can&nbsp;be&nbsp;reached&nbsp;by&nbsp;A,&nbsp;and&nbsp;C&nbsp;is&nbsp;an&nbsp;isolated&nbsp;point.&nbsp;*)</span><br/>
 
 <br/>
-<span class="id" title="keyword">Instance</span> <a id="P" class="idref" href="#P"><span class="id" title="instance">P</span></a> : <a class="idref" href="Topology.iS4_topol_sem.html#preorder"><span class="id" title="class">preorder</span></a> :=<br/>
+<span class="id" title="keyword">Instance</span> <a id="P" class="idref" href="#P"><span class="id" title="instance">P</span></a> : <a class="idref" href="Topology.iS4_topol_sem.html#preord_set"><span class="id" title="class">preord_set</span></a> :=<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{|<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Topology.iS4_topol_sem.html#nodes"><span class="id" title="method">nodes</span></a> := <a class="idref" href="iS4_GG_translation.html#ABC"><span class="id" title="inductive">ABC</span></a> ;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Topology.iS4_topol_sem.html#reachable"><span class="id" title="method">reachable</span></a> := <a class="idref" href="iS4_GG_translation.html#ABCreach"><span class="id" title="definition">ABCreach</span></a> ;<br/>
@@ -230,7 +230,7 @@
 <span class="id" title="keyword">Defined</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;The&nbsp;next&nbsp;lemma&nbsp;shows&nbsp;that&nbsp;upset&nbsp;in&nbsp;our&nbsp;preorder&nbsp;have&nbsp;a&nbsp;canonical&nbsp;representation.&nbsp;Note&nbsp;that&nbsp;in&nbsp;the<br/>
+<span class="comment">(*&nbsp;The&nbsp;next&nbsp;lemma&nbsp;shows&nbsp;that&nbsp;upset&nbsp;in&nbsp;our&nbsp;preord_set&nbsp;have&nbsp;a&nbsp;canonical&nbsp;representation.&nbsp;Note&nbsp;that&nbsp;in&nbsp;the<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;proof&nbsp;of&nbsp;it,&nbsp;we&nbsp;use&nbsp;LEM:&nbsp;as&nbsp;Ensembles&nbsp;are&nbsp;functions&nbsp;to&nbsp;Prop&nbsp;in&nbsp;Coq,&nbsp;and&nbsp;thus&nbsp;our&nbsp;upsets&nbsp;are&nbsp;defined&nbsp;over<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;these&nbsp;functions,&nbsp;to&nbsp;prove&nbsp;that&nbsp;two&nbsp;functions&nbsp;are&nbsp;equal&nbsp;we&nbsp;can&nbsp;assume&nbsp;LEM.&nbsp;We&nbsp;could&nbsp;get&nbsp;rid&nbsp;of&nbsp;this&nbsp;feature<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;requiring&nbsp;that&nbsp;our&nbsp;semantics&nbsp;accepts&nbsp;only&nbsp;upsets&nbsp;which&nbsp;are&nbsp;decidable.&nbsp;*)</span><br/>

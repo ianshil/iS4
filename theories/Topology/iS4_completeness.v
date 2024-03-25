@@ -12,7 +12,7 @@ Require Import iS4_topol_sem.
 
 Section Completeness.
 
-(* We first create the canonical preorder. *)
+(* We first create the canonical preord_set. *)
 
 Class Canon_worlds Γ : Type :=
   { world : @Ensemble form ;
@@ -37,7 +37,7 @@ intro. intros. unfold Canon_rel in H0. unfold Canon_rel in H.
 apply H0. apply H. auto.
 Qed.
 
-Instance CPre Γ : preorder :=
+Instance CPre Γ : preord_set :=
       {|
         nodes := Canon_worlds Γ ;
 
@@ -65,7 +65,7 @@ Proof.
   - intuition. apply H6. apply Id. apply IdRule_I ; auto.
 Qed.
 
-(* Then we create interior operator for the canonical preorder. *)
+(* Then we create interior operator for the canonical preord_set. *)
 
 Definition Theories Γ φ : Ensemble (@nodes (CPre Γ)) :=
   fun x => In _ (@world Γ x) φ.

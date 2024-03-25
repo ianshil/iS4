@@ -43,7 +43,7 @@
 <span class="id" title="keyword">Section</span> <a id="Completeness" class="idref" href="#Completeness"><span class="id" title="section">Completeness</span></a>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;We&nbsp;first&nbsp;create&nbsp;the&nbsp;canonical&nbsp;preorder.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;We&nbsp;first&nbsp;create&nbsp;the&nbsp;canonical&nbsp;preord_set.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Class</span> <a id="Canon_worlds" class="idref" href="#Canon_worlds"><span class="id" title="record">Canon_worlds</span></a> <a id="454330da0f56a2416dd22d7f96feb974" class="idref" href="#454330da0f56a2416dd22d7f96feb974"><span class="id" title="binder">Γ</span></a> : <span class="id" title="keyword">Type</span> :=<br/>
@@ -73,7 +73,7 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Instance</span> <a id="CPre" class="idref" href="#CPre"><span class="id" title="instance">CPre</span></a> <a id="de99c0e007bd311d76da1801ff347713" class="idref" href="#de99c0e007bd311d76da1801ff347713"><span class="id" title="binder">Γ</span></a> : <a class="idref" href="Topology.iS4_topol_sem.html#preorder"><span class="id" title="class">preorder</span></a> :=<br/>
+<span class="id" title="keyword">Instance</span> <a id="CPre" class="idref" href="#CPre"><span class="id" title="instance">CPre</span></a> <a id="de99c0e007bd311d76da1801ff347713" class="idref" href="#de99c0e007bd311d76da1801ff347713"><span class="id" title="binder">Γ</span></a> : <a class="idref" href="Topology.iS4_topol_sem.html#preord_set"><span class="id" title="class">preord_set</span></a> :=<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{|<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Topology.iS4_topol_sem.html#nodes"><span class="id" title="method">nodes</span></a> := <a class="idref" href="Topology.iS4_completeness.html#Canon_worlds"><span class="id" title="class">Canon_worlds</span></a> <span class="id" title="var">Γ</span> ;<br/>
 <br/>
@@ -104,7 +104,7 @@
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="comment">(*&nbsp;Then&nbsp;we&nbsp;create&nbsp;interior&nbsp;operator&nbsp;for&nbsp;the&nbsp;canonical&nbsp;preorder.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;Then&nbsp;we&nbsp;create&nbsp;interior&nbsp;operator&nbsp;for&nbsp;the&nbsp;canonical&nbsp;preord_set.&nbsp;*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Definition</span> <a id="Theories" class="idref" href="#Theories"><span class="id" title="definition">Theories</span></a> <a id="87cf4a9792a33e96b1c656d15f1aa3be" class="idref" href="#87cf4a9792a33e96b1c656d15f1aa3be"><span class="id" title="binder">Γ</span></a> <a id="7232aa770a8277aafc66777e1f8de7ed" class="idref" href="#7232aa770a8277aafc66777e1f8de7ed"><span class="id" title="binder">φ</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.18.0/stdlib//Coq.Sets.Ensembles.html#Ensemble"><span class="id" title="definition">Ensemble</span></a> (@<a class="idref" href="Topology.iS4_topol_sem.html#nodes"><span class="id" title="method">nodes</span></a> (<a class="idref" href="Topology.iS4_completeness.html#CPre"><span class="id" title="instance">CPre</span></a> <a class="idref" href="Topology.iS4_completeness.html#87cf4a9792a33e96b1c656d15f1aa3be"><span class="id" title="variable">Γ</span></a>)) :=<br/>

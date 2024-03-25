@@ -7,7 +7,7 @@ Require Import iS4_Syntax.
 
 Section TopologicalSemantics.
 
-    Class preorder :=
+    Class preord_set :=
       {
         (* Carrier *)
         nodes : Type ;
@@ -18,7 +18,7 @@ Section TopologicalSemantics.
         reach_tran u v w : reachable u v -> reachable v w -> reachable u w
       }.
 
-  Class upset (pre : preorder) :=
+  Class upset (pre : preord_set) :=
     {
       uset : Ensemble (@nodes pre);
       is_upset : forall w, (uset w) -> forall x, @reachable pre w x -> (uset x)
@@ -29,19 +29,19 @@ Section TopologicalSemantics.
 
   Axiom upset_prf_irrel : forall pre (u0 u1 : upset pre), (@uset _ u0 = @uset _ u1) -> u0 = u1.
 
-  Lemma unit_is_upset : forall (pre : preorder), forall w, ((fun (x : @nodes pre) => x = x) w) ->
+  Lemma unit_is_upset : forall (pre : preord_set), forall w, ((fun (x : @nodes pre) => x = x) w) ->
             forall y, @reachable pre w y -> ((fun (x : @nodes pre) => x = x) y).
   Proof.
   intros. simpl in H. simpl ; auto.
   Qed.
 
-  Instance unit_upset (pre : preorder) : upset pre :=
+  Instance unit_upset (pre : preord_set) : upset pre :=
       {|
         uset := (fun (x : @nodes pre) => x = x);
         is_upset := unit_is_upset pre
       |}.
 
-  Lemma inter_is_upset : forall (pre : preorder) (u0 u1 : upset pre), forall w, ((fun (x : @nodes pre) => (@uset pre u0) x /\ (@uset pre u1) x) w) ->
+  Lemma inter_is_upset : forall (pre : preord_set) (u0 u1 : upset pre), forall w, ((fun (x : @nodes pre) => (@uset pre u0) x /\ (@uset pre u1) x) w) ->
             forall y, @reachable pre w y -> ((fun (x : @nodes pre) => (@uset pre u0) x /\ (@uset pre u1) x) y).
   Proof.
   intros. simpl in H. simpl. destruct H ; split.
@@ -49,7 +49,7 @@ Section TopologicalSemantics.
   - apply (@is_upset pre u1 w) ; auto.
   Qed.
 
-  Instance inter_upset (pre : preorder) (u0 u1 : upset pre) : upset pre :=
+  Instance inter_upset (pre : preord_set) (u0 u1 : upset pre) : upset pre :=
       {|
         uset := (fun (x : @nodes pre) => (@uset pre u0) x /\ (@uset pre u1) x);
         is_upset := inter_is_upset pre u0 u1
@@ -57,8 +57,8 @@ Section TopologicalSemantics.
 
     Class model :=
       {
-        (* Base preorder *)
-        pre : preorder ;
+        (* Base preord_set *)
+        pre : preord_set ;
 
         (* Interior operator *)
         i : (upset pre) -> (upset pre) ;
