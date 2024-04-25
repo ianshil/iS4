@@ -114,12 +114,6 @@ Definition BoxOne φ : form :=
   | _ => Box φ
   end.
 
-Definition BoxTwo φ : form :=
-  match φ with
-  | Box ψ => Box (BoxOne ψ)
-  | _ => Box (Box φ)
-  end.
-
 Definition UnBox φ : form :=
   match φ with
   | Box ψ => ψ
@@ -128,16 +122,9 @@ Definition UnBox φ : form :=
 
 Definition ClosOneBox Γ : Ensemble form := Union _ Γ (fun φ => exists ψ, In _ Γ ψ /\ φ = BoxOne ψ).
 
-Definition ClosTwoBox Γ : Ensemble form := Union _ Γ (fun φ => exists ψ, In _ Γ ψ /\ φ = BoxTwo ψ).
-
-Definition ClosOneTwoBox Γ : Ensemble form :=
-  Union _ Γ (Union _ (fun φ => exists ψ, In _ Γ ψ /\ φ = BoxOne ψ) (fun φ => exists ψ, In _ Γ ψ /\ φ = BoxTwo ψ)).
-
 Definition ClosSubform Γ : Ensemble form := fun φ => exists ψ, In _ Γ ψ /\ List.In φ (subformlist ψ).
 
-Definition Clos Γ : Ensemble form := ClosOneTwoBox (ClosSubform Γ).
-
-Definition Clos' Γ : Ensemble form := ClosOneBox (ClosSubform Γ).
+Definition Clos Γ : Ensemble form := ClosOneBox (ClosSubform Γ).
 
 Lemma Incl_Set_ClosSubform : forall Γ, Included _ Γ (ClosSubform Γ).
 Proof.
@@ -146,134 +133,40 @@ Qed.
 
 Lemma Incl_ClosSubform_Clos : forall Γ, Included _ (ClosSubform (Clos Γ)) (Clos Γ).
 Proof.
-intros Γ φ Hφ. unfold In in *. unfold Clos in *. unfold ClosOneTwoBox in *.
+intros Γ φ Hφ. unfold In in *. unfold Clos in *. unfold ClosOneBox in *.
 unfold ClosSubform in *. destruct Hφ. destruct H. unfold In in H. inversion H.
 - subst. inversion H1. destruct H2. apply Union_introl. unfold In. exists x0. split ; auto.
   apply subform_trans with (φ:=x) ; auto.
-- subst. unfold In in H1. inversion H1 ; subst.
-  + unfold In in H2. destruct H2. destruct H2 ; subst. destruct H2. destruct H2 ; subst.
-     destruct x0 ; simpl in * ; destruct H0 ; auto.
-     apply Union_intror. unfold In. apply Union_introl. unfold In. exists (# n).
-     split ; auto. exists x ; auto. destruct H0 ; subst.
-     apply Union_introl. unfold In. exists x ; auto. inversion H0.
-     apply Union_intror. unfold In. apply Union_introl. unfold In. exists Bot.
-     split ; auto. exists x ; auto. destruct H0 ; subst.
-     apply Union_introl. unfold In. exists x ; auto. inversion H0.
-     apply Union_intror. unfold In. apply Union_introl. unfold In. exists (x0_1 ∧ x0_2).
-     split ; auto. exists x ; auto. destruct H0 ; subst.
-     apply Union_introl. unfold In. exists x ; auto.
-     apply Union_introl. unfold In. exists x ; split ; auto.
-     apply subform_trans with (φ:=x0_1 ∧ x0_2) ; auto. simpl ; auto.
-     apply Union_intror. unfold In. apply Union_introl. unfold In. exists (x0_1 ∨ x0_2).
-     split ; auto. exists x ; auto. destruct H0 ; subst.
-     apply Union_introl. unfold In. exists x ; auto.
-     apply Union_introl. unfold In. exists x ; split ; auto.
-     apply subform_trans with (φ:=x0_1 ∨ x0_2) ; auto. simpl ; auto.
-     apply Union_intror. unfold In. apply Union_introl. unfold In. exists (x0_1 --> x0_2).
-     split ; auto. exists x ; auto. destruct H0 ; subst.
-     apply Union_introl. unfold In. exists x ; auto.
-     apply Union_introl. unfold In. exists x ; split ; auto.
-     apply subform_trans with (φ:=x0_1 --> x0_2) ; auto. simpl ; auto.
-     apply Union_intror. unfold In. apply Union_introl. unfold In. exists (Box x0).
-     split ; auto. exists x ; auto.
-     apply Union_introl. unfold In. exists x ; split ; auto.
-     apply subform_trans with (φ:=Box x0) ; auto. simpl ; auto.
-  + unfold In in H2. destruct H2. destruct H2 ; subst. destruct H2. destruct H2 ; subst.
-     destruct x0 ; simpl in *. 1-5: destruct H0 ; subst ; auto.
-     destruct H0 ; subst. apply Union_intror. unfold In. apply Union_introl. unfold In. exists (# n).
-     split ; auto. exists x ; auto. destruct H0 ; subst. 2: inversion H0.
-     apply Union_introl. unfold In. exists x ; auto.
-     destruct H0 ; subst. apply Union_intror. unfold In. apply Union_introl. unfold In. exists Bot.
-     split ; auto. exists x ; auto. destruct H0 ; subst. 2: inversion H0.
-     apply Union_introl. unfold In. exists x ; auto.
-     destruct H0 ; subst. apply Union_intror. unfold In. apply Union_introl. unfold In. exists (x0_1 ∧ x0_2).
-     split ; auto. exists x ; auto. destruct H0 ; subst.
-     apply Union_introl. unfold In. exists x ; auto.
-     apply Union_introl. unfold In. exists x ; split ; auto.
-     apply subform_trans with (φ:=x0_1 ∧ x0_2) ; auto. simpl ; auto.
-     destruct H0 ; subst. apply Union_intror. unfold In. apply Union_introl. unfold In. exists (x0_1 ∨ x0_2).
-     split ; auto. exists x ; auto. destruct H0 ; subst.
-     apply Union_introl. unfold In. exists x ; auto.
-     apply Union_introl. unfold In. exists x ; split ; auto.
-     apply subform_trans with (φ:=x0_1 ∨ x0_2) ; auto. simpl ; auto.
-     destruct H0 ; subst. apply Union_intror. unfold In. apply Union_introl. unfold In. exists (x0_1 --> x0_2).
-     split ; auto. exists x ; auto. destruct H0 ; subst.
-     apply Union_introl. unfold In. exists x ; auto.
-     apply Union_introl. unfold In. exists x ; split ; auto.
-     apply subform_trans with (φ:=x0_1 --> x0_2) ; auto. simpl ; auto.
-     { destruct x0  ; simpl in *. 1-5: destruct H0 ; subst ; auto.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; auto.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; split ; auto.
-       apply subform_trans with (φ:=(Box # n)) ; auto. simpl ; auto. inversion H0.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; auto.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; split ; auto.
-       apply subform_trans with (φ:=(Box Bot)) ; auto. simpl ; auto. inversion H0.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; auto.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; split ; auto.
-       apply subform_trans with (φ:=(Box (x0_1 ∧ x0_2))) ; auto. simpl ; auto.
-       apply Union_introl. unfold In. exists x ; split ; auto.
-       apply subform_trans with (φ:=(Box (x0_1 ∧ x0_2))) ; auto. simpl ; auto.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; auto.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; split ; auto.
-       apply subform_trans with (φ:=(Box (x0_1 ∨ x0_2))) ; auto. simpl ; auto.
-       apply Union_introl. unfold In. exists x ; split ; auto.
-       apply subform_trans with (φ:=(Box (x0_1 ∨ x0_2))) ; auto. simpl ; auto.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; auto.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; split ; auto.
-       apply subform_trans with (φ:=(Box (x0_1 --> x0_2))) ; auto. simpl ; auto.
-       apply Union_introl. unfold In. exists x ; split ; auto.
-       apply subform_trans with (φ:=(Box (x0_1 --> x0_2))) ; auto. simpl ; auto.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; auto.
-       destruct H0 ; subst. apply Union_introl. unfold In. exists x ; split ; auto.
-       apply subform_trans with (φ:=Box (Box x0)) ; auto. simpl ; auto.
-       apply Union_introl. unfold In. exists x ; split ; auto.
-       apply subform_trans with (φ:=Box (Box x0)) ; auto. simpl ; auto. }
-Qed.
-
-Lemma Incl_ClosSubform_Clos' : forall Γ, Included _ (ClosSubform (Clos' Γ)) (Clos' Γ).
-Proof.
-intros Γ φ Hφ. unfold In in *. unfold Clos' in *. unfold ClosOneBox in *.
-unfold ClosSubform in *. destruct Hφ. destruct H. unfold In in H. inversion H.
-- subst. inversion H1. destruct H2. apply Union_introl. unfold In. exists x0. split ; auto.
-  apply subform_trans with (φ:=x) ; auto.
-- subst. unfold In in H1. inversion H1 ; subst.
-  unfold In in H2. destruct H2. destruct H2 ; subst. destruct H2.
+- subst. unfold In in H1. destruct H1. destruct H1 ; subst. destruct H1. destruct H1 ; subst.
   destruct x0 ; simpl in * ; destruct H0 ; auto.
   apply Union_intror. unfold In. exists (# n).
-  split ; auto. exists x1 ; auto. destruct H0 ; subst.
-  apply Union_introl. unfold In. exists x1 ; auto. inversion H0.
+  split ; auto. exists x ; auto. destruct H0 ; subst. apply Union_introl.
+  exists x ; auto. inversion H0.
   apply Union_intror. unfold In. exists Bot.
-  split ; auto. exists x1 ; auto. destruct H0 ; subst.
-  apply Union_introl. unfold In. exists x1 ; auto. inversion H0.
+  split ; auto. exists x ; auto. destruct H0 ; subst.
+  apply Union_introl. unfold In. exists x ; auto. inversion H0.
   apply Union_intror. unfold In. exists (x0_1 ∧ x0_2).
-  split ; auto. exists x1 ; auto. destruct H0 ; subst.
-  apply Union_introl. unfold In. exists x1 ; auto.
-  apply Union_introl. unfold In. exists x1 ; split ; auto.
+  split ; auto. exists x ; auto. destruct H0 ; subst.
+  apply Union_introl. unfold In. exists x ; auto.
+  apply Union_introl. unfold In. exists x ; split ; auto.
   apply subform_trans with (φ:=x0_1 ∧ x0_2) ; auto. simpl ; auto.
   apply Union_intror. unfold In. exists (x0_1 ∨ x0_2).
-  split ; auto. exists x1 ; auto. destruct H0 ; subst.
-  apply Union_introl. unfold In. exists x1 ; auto.
-  apply Union_introl. unfold In. exists x1 ; split ; auto.
+  split ; auto. exists x ; auto. destruct H0 ; subst.
+  apply Union_introl. unfold In. exists x ; auto.
+  apply Union_introl. unfold In. exists x ; split ; auto.
   apply subform_trans with (φ:=x0_1 ∨ x0_2) ; auto. simpl ; auto.
   apply Union_intror. unfold In. exists (x0_1 --> x0_2).
-  split ; auto. exists x1 ; auto. destruct H0 ; subst.
-  apply Union_introl. unfold In. exists x1 ; auto.
-  apply Union_introl. unfold In. exists x1 ; split ; auto.
+  split ; auto. exists x ; auto. destruct H0 ; subst.
+  apply Union_introl. unfold In. exists x ; auto.
+  apply Union_introl. unfold In. exists x ; split ; auto.
   apply subform_trans with (φ:=x0_1 --> x0_2) ; auto. simpl ; auto.
   apply Union_intror. unfold In. exists (Box x0).
-  split ; auto. exists x1 ; auto.
-  apply Union_introl. unfold In. exists x1 ; split ; auto.
- apply subform_trans with (φ:=Box x0) ; auto. simpl ; auto.
+  split ; auto. exists x ; auto.
+  apply Union_introl. unfold In. exists x ; split ; auto.
+apply subform_trans with (φ:=Box x0) ; auto. simpl ; auto.
 Qed.
 
 Lemma Box_UnBox_BoxOne_id : forall l, map Box (map UnBox (map BoxOne l)) = map BoxOne l.
-Proof.
-induction l ; simpl ; intuition.
-destruct a ; simpl ; subst ; auto. 1-5: rewrite IHl ; auto.
-destruct a ; simpl ; auto. 1-6: rewrite IHl ; auto.
-Qed.
-
-Lemma Box_UnBox_BoxTwo_id : forall l, map Box (map UnBox (map BoxTwo l)) = map BoxTwo l.
 Proof.
 induction l ; simpl ; intuition.
 destruct a ; simpl ; subst ; auto. 1-5: rewrite IHl ; auto.
@@ -285,18 +178,7 @@ Proof.
 induction φ ; simpl ; auto.
 Qed.
 
-Lemma UnBox_BoxTwo : forall φ, BoxTwo φ = Box (Box (UnBox (UnBox φ))).
-Proof.
-induction φ ; simpl ; auto.
-destruct φ ; simpl ; auto.
-Qed.
-
 Lemma BoxOne_UnBox_fixpoint : forall φ, BoxOne φ = Box (UnBox (BoxOne φ)).
-Proof.
-induction φ ; simpl ; auto.
-Qed.
-
-Lemma BoxTwo_UnBox_fixpoint : forall φ, BoxTwo φ = Box (UnBox (BoxTwo φ)).
 Proof.
 induction φ ; simpl ; auto.
 Qed.
@@ -304,35 +186,13 @@ Qed.
 Lemma In_Clos_not_box : forall Γ φ, ((exists ψ, φ = Box ψ) -> False) -> (Clos Γ) φ -> (ClosSubform Γ) φ.
 Proof.
 intros. destruct H0 ; auto. destruct H0 ; auto. destruct H0. destruct H0 ; subst.
-exfalso. apply H. exists (UnBox x0). apply UnBox_BoxOne. destruct H0.
-destruct H0 ; subst. exfalso ; apply H. exists (Box (UnBox (UnBox x0))).
-apply UnBox_BoxTwo.
-Qed.
-
-Lemma In_Clos'_not_box : forall Γ φ, ((exists ψ, φ = Box ψ) -> False) -> (Clos' Γ) φ -> (ClosSubform Γ) φ.
-Proof.
-intros. destruct H0 ; auto. destruct H0 ; auto. destruct H0. destruct H0 ; subst.
 exfalso. apply H. exists (UnBox x0). apply UnBox_BoxOne.
 Qed.
 
-Lemma In_Clos_BoxTwo : forall Γ φ, (Clos Γ) φ -> (Clos Γ) (BoxTwo φ).
+Lemma In_Clos_BoxOne : forall Γ φ, (Clos Γ) φ -> (Clos Γ) (BoxOne φ).
 Proof.
 induction φ.
-1-5: intros ; apply Union_intror ; apply Union_intror ; eexists ; split ; auto ; apply In_Clos_not_box ; auto.
-1-5: intro H0 ; destruct H0 ; inversion H0.
-intros. destruct φ ; simpl in * ; auto.
-1-5: apply IHφ ; apply Incl_ClosSubform_Clos.
-exists (Box (# n)). simpl ; split ; auto.
-exists (Box Bot). simpl ; split ; auto.
-exists (Box (φ1 ∧ φ2)). simpl ; split ; auto.
-exists (Box (φ1 ∨ φ2)). simpl ; split ; auto.
-exists (Box (φ1 --> φ2)). simpl ; split ; auto.
-Qed.
-
-Lemma In_Clos'_BoxOne : forall Γ φ, (Clos' Γ) φ -> (Clos' Γ) (BoxOne φ).
-Proof.
-induction φ.
-1-5: intros ; apply Union_intror ; eexists ; split ; auto ; apply In_Clos'_not_box ; auto.
+1-5: intros ; apply Union_intror ; eexists ; split ; auto ; apply In_Clos_not_box ; auto.
 1-5: intro H0 ; destruct H0 ; inversion H0.
 intros. destruct φ ; simpl in * ; auto.
 Qed.

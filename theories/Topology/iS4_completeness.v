@@ -5,9 +5,12 @@ Require Import Lia.
 Require Import Ensembles.
 
 Require Import iS4_Syntax.
-Require Import iS4H_export.
+Require Import iS4H.
+Require Import iS4H_logic.
+Require Import iS4H_properties.
+Require Import iS4_enum.
 Require Import iS4_topol_sem.
-
+Require Import iS4_Lindenbaum_lem.
 
 
 Section Completeness.
@@ -17,8 +20,8 @@ Section Completeness.
 Class Canon_worlds Γ : Type :=
   { world : @Ensemble form ;
     wInclClos : Included _ world (Clos Γ) ;
-    wClosed : restr_closed (Clos Γ) world ;
     wNotDer : ~ iS4H_prv (world, Bot) ;
+    wClosed : restr_closed (Clos Γ) world ;
     wPrime : quasi_prime world
   }.
 
@@ -65,7 +68,7 @@ Proof.
   - intuition. apply H6. apply Id. apply IdRule_I ; auto.
 Qed.
 
-(* Then we create the interior operator for the canonical preord_set. *)
+(* Then we create interior operator for the canonical preord_set. *)
 
 Definition Theories Γ φ : Ensemble (@nodes (CPre Γ)) :=
   fun x => In _ (@world Γ x) φ.
@@ -84,7 +87,7 @@ Instance upTheories Γ φ : (upset (CPre Γ)) :=
       |}.
 
 (* Note that the next definition outputs the entire type X in the case
-    where the list l is nil. *)
+    where l is nil. Else, it behaves as a normal finite intersection. *)
 
 Definition Finite_Intersection {X : Type} (l : list (Ensemble X)) : Ensemble X :=
   fun x => forall y, List.In y l -> In _ y x.
@@ -94,13 +97,13 @@ Definition Finite_Intersection {X : Type} (l : list (Ensemble X)) : Ensemble X :
 Definition Inf_Union {X : Type} (E : Ensemble (Ensemble X)) : Ensemble X :=
   fun x => exists S, In _ E S /\ In _ S x.
 
- (* We define the function Ci, the interior function of the canonical model.  *)
+ (* We define the function Ci, the interior function on the canonical model.  *)
 
 Definition Ci_uset Γ (u : upset (CPre Γ)) : Ensemble (@nodes (CPre Γ)) :=
    Inf_Union (fun x => exists (l: list form),
-     (Included _ (fun y => List.In y (map Box l)) (Clos Γ)) /\ (* All formulae in Box l are in Clos Γ. *)
+     (Included _ (fun y => List.In y (map BoxOne l)) (Clos Γ)) /\ (* All formulae in Box l are in Clos Γ. *)
       Included _ (Finite_Intersection (map (Theories Γ) l)) (@uset _ u) /\
-      x = Finite_Intersection (map (Theories _) (map Box l))).
+      x = Finite_Intersection (map (Theories _) (map BoxOne l))).
 
 Lemma Ci_upset : forall Γ (u : upset (CPre Γ)),
   forall (w : @nodes (CPre Γ)), ((Ci_uset Γ u) w) ->
@@ -109,7 +112,7 @@ Proof.
 intros. unfold Ci_uset, Inf_Union in *. destruct H. destruct H.
 unfold In in H. destruct H as ( l & H2 & H3 & H4). subst.
 unfold In ; simpl.
-exists (Finite_Intersection (map (Theories Γ) (map Box l))).
+exists (Finite_Intersection (map (Theories Γ) (map BoxOne l))).
 repeat split.
 - exists l. repeat split.
   + intros A HA. unfold In in HA. apply in_map_iff in HA. destruct HA. destruct H ; subst.
@@ -120,7 +123,7 @@ repeat split.
      exists x. unfold Theories. split ; auto.
 - unfold Finite_Intersection in *. unfold In in *. intros. apply in_map_iff in H. destruct H.
   destruct H ; subst. unfold Theories. unfold In. apply in_map_iff in H4. destruct H4.
-  destruct H ; subst. apply H0. apply H1 ; simpl. apply in_map_iff. exists (Box x0).
+  destruct H ; subst. apply H0. apply H1 ; simpl. apply in_map_iff. exists (BoxOne x0).
   split. unfold Theories. auto. apply in_map_iff ; exists x0 ; auto.
 Qed.
 
@@ -147,15 +150,15 @@ Proof.
 intros. unfold uset ; simpl. unfold Ci_uset ; simpl.
 unfold Inf_Union ; simpl. apply Extensionality_Ensembles. split ; intros A HA ; auto.
 - unfold In in *. destruct HA. destruct H. destruct H. destruct H. destruct H1 ; subst. split.
-  + exists (Finite_Intersection (map (Theories Γ) (map Box x0))). split ; auto.
+  + exists (Finite_Intersection (map (Theories Γ) (map BoxOne x0))). split ; auto.
      exists x0. repeat split ; auto. intros B HB. unfold In in *. unfold uset ; simpl.
      apply H1. unfold In. auto.
-  + exists (Finite_Intersection (map (Theories Γ) (map Box x0))). split ; auto.
+  + exists (Finite_Intersection (map (Theories Γ) (map BoxOne x0))). split ; auto.
      exists x0. repeat split ; auto. intros B HB. unfold In in *. unfold uset ; simpl.
      apply H1. unfold In. auto.
 - unfold In in *. destruct HA. destruct H. destruct H. destruct H. destruct H. destruct H2. subst.
   destruct H0. destruct H0. destruct H0. destruct H0. destruct H4 ; subst.
-  exists (Finite_Intersection (map (Theories Γ) ((map Box x0) ++ (map Box x1)))). split ; auto.
+  exists (Finite_Intersection (map (Theories Γ) ((map BoxOne x0) ++ (map BoxOne x1)))). split ; auto.
   + exists (x0 ++ x1). repeat split ; auto.
      * intros B HB. unfold In in *. apply in_map_iff in HB. destruct HB.
        destruct H5 ; subst. apply in_app_or in H6. destruct H6. apply H ; unfold In.
@@ -169,9 +172,9 @@ unfold Inf_Union ; simpl. apply Extensionality_Ensembles. split ; intros A HA ; 
      * repeat rewrite map_app ; auto.
   + unfold Finite_Intersection in *. intros. unfold In in *. apply in_map_iff in H5. destruct H5. destruct H5 ; subst. unfold Theories.
      apply in_app_or in H6. destruct H6. apply in_map_iff in H5. destruct H5. destruct H5 ; subst. unfold In. apply H1.
-     apply in_map_iff. exists (Box x2). split ; auto. apply in_map_iff ; exists x2 ; split ; auto.
+     apply in_map_iff. exists (BoxOne x2). split ; auto. apply in_map_iff ; exists x2 ; split ; auto.
      apply H3 ; auto. apply in_map_iff in H5. destruct H5. destruct H5 ; subst.
-     apply in_map_iff. exists (Box x2). split ; auto. apply in_map_iff ; exists x2 ; split ; auto.
+     apply in_map_iff. exists (BoxOne x2). split ; auto. apply in_map_iff ; exists x2 ; split ; auto.
 Qed.
 
 Lemma Ci_T Γ :forall u, Included _ (@uset (CPre Γ) (Ci Γ u)) (@uset (CPre Γ) u).
@@ -181,36 +184,21 @@ destruct HA. unfold In in H. destruct H. destruct H. destruct H. destruct H1 ; s
 unfold Finite_Intersection in * ; simpl in *. unfold In in *.
 apply H1. unfold In. intros. apply in_map_iff in H2. destruct H2. destruct H2 ; subst. unfold Theories.
 unfold In. apply wClosed.
-apply MP with (ps:=[(world, Box x --> x);(world, Box x)]). 2: apply MPRule_I.
-intros. inversion H2 ; subst. apply Ax. apply AxRule_I. right. apply MAT_I.
-exists x ; auto. inversion H4 ; subst. 2: inversion H5. apply Id. apply IdRule_I.
-unfold In. apply H0. apply in_map_iff. exists (Box x) ; split ; auto.
+eapply MP with [_;(_, BoxOne x)]. 2: apply MPRule_I.
+intros. inversion H2 ; subst. destruct x ; simpl.
+1-5: apply Ax ; apply AxRule_I ; right ; apply MAT_I ; eexists ; reflexivity.
+apply imp_Id_gen. inversion H4 ; subst. 2: inversion H5. apply Id. apply IdRule_I.
+unfold In. apply H0. apply in_map_iff. exists (BoxOne x) ; split ; auto.
 apply in_map_iff. exists x ; split ; auto.
-assert ((Clos Γ) (Box x)). apply H. unfold In. apply in_map_iff. exists x ; split ; auto.
-unfold Clos in *. unfold ClosOneTwoBox in *. inversion H2 ; subst.
-apply Union_introl. unfold ClosSubform in *. unfold In in *. destruct H4. destruct H4.
-exists x1. split ; auto. apply subform_trans with (φ:=Box x) ; auto. simpl. right.
-destruct x ; simpl ; auto.
-unfold In in *. inversion H4 ; subst.
-unfold In in *. destruct H5. destruct H5 ; subst.
-unfold ClosSubform in *. unfold In in *. destruct H5. destruct H5.
-apply Union_introl ; subst. unfold In.
-exists x2. split ; auto. apply subform_trans with (φ:=x1) ; auto.
-destruct x1 ; simpl in * ; inversion H6 ; subst ; auto. right.
-destruct x1 ; simpl ; auto.
-unfold In in *. destruct H5. destruct H5 ; subst.
-unfold ClosSubform in *. unfold In in *. destruct H5. destruct H5.
-destruct x1 ; simpl in * ; inversion H6 ; subst.
-1-5: apply Union_intror ; apply Union_introl ; unfold In in *.
-exists (# n) ; simpl. split ; auto. exists x2 ; split ; auto.
-exists (Bot) ; simpl. split ; auto. exists x2 ; split ; auto.
-exists (x1_1 ∧ x1_2) ; simpl. split ; auto. exists x2 ; split ; auto.
-exists (x1_1 ∨ x1_2) ; simpl. split ; auto. exists x2 ; split ; auto.
-exists (x1_1 --> x1_2) ; simpl. split ; auto. exists x2 ; split ; auto.
-destruct x1 ; simpl in * ; inversion H6 ; subst.
-all: apply Union_introl ; unfold In in * ; exists x2 ; split ; auto.
-apply subform_trans with (φ:=(Box (Box x1))) ; auto.
-simpl. auto.
+assert ((Clos Γ) (BoxOne x)). apply H. unfold In. apply in_map_iff. exists x ; split ; auto.
+apply Incl_ClosSubform_Clos. unfold In. exists (BoxOne x) ; split ; auto.
+destruct x ; simpl in * ; auto.
+Qed.
+
+Lemma map__double_BoxOne : forall l, (map BoxOne l) = (map BoxOne (map BoxOne l)).
+Proof.
+induction l ; simpl ; auto.
+- rewrite <- IHl. destruct a ; simpl ; auto.
 Qed.
 
 Lemma Ci_4 Γ : forall u, Included _ (@uset (CPre Γ) (Ci Γ u)) (@uset (CPre Γ) (Ci Γ (Ci Γ u))).
@@ -219,31 +207,16 @@ intros u w Hw. unfold In in *. unfold uset in *. simpl in *. unfold Ci_uset in H
 unfold In in *. destruct Hw. destruct H as (H0 & H1). destruct H0 as (l & H2 & H3 & H4) ; subst.
 unfold Finite_Intersection in *. simpl in *. unfold In in *.
 unfold Ci_uset. unfold Inf_Union. simpl ; unfold In.
-exists (Finite_Intersection (map (Theories Γ) (map BoxTwo l))). split ; auto.
-- rewrite <- Box_UnBox_BoxTwo_id. exists (map UnBox (map BoxTwo l)).
-  repeat split ; auto.
+exists (Finite_Intersection (map (Theories Γ) (map BoxOne l))). split ; auto.
+exists (map BoxOne l) ; repeat split ; auto.
   + intros A HA. unfold In in *. apply in_map_iff in HA. destruct HA. destruct H ; subst.
-     apply in_map_iff in H0. destruct H0. destruct H ; subst. apply in_map_iff in H0.
-     destruct H0. destruct H ; subst. rewrite <- BoxTwo_UnBox_fixpoint.
-     apply In_Clos_BoxTwo. apply Incl_ClosSubform_Clos. exists (Box x).
-     simpl ; split ; auto. apply H2. apply in_map_iff. eexists ; split ; auto. right ; destruct x ; simpl ; auto.
+     apply in_map_iff in H0. destruct H0. destruct H ; subst. apply H2. unfold In.
+     apply in_map_iff. exists x0 ; split ; auto. destruct x0 ; simpl ; auto.
   + intros v Hv. unfold In in *. unfold Finite_Intersection in *. unfold In in *.
      unfold Ci_uset. unfold Inf_Union. unfold In ; simpl.
-     exists (Finite_Intersection (map (Theories Γ) (map Box l))). split ; auto.
-     * exists l ; split ; auto.
-     * intros u0 Hu0. apply in_map_iff in Hu0. destruct Hu0. destruct H ; subst.
-       apply in_map_iff in H0. destruct H0. destruct H ; subst. unfold In.
-       unfold Theories. unfold In. apply wClosed. apply UnBox_BoxTwo_Box_prv.
-       apply Id. apply IdRule_I. apply Hv. apply in_map_iff ; exists (UnBox (BoxTwo x0)) ; split ; auto.
-       apply in_map_iff. eexists ; split ; auto. apply in_map_iff. eexists ; split ; auto.
-       apply H2. apply in_map_iff. eexists ; split ; auto.
-- intros t Ht. apply in_map_iff in Ht. destruct Ht. destruct H ; subst.
-  apply in_map_iff in H0. destruct H0 as (A & HA0 & HA) ; subst.
-  unfold In in *. unfold Theories. unfold In. apply wClosed.
-  + apply Box_BoxTwo_prv. apply Id. apply IdRule_I. apply H1.
-     apply in_map_iff. exists (Box A) ; split ; auto. apply in_map_iff ; eexists ; auto.
-  + apply In_Clos_BoxTwo. apply Incl_ClosSubform_Clos. exists (Box A).
-     split. apply H2. apply in_map_iff. eexists ; split ; auto. simpl ; right ; destruct A ; simpl ; auto.
+     exists (Finite_Intersection (map (Theories Γ) (map BoxOne l))). split ; auto.
+     exists l ; repeat split ; auto.
+  + rewrite <- map__double_BoxOne ; auto.
 Qed.
 
 (* We define the canonical valuation. *)
@@ -275,9 +248,6 @@ Instance CM Γ : model :=
 
 Axiom LEM : forall P, P \/ ~ P.
 
-(* A crucial consequence of LEM is that quasi-prime sets
-   of formulas are now prime. *)
-
 Lemma LEM_prime Δ :
   quasi_prime Δ  -> prime Δ .
 Proof.
@@ -287,43 +257,35 @@ Proof.
   intro. destruct H3 ; auto.
 Qed.
 
-(* Then, we can easily prove a stepping stone for the
-    truth lemma. This lemma may be proved constructively
-    but we could not find a constructive proof for it. *)
+(* Stepping stone for the truth lemma. *)
 
 Lemma K_finite_intersection : forall Γ l0 l1,
-  Included _ (fun y => List.In y (map Box l0)) (Clos Γ) ->
-  Included _ (fun y => List.In y (map Box l1)) (Clos Γ) ->
+  Included _ (fun y => List.In y (map BoxOne l0)) (Clos Γ) ->
+  Included _ (fun y => List.In y (map BoxOne l1)) (Clos Γ) ->
   Included _ (Finite_Intersection (map (Theories Γ) l0)) (Finite_Intersection (map (Theories Γ) l1)) ->
-  Included _ (Finite_Intersection (map (Theories Γ) (map Box l0))) (Finite_Intersection (map (Theories Γ) (map Box l1))).
+  Included _ (Finite_Intersection (map (Theories Γ) (map BoxOne l0))) (Finite_Intersection (map (Theories Γ) (map BoxOne l1))).
 Proof.
 intros. intros w Hw. unfold In in *. unfold Finite_Intersection in *. unfold In in *.
 intros. apply in_map_iff in H2. destruct H2. destruct H2 ; subst. apply in_map_iff in H3.
 destruct H3. destruct H2 ; subst. unfold Theories in *. simpl in *. unfold In in *.
-enough (iS4H_rules ((fun x => List.In x (map Box l0)), Box x0)).
+enough (iS4H_rules ((fun x => List.In x (map BoxOne l0)), BoxOne x0)).
 - apply wClosed. eapply (iS4H_monot (_,_) H2). simpl in *. intros A HA. unfold In in *.
   apply Hw. apply in_map_iff. exists A ; split ; auto. apply H0. apply in_map_iff. eexists ; split ; auto.
 - enough (iS4H_prv (fun x : form => List.In x l0, x0)).
-  + apply K_rule in H2.
-     assert (((fun x : form => exists B : form, In form (fun x0 : form => List.In x0 l0) B /\ x = Box B) =
-     fun x : form => List.In x (map Box l0))). apply Extensionality_Ensembles.
-     split ; intros A HA. unfold In in * ; simpl. destruct HA. destruct H4 ; subst ; auto. apply in_map_iff.
-     exists x ; split ; auto. unfold In in *. apply in_map_iff in HA. destruct HA. destruct H4 ; subst.
+  + apply K_BoxOne_rule in H2. apply (iS4H_monot _ H2) ; simpl ; intros A HA.
+     unfold In in * ; simpl. destruct HA. destruct H4 ; subst ; auto. apply in_map_iff.
      exists x ; split ; auto.
-     rewrite <- H4 ; auto.
-  + assert (J0: In form (Clos Γ) x0). apply Incl_ClosSubform_Clos. exists (Box x0). split ; auto. apply H0.
-     unfold In. apply in_map_iff. exists x0 ; auto. simpl ; right ; destruct x0 ; simpl ; auto.
+  + destruct (LEM (iS4H_prv (fun x : form => List.In x l0, x0))) ; auto. exfalso.
+     assert (J0: In form (Clos Γ) x0). apply Incl_ClosSubform_Clos. exists (BoxOne x0). split ; auto. apply H0.
+     unfold In. apply in_map_iff. exists x0 ; auto. destruct x0 ; simpl ; auto ; right ; simpl ; auto.
      assert (J1: Included form (fun x : form => List.In x l0) (Clos Γ)).
-     intros A HA. apply Incl_ClosSubform_Clos. exists (Box A). split ; auto.
-     apply H. simpl ; apply in_map_iff. eexists ; auto. simpl ; right ; destruct A ; simpl ; auto.
-     destruct (LEM (iS4H_prv (fun x : form => List.In x l0, x0))) ; auto. exfalso.
+     intros A HA. apply Incl_ClosSubform_Clos. exists (BoxOne A). split ; auto.
+     apply H. simpl ; apply in_map_iff. eexists ; auto. destruct A ; simpl ; auto ; right ; simpl ; auto.
      pose (Lindenbaum_world _ _ _ J0 J1 H2). destruct e. destruct H4.
      pose (H1 x). unfold In in *. apply H5. apply i.
      intros. apply in_map_iff in H6. destruct H6. destruct H6 ; subst. apply H4. auto.
      apply in_map_iff. exists x0. split ; auto.
 Qed.
-
-(* The truth lemma is then provable. *)
 
 Lemma truth_lemma Γ : forall ψ (cp : Canon_worlds Γ),
   (Clos Γ ψ) ->
@@ -364,7 +326,7 @@ induction ψ ; intros ; split ; intros ; simpl ; try simpl in H1 ; auto.
   2: apply MPRule_I. intros. inversion H1. subst. apply Ax. apply AxRule_I. left.
   apply IA6_I. repeat eexists ; auto. inversion H2. 2: inversion H3.
   subst. apply Id. apply IdRule_I ; auto.
-  apply IHψ2 ; auto. apply wClosed ; auto.
+  apply IHψ2 ; auto. apply wClosed; auto.
   apply MP with (ps:=[(world, (And ψ1 ψ2) --> ψ2);(world, (And ψ1 ψ2))]).
   2: apply MPRule_I. intros. inversion H1. subst. apply Ax. apply AxRule_I. left.
   apply IA7_I. repeat eexists ; auto. inversion H2. 2: inversion H3.
@@ -393,7 +355,7 @@ induction ψ ; intros ; split ; intros ; simpl ; try simpl in H1 ; auto.
   assert (Jψ2: Clos Γ ψ2).
   apply Incl_ClosSubform_Clos. unfold In. exists (ψ1 ∨ ψ2). split ; simpl ; auto. right.
   apply in_or_app ; right ; destruct ψ2 ; simpl ; auto.
-  pose (LEM_prime _  wPrime). apply p in H0. destruct H0.
+  pose (LEM_prime _  wPrime). apply p in H0 ; auto. destruct H0.
   left. apply IHψ1 ; auto.
   right. apply IHψ2 ; auto.
 (* Imp ψ1 ψ2 *)
@@ -404,7 +366,7 @@ induction ψ ; intros ; split ; intros ; simpl ; try simpl in H1 ; auto.
   apply Incl_ClosSubform_Clos. unfold In. exists (ψ1 --> ψ2). split ; simpl ; auto. right.
   apply in_or_app ; right ; destruct ψ2 ; simpl ; auto.
   destruct (LEM (In form world (ψ1 --> ψ2))) ; auto. exfalso.
-  assert (iS4H_rules (Union _ (world) (Singleton _ ψ1), ψ2) -> False).
+  assert (iS4H_rules (Union _ world (Singleton _ ψ1), ψ2) -> False).
   intro. apply iS4H_Deduction_Theorem with (A:=ψ1) (B:=ψ2) (Γ:=world) in H2 ; auto.
   apply H1. apply wClosed ; auto.
   assert (Included form (Union form world (Singleton form ψ1)) (Clos Γ)).
@@ -439,27 +401,39 @@ induction ψ ; intros ; split ; intros ; simpl ; try simpl in H1 ; auto.
   unfold In in *.
   unfold Ci_uset in H1. unfold Inf_Union in H1. destruct H1. unfold In in *.
   destruct H1. destruct H1. destruct H1. destruct H3 ; subst.
-  assert (Included form (fun y : form => List.In y [Box ψ]) (Clos Γ)).
-  intros A HA. inversion HA ; subst ; auto. inversion H4.
+  assert (Included form (fun y : form => List.In y [BoxOne ψ]) (Clos Γ)).
+  intros A HA. inversion HA ; subst ; auto. apply In_Clos_BoxOne ; auto. inversion H4.
   assert (Included nodes (Finite_Intersection (map (Theories Γ) x0)) (Finite_Intersection (map (Theories Γ) [ψ]))). 
   intros A HA. unfold In in *. unfold Finite_Intersection in *. intros.
   simpl in *. destruct H5 ; unfold In in * ; subst. unfold Theories. unfold In. apply H3 ; auto.
   inversion H5.
   pose (K_finite_intersection _ _ [ψ] H1 H4 H5).
-  pose (i _ H2). unfold In in *. unfold Finite_Intersection in i0.
-  apply i0. apply in_map_iff. exists (Box ψ). split ; auto. apply in_map_iff.
-  exists ψ ; split ; auto. apply in_eq.
+  pose (i _ H2). unfold In in *.
+  apply wClosed ; auto.
+  eapply MP with [_;(_,BoxOne ψ)]. 2: apply MPRule_I.
+  intros. inversion H6 ; subst. destruct ψ ; simpl.
+  1-5: apply imp_Id_gen. apply Ax. apply AxRule_I ; right ; apply MA4_I ; eexists ; reflexivity.
+  inversion H7 ; subst. unfold Finite_Intersection in i0.
+  apply i0. apply in_map_iff. exists (BoxOne ψ). split ; auto.
+  apply Extensionality_Ensembles ; split ; intros A HA ; unfold In in *. unfold Theories in HA.
+  apply Id. apply IdRule_I ; auto. apply wClosed ; auto. apply In_Clos_BoxOne ; auto.
+  apply in_map_iff. exists ψ ; split ; auto. apply in_eq. inversion H8.
 - assert (Jψ: Clos Γ ψ).
   apply Incl_ClosSubform_Clos. unfold In. exists (Box ψ). split ; simpl ; auto. right.
   destruct ψ ; simpl ; auto.
   intros. unfold Ci_uset. unfold Inf_Union. unfold In in *. simpl in *.
-  exists (Finite_Intersection [(Theories Γ (Box ψ))]). split ; auto.
+  exists (Finite_Intersection [(Theories Γ (BoxOne ψ))]). split ; auto.
   + exists [ψ] ; repeat split ; simpl ; auto.
-     intros A HA. inversion HA ; subst ; auto. inversion H2.
+     intros A HA. inversion HA ; subst ; auto. apply In_Clos_BoxOne ; auto. inversion H2.
      intros A HA. apply H1. unfold In in *. unfold Finite_Intersection in HA. unfold In in *.
      apply IHψ ; auto. apply HA. unfold Theories. simpl. auto.
   + unfold Finite_Intersection. unfold Theories ; unfold In in * ; simpl. intros.
-     destruct H2 ; subst ; try contradiction. auto.
+     destruct H2 ; subst ; try contradiction. apply wClosed ; auto.
+     eapply MP with [_;(_,Box ψ)]. 2: apply MPRule_I.
+     intros. inversion H2 ; subst. destruct ψ ; simpl. 1-5: apply imp_Id_gen.
+     apply Ax. apply AxRule_I ; right ; apply MAT_I ; eexists ; reflexivity.
+     inversion H3 ; [subst | inversion H4]. apply Id ; apply IdRule_I ; auto.
+     apply In_Clos_BoxOne ; auto.
 Qed.
 
 Theorem QuasiCompleteness : forall s,
@@ -470,11 +444,11 @@ apply Lindenbaum_world with (Γ:=Union _ e (Singleton _ f)) in WD ; auto.
 - destruct WD as (w & H1 & H2).
   assert ((forall A, In _ e A -> forces (CM _) w A)). intros. apply truth_lemma. 2: auto.
   apply wInclClos ; auto. apply H in H0. apply truth_lemma in H0 ; auto.
-  unfold Clos. unfold ClosOneTwoBox. apply Union_introl. unfold In.
+  unfold Clos. unfold ClosOneBox. apply Union_introl. unfold In.
   exists f. split. apply Union_intror. apply In_singleton. destruct f ; simpl ; auto.
-- unfold Clos. unfold ClosOneTwoBox. apply Union_introl. unfold In.
+- unfold Clos. unfold ClosOneBox. apply Union_introl. unfold In.
   exists f. split. apply Union_intror. apply In_singleton. destruct f ; simpl ; auto.
-- intros A HA. unfold Clos. unfold ClosOneTwoBox. apply Union_introl. unfold In.
+- intros A HA. unfold Clos. unfold ClosOneBox. apply Union_introl. unfold In.
   exists A. split. apply Union_introl ; auto. destruct A ; simpl ; auto.
 Qed.
 
@@ -488,5 +462,5 @@ Qed.
 
 End Completeness.
 
-Print Assumptions Completeness.
 
+  

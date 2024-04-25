@@ -659,48 +659,20 @@ auto. intro. intros. inversion H0. destruct H1. subst. unfold In.
 exists x2 ; split ; auto. apply i. apply H ; auto.
 Qed.
 
-Lemma Box_BoxTwo_prv : forall Γ A, iS4H_prv (Γ, Box A) ->
-    iS4H_prv (Γ, BoxTwo A).
+Lemma K_BoxOne_rule : forall Γ A, iS4H_prv (Γ, A) ->
+    iS4H_prv ((fun x => (exists B, In _ Γ B /\ x = BoxOne B)), BoxOne A).
 Proof.
-intros. destruct A ; simpl in *.
-1-5: eapply MP with (ps:=[(Γ, (Box _) --> Box (Box _));(Γ, Box _)]) ; 
-       [ intros prem H0 ; inversion H0 ; [ subst ; apply Ax ; apply AxRule_I ; 
-        right ; apply MA4_I ; eexists _ ; unfold MA4 ; auto |
-        inversion H1 ; [ subst ; apply H | inversion H2] ] | apply MPRule_I].
-destruct A ; simpl in * ; auto.
-apply MP with (ps:=[(Γ, Box (Box (Box A)) --> Box (Box A));(Γ, Box (Box (Box A)))]).
-2: apply MPRule_I. intros. inversion H0 ; subst. 2: inversion H1 ; [subst ; auto |  inversion H2].
-apply Ax. apply AxRule_I. right. apply MAT_I. exists (Box (Box A)) ; auto.
-Qed.
-
-Lemma BoxTwo_Box_prv : forall Γ A, iS4H_prv (Γ, BoxTwo A) ->
-    iS4H_prv (Γ, Box A).
-Proof.
-intros. destruct A ; simpl in *.
-1-5: eapply MP with (ps:=[(Γ, Box (Box _) --> (Box _));(Γ, Box (Box _))]) ; 
-       [ intros prem H0 ; inversion H0 ; [ subst ; apply Ax ; apply AxRule_I ; 
-        right ; apply MAT_I ; eexists _ ; unfold MAT ; auto |
-        inversion H1 ; [ subst ; apply H | inversion H2] ] | apply MPRule_I].
-destruct A ; simpl in * ; auto.
-apply MP with (ps:=[(Γ, Box (Box A) --> Box (Box (Box A)));(Γ, Box (Box A))]).
-2: apply MPRule_I. intros. inversion H0 ; subst. 2: inversion H1 ; [subst ; auto |  inversion H2].
-apply Ax. apply AxRule_I. right. apply MA4_I. exists (Box A) ; auto.
-Qed.
-
-Lemma UnBox_BoxTwo_Box_prv : forall Γ A, iS4H_prv (Γ, UnBox (BoxTwo A)) ->
-    iS4H_prv (Γ, Box A).
-Proof.
-intros. destruct A ; simpl in * ; auto.
-destruct A ; simpl in * ; auto.
-1-5: eapply MP with (ps:=[(Γ, (Box _) --> Box (Box _));(Γ, Box _)]) ; 
-       [ intros prem H0 ; inversion H0 ; [ subst ; apply Ax ; apply AxRule_I ; 
-        right ; apply MA4_I ; eexists _ ; unfold MA4 ; auto |
-        inversion H1 ; [ subst ; apply H | inversion H2] ] | apply MPRule_I].
-apply MP with (ps:=[(Γ, Box (Box A) --> Box (Box (Box A)));(Γ, Box (Box A))]).
-2: apply MPRule_I. intros. inversion H0 ; subst. 2: inversion H1 ; [subst ; auto |  inversion H2].
-apply Ax. apply AxRule_I. right. apply MA4_I. exists (Box A) ; auto.
-apply MP with (ps:=[(Γ, Box A --> Box (Box A));(Γ, Box A)]).
-2: apply MPRule_I. intros. inversion H2 ; subst. 2: inversion H3 ; [subst ; auto |  inversion H4].
-apply Ax. apply AxRule_I. right. apply MA4_I. exists A ; auto.
+intros. pose (K_rule Γ A H).
+eapply MP with [_;(_,Box A)]. 2: apply MPRule_I.
+intros. inversion H0 ; subst. destruct A ; simpl.
+1-5: apply imp_Id_gen. apply Ax. apply AxRule_I ; right ; apply MAT_I ; eexists ; reflexivity.
+inversion H1 ; [subst | inversion H2].
+apply (iS4H_comp _ i) ; simpl. intros. destruct H2 as (B & H3 & H4) ; subst.
+eapply MP with [_;(_,BoxOne B)]. 2: apply MPRule_I.
+intros. inversion H2 ; subst. destruct B ; simpl.
+1-5: apply imp_Id_gen.
+apply Ax. apply AxRule_I ; right ; apply MA4_I ; eexists ; reflexivity.
+inversion H4 ; [subst | inversion H5].
+apply Id. apply IdRule_I. exists B ; auto.
 Qed.
 
