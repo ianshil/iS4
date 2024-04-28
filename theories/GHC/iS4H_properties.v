@@ -641,6 +641,13 @@ induction l ; simpl ; intros.
   destruct H. destruct H. subst. exists x ; auto.
 Qed.
 
+Lemma T_BoxOne : forall Γ A, iS4H_prv (Γ, BoxOne A --> A).
+Proof.
+intros. destruct A ; simpl.
+1-5: apply Ax ; apply AxRule_I ; right ; apply MAT_I ; eexists ; reflexivity.
+apply imp_Id_gen.
+Qed.
+
 Lemma K_rule : forall Γ A, iS4H_prv (Γ, A) ->
     iS4H_prv ((fun x => (exists B, In _ Γ B /\ x = Box B)), Box A).
 Proof.

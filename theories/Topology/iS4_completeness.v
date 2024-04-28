@@ -185,20 +185,13 @@ unfold Finite_Intersection in * ; simpl in *. unfold In in *.
 apply H1. unfold In. intros. apply in_map_iff in H2. destruct H2. destruct H2 ; subst. unfold Theories.
 unfold In. apply wClosed.
 eapply MP with [_;(_, BoxOne x)]. 2: apply MPRule_I.
-intros. inversion H2 ; subst. destruct x ; simpl.
-1-5: apply Ax ; apply AxRule_I ; right ; apply MAT_I ; eexists ; reflexivity.
-apply imp_Id_gen. inversion H4 ; subst. 2: inversion H5. apply Id. apply IdRule_I.
+intros. inversion H2 ; subst. apply T_BoxOne.
+inversion H4 ; subst. 2: inversion H5. apply Id. apply IdRule_I.
 unfold In. apply H0. apply in_map_iff. exists (BoxOne x) ; split ; auto.
 apply in_map_iff. exists x ; split ; auto.
 assert ((Clos Γ) (BoxOne x)). apply H. unfold In. apply in_map_iff. exists x ; split ; auto.
 apply Incl_ClosSubform_Clos. unfold In. exists (BoxOne x) ; split ; auto.
 destruct x ; simpl in * ; auto.
-Qed.
-
-Lemma map__double_BoxOne : forall l, (map BoxOne l) = (map BoxOne (map BoxOne l)).
-Proof.
-induction l ; simpl ; auto.
-- rewrite <- IHl. destruct a ; simpl ; auto.
 Qed.
 
 Lemma Ci_4 Γ : forall u, Included _ (@uset (CPre Γ) (Ci Γ u)) (@uset (CPre Γ) (Ci Γ (Ci Γ u))).
@@ -216,7 +209,7 @@ exists (map BoxOne l) ; repeat split ; auto.
      unfold Ci_uset. unfold Inf_Union. unfold In ; simpl.
      exists (Finite_Intersection (map (Theories Γ) (map BoxOne l))). split ; auto.
      exists l ; repeat split ; auto.
-  + rewrite <- map__double_BoxOne ; auto.
+  + rewrite <- map_double_BoxOne ; auto.
 Qed.
 
 (* We define the canonical valuation. *)

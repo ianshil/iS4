@@ -197,5 +197,15 @@ induction φ.
 intros. destruct φ ; simpl in * ; auto.
 Qed.
 
+Lemma double_BoxOne : forall A, BoxOne (BoxOne A) = BoxOne A.
+Proof.
+intro A ; destruct A ; simpl ; auto.
+Qed.
+
+Lemma map_double_BoxOne : forall l, (map BoxOne l) = (map BoxOne (map BoxOne l)).
+Proof.
+induction l ; simpl ; auto. rewrite <- IHl ; rewrite double_BoxOne ; auto.
+Qed.
+
 
 
