@@ -445,7 +445,7 @@ apply Lindenbaum_world with (Γ:=Union _ e (Singleton _ f)) in WD ; auto.
   exists A. split. apply Union_introl ; auto. destruct A ; simpl ; auto.
 Qed.
 
-Theorem Completeness : forall Γ A,
+Theorem Strong_Completeness : forall Γ A,
     (loc_conseq Γ A) -> iS4H_rules (Γ, A).
 Proof.
 intros Γ A LC. pose (QuasiCompleteness (Γ, A)).

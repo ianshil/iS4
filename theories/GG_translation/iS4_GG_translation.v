@@ -14,7 +14,7 @@ Section Failure_of_GG.
 
 Lemma DNE_Box_Bot Γ : iS4H_prv (Γ, (¬ (¬ (Box Bot))) --> Box Bot).
 Proof.
-apply Completeness. intros M x HΓ.
+apply Strong_Completeness. intros M x HΓ.
 intros y Rxy Hy.
 intros u Hu.
 exfalso. simpl in *.

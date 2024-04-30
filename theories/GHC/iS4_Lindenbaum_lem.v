@@ -405,7 +405,7 @@ End PrimeProps.
 
 
 
-Section Lindenbaum.
+Section Lindenbaum_lemma.
 
 (* Lindenbaum lemma. *)
 
@@ -429,7 +429,7 @@ repeat split.
 - intro. apply Under_Lind_theory with (Γ:=(Clos Γ)) in H1 ; auto.
 Qed.
 
-End Lindenbaum.
+End Lindenbaum_lemma.
 
 
 
