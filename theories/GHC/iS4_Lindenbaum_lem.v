@@ -283,12 +283,12 @@ remember (form_index a) as n. destruct n ; simpl.
     (Lind_theory (Clos Γ) Δ ψ, (a --> ψ))]). 2: apply MPRule_I. intros. inversion H4 ; subst.
     apply Ax. apply AxRule_I. left. apply IA5_I. exists a. exists a. exists ψ. auto.
     inversion H5 ; subst. 2: inversion H6.
-    apply iS4H_Deduction_Theorem with (s:=(Union (form) (Lind_theory (Clos Γ) Δ ψ) (Singleton (form) a), ψ)) ; auto.
+    apply iS4H_Deduction_Theorem.
     apply iS4H_monot with (Γ1:=Union form (Lind_theory (Clos Γ) Δ ψ) (Singleton form a)) in H ; auto.
     simpl ; intros c Hc. inversion Hc ; subst. apply Union_introl. apply Lind_theory_extens ; auto.
     inversion H6 ; subst ; apply Union_intror ; apply In_singleton.
     inversion H4 ; subst. 2: inversion H5.
-    apply iS4H_Deduction_Theorem with (s:=(Union (form) (Lind_theory (Clos Γ) Δ ψ) (Singleton (form) a), ψ)) ; auto.
+    apply iS4H_Deduction_Theorem.
     apply iS4H_monot with (Γ1:=Union form (Lind_theory (Clos Γ) Δ ψ) (Singleton form a)) in H ; auto.
     simpl ; intros c Hc. inversion Hc ; subst. apply Union_introl. apply Lind_theory_extens ; auto.
     inversion H5 ; subst ; apply Union_intror ; apply In_singleton.
@@ -307,12 +307,12 @@ remember (form_index a) as n. destruct n ; simpl.
      (Lind_theory (Clos Γ) Δ ψ, (a --> ψ))]). 2: apply MPRule_I. intros. inversion H5 ; subst.
      apply Ax. apply AxRule_I. left. apply IA5_I. exists a. exists b. exists ψ. auto.
      inversion H6 ; subst. 2: inversion H7.
-     apply iS4H_Deduction_Theorem with (s:=(Union (form) (Lind_theory (Clos Γ) Δ ψ) (Singleton (form) a), ψ)) ; auto.
+     apply iS4H_Deduction_Theorem.
      apply iS4H_monot with (Γ1:=Union form (Lind_theory (Clos Γ) Δ ψ) (Singleton form a)) in H ; auto.
      simpl ; intros c Hc. inversion Hc ; subst. apply Union_introl. apply Lind_theory_extens ; auto.
      inversion H7 ; subst ; apply Union_intror ; apply In_singleton.
      inversion H5 ; subst. 2: inversion H6.
-     apply iS4H_Deduction_Theorem with (s:=(Union (form) (Lind_theory (Clos Γ) Δ ψ) (Singleton (form) b), ψ)) ; auto.
+     apply iS4H_Deduction_Theorem.
      apply iS4H_monot with (Γ1:=Union form (Lind_theory (Clos Γ) Δ ψ) (Singleton form b)) in H2 ; auto.
      simpl ; intros c Hc. inversion Hc ; subst. apply Union_introl. unfold In. exists m ; auto.
      inversion H6 ; subst ; apply Union_intror ; apply In_singleton.
@@ -338,12 +338,12 @@ remember (form_index a) as n. destruct n ; simpl.
      (Lind_theory (Clos Γ) Δ ψ, (a --> ψ))]). 2: apply MPRule_I. intros. inversion H5 ; subst.
      apply Ax. apply AxRule_I. left. apply IA5_I. exists a. exists b. exists ψ. auto.
      inversion H6 ; subst. 2: inversion H7.
-     apply iS4H_Deduction_Theorem with (s:=(Union (form) (Lind_theory (Clos Γ) Δ ψ) (Singleton (form) a), ψ)) ; auto.
+     apply iS4H_Deduction_Theorem.
      apply iS4H_monot with (Γ1:=Union form (Lind_theory (Clos Γ) Δ ψ) (Singleton form a)) in H ; auto.
      simpl ; intros c Hc. inversion Hc ; subst. apply Union_introl. unfold In ; exists n ; auto.
      inversion H7 ; subst ; apply Union_intror ; apply In_singleton.
      inversion H5 ; subst. 2: inversion H6.
-     apply iS4H_Deduction_Theorem with (s:=(Union (form) (Lind_theory (Clos Γ) Δ ψ) (Singleton (form) b), ψ)) ; auto.
+     apply iS4H_Deduction_Theorem.
      apply iS4H_monot with (Γ1:=Union form (Lind_theory (Clos Γ) Δ ψ) (Singleton form b)) in H2 ; auto.
      simpl ; intros c Hc. inversion Hc ; subst. apply Union_introl. apply Lind_theory_extens ; auto.
      inversion H6 ; subst ; apply Union_intror ; apply In_singleton.
@@ -362,12 +362,12 @@ remember (form_index a) as n. destruct n ; simpl.
      (Lind_theory (Clos Γ) Δ ψ, (a --> ψ))]). 2: apply MPRule_I. intros. inversion H5 ; subst.
      apply Ax. apply AxRule_I. left. apply IA5_I. exists a. exists b. exists ψ. auto.
      inversion H6 ; subst. 2: inversion H7.
-     apply iS4H_Deduction_Theorem with (s:=(Union (form) (Lind_theory (Clos Γ) Δ ψ) (Singleton (form) a), ψ)) ; auto.
+     apply iS4H_Deduction_Theorem.
      apply iS4H_monot with (Γ1:=Union form (Lind_theory (Clos Γ) Δ ψ) (Singleton form a)) in H ; auto.
      simpl ; intros c Hc. inversion Hc ; subst. apply Union_introl. unfold In. exists n ; auto.
      inversion H7 ; subst ; apply Union_intror ; apply In_singleton.
      inversion H5 ; subst. 2: inversion H6.
-     apply iS4H_Deduction_Theorem with (s:=(Union (form) (Lind_theory (Clos Γ) Δ ψ) (Singleton (form) b), ψ)) ; auto.
+     apply iS4H_Deduction_Theorem.
      apply iS4H_monot with (Γ1:=Union form (Lind_theory (Clos Γ) Δ ψ) (Singleton form b)) in H2 ; auto.
      simpl ; intros c Hc. inversion Hc ; subst. apply Union_introl. unfold In. exists m ; auto.
      inversion H6 ; subst ; apply Union_intror ; apply In_singleton.

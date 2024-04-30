@@ -319,8 +319,8 @@ apply MP with (ps:=[(Γ , ((Neg A) -->  A -->  Bot) -->  (And (Neg A) A  -->  Bo
 Qed.
 
 Theorem iS4H_Detachment_Theorem : forall A B Γ,
-           (iS4H_rules (Γ, A --> B)) ->
-                          iS4H_rules  (Union _ Γ  (Singleton _ (A)), B).
+           iS4H_rules (Γ, A --> B) ->
+           iS4H_rules  (Union _ Γ  (Singleton _ (A)), B).
 Proof.
 intros A B Γ D.
 apply MP with (ps:=[(Union _ Γ (Singleton _ A), Imp A B);(Union _ Γ (Singleton _ A), A)]).
@@ -332,68 +332,56 @@ apply Id. apply IdRule_I. apply Union_intror. apply In_singleton.
 inversion H1.
 Qed.
 
-Theorem iS4H_Deduction_Theorem : forall s,
-           (iS4H_rules s) ->
-           (forall A B Γ , (fst s = Union _ Γ  (Singleton _ (A))) ->
-                          (snd s = B) ->
-                          iS4H_rules (Γ , A -->  B)).
+Theorem iS4H_Deduction_Theorem : forall A B Γ,
+           iS4H_rules (Union _ Γ  (Singleton _ (A)), B) ->
+           iS4H_rules (Γ , A -->  B).
 Proof.
+intros. remember (Union form Γ (Singleton form A), B) as s.
+revert s H A B Γ Heqs.
 intros s D. induction D.
 (* Id *)
-- intros A B Γ  id1 id2. inversion H. subst. simpl in id1. subst. simpl. inversion H0.
-  + subst. apply MP with (ps:=[(Γ , A0 -->  A -->  A0);(Γ , A0)]). 2: apply MPRule_I. intros. inversion H2. subst.
-    apply Thm_irrel. inversion H3. subst. apply Id. apply IdRule_I. assumption.
-    inversion H4.
-  + subst. inversion H1. subst. apply imp_Id_gen.
+- intros A B Γ id. inversion H. subst. simpl. inversion H2 ; subst. inversion H0 ; subst.
+  + eapply MP with [_;(_, B)]. 2: apply MPRule_I. intros. inversion H3. subst.
+     apply Thm_irrel. inversion H4. subst. apply Id. apply IdRule_I. assumption.
+     inversion H5.
+  + inversion H1 ; subst. apply imp_Id_gen.
 (* Ax *)
-- intros A B Γ  id1 id2. inversion H. subst. simpl in id1. subst. simpl.
-  apply MP with (ps:=[(Γ , A0 -->  A -->  A0);(Γ , A0)]). 2: apply MPRule_I. intros. inversion H1. subst.
-  apply Thm_irrel. inversion H2. subst.
-  apply Ax. apply AxRule_I. assumption. inversion H3.
+- intros A B Γ id. inversion H ; subst. inversion H2 ; subst ; simpl in *.
+  eapply MP with [_;(_,B)]. 2: apply MPRule_I. intros. inversion H1 ; subst.
+  apply Thm_irrel. inversion H3. subst.
+  apply Ax. apply AxRule_I. assumption. inversion H4.
 (* MP *)
-- intros A B Γ  id1 id2. inversion H1. subst. simpl in id1. subst. simpl.
-  assert (J1: Union _ Γ  (Singleton _ A) = Union _ Γ  (Singleton _ A)). reflexivity.
-  assert (J2: A0 -->  B0 = A0 -->  B0). reflexivity.
-  assert (J20: List.In (Union (form) Γ  (Singleton (form) A), A0 -->  B0) [(Union (form) Γ  (Singleton (form) A), A0 -->  B0); (Union (form) Γ  (Singleton (form) A), A0)]).
+- intros A B Γ id. inversion H1 ; subst. inversion H3 ; subst.
+  eapply MP with [_;(Γ , And A A0 -->  B)]. 2: apply MPRule_I.
+  intros. inversion H2 ; subst.
+  eapply MP with [_;(_, A -->  And A A0)].
+  2: apply MPRule_I. intros. inversion H4. subst. apply Imp_trans.
+  inversion H5 ; subst. 2: inversion H6.
+  eapply MP with [_;(_, A -->  A0)]. 2: apply MPRule_I.
+  intros. inversion H6. subst.
+  eapply MP with [_;(_, A -->  A)]. 2: apply MPRule_I.
+  intros. inversion H7. subst. apply Ax. apply AxRule_I. left. apply IA8_I.
+  eexists ; eexists ; eexists ; reflexivity. inversion H8 ; subst.
+  apply imp_Id_gen. inversion H9. inversion H7 ; subst. 2: inversion H8.
+  apply H0 with (Union (form) Γ  (Singleton (form) A), A0) ; auto. apply in_cons ; apply in_eq.
+  inversion H4 ; [subst | inversion H5].
+  eapply MP with [_;(_, (A -->  A0 -->  B))]. 2: apply MPRule_I.
+  intros. inversion H5. subst. apply Imp_And.
+  inversion H6 ; [subst | inversion H7].
+  apply H0 with (Union form Γ (Singleton form A), A0 --> B) ; auto.
   apply in_eq.
-  pose (H0 (Union (form) Γ  (Singleton (form) A),  A0 -->  B0) J20
-  A (Imp A0 B0) Γ  J1 J2).
-  assert (J3: A0 = A0). reflexivity.
-  apply MP with (ps:=[(Γ , (And A A0 -->  B0) -->  (A -->  B0));(Γ , And A A0 -->  B0)]).
-  2: apply MPRule_I. intros. inversion H2. subst.
-  apply MP with (ps:=[(Γ , (A -->  And A A0) -->  (And A A0 -->  B0) -->  (A -->  B0));(Γ , A -->  And A A0)]).
-  2: apply MPRule_I. intros. inversion H3. subst. apply Imp_trans.
-  inversion H4. subst. 2: inversion H5.
-  apply MP with (ps:=[(Γ , (A -->  A0) -->  (A -->  And A A0));(Γ , A -->  A0)]).
-  2: apply MPRule_I. intros. inversion H5. subst.
-  apply MP with (ps:=[(Γ , (A -->  A) -->  (A -->  A0) -->  (A -->  And A A0));(Γ , A -->  A)]).
-  2: apply MPRule_I. intros. inversion H6. subst. apply Ax.
-  apply AxRule_I. left. apply IA8_I. exists A. exists A. exists A0. auto. inversion H7.
-  subst. apply imp_Id_gen. inversion H8. inversion H6. subst. 2: inversion H7.
-  assert (J30: List.In (Union (form) Γ  (Singleton (form) A), A0) [(Union (form) Γ  (Singleton (form) A), A0 -->  B0); (Union (form) Γ  (Singleton (form) A), A0)]).
-  apply in_cons. apply in_eq. assert (J40: A0 = A0). reflexivity.
-  pose (H0 (Union (form) Γ  (Singleton (form) A), A0) J30
-  A A0 Γ  J1 J40). auto. inversion H3. subst.
-  apply MP with (ps:=[(Γ , (A -->  A0 -->  B0) -->  (And A A0 -->  B0));(Γ , (A -->  A0 -->  B0))]).
-  2: apply MPRule_I. intros. inversion H4. subst. apply Imp_And.
-  inversion H5. subst. assumption. inversion H6. inversion H4.
 (* DNw *)
-- intros A B Γ id1 id2. inversion H1. subst. simpl in id1. subst. simpl.
-  assert (J1: iS4H_prv (Empty_set _, Box A0)).
-  apply Nec with (ps:=[(Empty_set _, A0)]). 2: apply NecRule_I. assumption.
-  assert (J2: Included _ (fst (Empty_set _, Box A0)) Γ). intro. intro. inversion H2.
-  pose (iS4H_monot (Empty_set _, Box A0) J1 Γ J2). simpl in i.
-  apply MP with (ps:=[(Γ, (Box A0) --> A --> (Box A0)); (Γ, Box A0)]).
-  2: apply MPRule_I. intros. inversion H2. subst. apply Thm_irrel.
-  inversion H3. subst. 2: inversion H4. assumption.
+- intros A B Γ id. inversion H1 ; subst. inversion H3 ; subst.
+  eapply MP with [_; (_, Box A0)]. 2: apply MPRule_I.
+  intros. inversion H2. subst. apply Thm_irrel.
+  inversion H4 ; [subst | inversion H5].
+  eapply Nec with [(_, A0)]. 2: apply NecRule_I. assumption.
 Qed.
 
 Lemma And_Imp : forall A B C Γ, iS4H_rules (Γ , ((And A B) -->  C) --> (A --> (B -->  C))).
 Proof.
 intros.
-apply iS4H_Deduction_Theorem with (Union _ Γ (Singleton _ ((A ∧ B) --> C)), A --> B --> C) ; auto.
-apply iS4H_Deduction_Theorem with (Union _ (Union _ Γ (Singleton _ ((A ∧ B) --> C))) (Singleton _ A), B --> C) ; auto.
-apply iS4H_Deduction_Theorem with (Union _ (Union _ (Union _ Γ (Singleton _ ((A ∧ B) --> C))) (Singleton _ A)) (Singleton _ B), C) ; auto.
+repeat apply iS4H_Deduction_Theorem.
 eapply MP with ([(_,(A ∧ B) --> C);(_,(A ∧ B))]).
 2: apply MPRule_I. intros. inversion H ; subst.
 apply Id. apply IdRule_I. apply Union_introl. apply Union_introl.
@@ -408,12 +396,10 @@ eapply MP with ([(_,(Top --> A) --> (Top --> B) --> (Top --> (A ∧ B)));(_, Top
 2: apply MPRule_I. intros. inversion H3 ; subst.
 apply Ax. apply AxRule_I. left. apply IA8_I. exists Top. exists A. exists B. auto.
 inversion H4 ; subst. 2: inversion H5.
-apply iS4H_Deduction_Theorem with (Union _ (Union form (Union form
-(Union form Γ (Singleton form ((A ∧ B) --> C))) (Singleton form A)) (Singleton form B)) (Singleton _ Top), A) ; auto.
+apply iS4H_Deduction_Theorem.
 apply Id. apply IdRule_I. apply Union_introl. apply Union_introl. apply Union_intror. apply In_singleton.
 inversion H3 ; subst. 2: inversion H4.
-apply iS4H_Deduction_Theorem with (Union _ (Union form (Union form
-(Union form Γ (Singleton form ((A ∧ B) --> C))) (Singleton form A)) (Singleton form B)) (Singleton _ Top), B) ; auto.
+apply iS4H_Deduction_Theorem.
 apply Id. apply IdRule_I. apply Union_introl. apply Union_intror. apply In_singleton.
 inversion H2 ; subst. 2: inversion H3.
 apply prv_Top.
@@ -461,8 +447,7 @@ Lemma Explosion : forall Γ A B,
   iS4H_prv (Γ, (B --> Bot) --> (B --> A)).
 Proof.
 intros.
-apply iS4H_Deduction_Theorem with (s:=(Union _ Γ (Singleton _ (B --> Bot)),  B --> A)) ; auto.
-apply iS4H_Deduction_Theorem with (s:=(Union _ (Union _ Γ (Singleton _ (B --> Bot))) (Singleton _ B), A)) ; auto.
+repeat apply iS4H_Deduction_Theorem.
 remember (Union form (Union form Γ (Singleton form (B --> Bot))) (Singleton form B)) as X.
 apply MP with (ps:=[(X, Bot --> A);(X, Bot)]). 2: apply MPRule_I.
 intros. inversion H. subst. apply Ax. apply AxRule_I. left. apply IA9_I. exists A ; auto.
@@ -480,8 +465,7 @@ Proof.
 induction l ; simpl ; intros.
 - split ; intro ; auto.
 - split ; intro.
-  * apply iS4H_Deduction_Theorem with (s:=(Union _ Γ (Singleton _ A), a --> list_Imp B l)) ; auto.
-    apply iS4H_Deduction_Theorem with (s:=(Union _ (Union _ Γ (Singleton _ A)) (Singleton _ a), list_Imp B l)) ; auto.
+  * repeat apply iS4H_Deduction_Theorem.
     assert (Union form (Union form Γ (Singleton form A)) (Singleton form a) =
     Union form (Union form Γ (Singleton form a)) (Singleton form A)).
     apply Extensionality_Ensembles. split ; intro ; intros. inversion H0. subst.
@@ -492,9 +476,9 @@ induction l ; simpl ; intros.
     apply Union_introl. apply Union_intror. auto. rewrite H0.
     apply iS4H_Detachment_Theorem. apply IHl.
     apply iS4H_Detachment_Theorem. auto.
-  * apply iS4H_Deduction_Theorem with (s:=(Union _ Γ (Singleton _ a), list_Imp (A --> B) l)) ; auto.
+  * apply iS4H_Deduction_Theorem.
     apply IHl.
-    apply iS4H_Deduction_Theorem with (s:=(Union _ (Union _ Γ (Singleton _ a)) (Singleton _ A), list_Imp B l)) ; auto.
+    apply iS4H_Deduction_Theorem.
     assert (Union form (Union form Γ (Singleton form A)) (Singleton form a) =
     Union form (Union form Γ (Singleton form a)) (Singleton form A)).
     apply Extensionality_Ensembles. split ; intro ; intros. inversion H0. subst.
@@ -540,11 +524,10 @@ induction l ; simpl ; intros.
        auto. split ; auto. apply H ; auto. intro. subst. auto.
        pose (IHl (fun y => (In _ Γ y) /\ (y <> a)) (a --> A) J0).
        destruct i. apply Imp_list_Imp. apply H3.
-       apply iS4H_Deduction_Theorem with (s:=(Γ, A)) ; simpl ; auto.
-       apply Extensionality_Ensembles. split ; intro ; intros. unfold In.
+       apply iS4H_Deduction_Theorem ; auto.
+       apply (iS4H_monot _ H0). intros x Hx.
        destruct (eq_dec_form a x). subst. apply Union_intror. apply In_singleton.
-       apply Union_introl. unfold In. split ; auto. inversion H5. subst.
-       inversion H6. auto. subst. inversion H6. subst. apply H. auto.
+       apply Union_introl. unfold In. split ; auto.
   * assert (decidable_eq form). unfold decidable_eq. intros.
     destruct (eq_dec_form x y). subst. unfold Decidable.decidable. auto.
     unfold Decidable.decidable. auto.
@@ -582,8 +565,7 @@ iS4H_rules (Γ, Box (list_Imp A l) --> list_Imp (Box A) (Box_list l)).
 Proof.
 induction l ; simpl ; intros.
 - apply imp_Id_gen.
-- apply iS4H_Deduction_Theorem with (s:=(Union _ Γ (Singleton _ (Box (a --> list_Imp A l))),  Box a --> list_Imp (Box A) (Box_list l))) ; auto.
-  apply iS4H_Deduction_Theorem with (s:=(Union _ (Union _ Γ (Singleton _ (Box (a --> list_Imp A l)))) (Singleton _ (Box a)),  list_Imp (Box A) (Box_list l))) ; auto.
+- repeat apply iS4H_Deduction_Theorem.
   remember (Union form (Union form Γ (Singleton form (Box (a --> list_Imp A l)))) (Singleton form (Box a))) as X.
   apply MP with (ps:=[(X, Box (list_Imp A l) --> list_Imp (Box A) (Box_list l));(X,Box (list_Imp A l))]).
   2: apply MPRule_I. intros. inversion H. rewrite <- H0. auto.
